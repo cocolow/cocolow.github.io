@@ -1,63 +1,66 @@
 import { Badge } from "@/components/ui/badge";
 
 const projects = [
-  { title: "Brand Identity System", category: "Work Project", gradient: "from-watercolor-orange/40 to-watercolor-yellow/30" },
-  { title: "Generative Art Series", category: "Artwork", gradient: "from-watercolor-purple/40 to-watercolor-pink/30" },
-  { title: "Mobile App Redesign", category: "Work Project", gradient: "from-watercolor-blue/40 to-watercolor-turquoise/30" },
-  { title: "Botanical Illustrations", category: "Artwork", gradient: "from-watercolor-green/40 to-watercolor-yellow/30" },
-  { title: "Open Source CLI Tool", category: "Personal Project", gradient: "from-watercolor-turquoise/40 to-watercolor-blue/30" },
-  { title: "Watercolor Portraits", category: "Artwork", gradient: "from-watercolor-burgundy/40 to-watercolor-orange/30" },
+  { title: "Brand Identity System", category: "Work Project", gradient: "from-watercolor-orange/40 to-watercolor-yellow/30", file: "brand_v3.psd" },
+  { title: "Generative Art Series", category: "Artwork", gradient: "from-watercolor-purple/40 to-watercolor-pink/30", file: "gen_art_07.png" },
+  { title: "Mobile App Redesign", category: "Work Project", gradient: "from-watercolor-blue/40 to-watercolor-turquoise/30", file: "app_mockup.fig" },
+  { title: "Botanical Illustrations", category: "Artwork", gradient: "from-watercolor-green/40 to-watercolor-yellow/30", file: "botanicals.tif" },
+  { title: "Open Source CLI Tool", category: "Personal Project", gradient: "from-watercolor-turquoise/40 to-watercolor-blue/30", file: "cli_tool.rs" },
+  { title: "Watercolor Portraits", category: "Artwork", gradient: "from-watercolor-burgundy/40 to-watercolor-orange/30", file: "portrait_02.png" },
 ];
 
 const categoryColors: Record<string, string> = {
-  "Work Project": "bg-watercolor-blue/15 text-watercolor-blue border-watercolor-blue/20",
-  "Personal Project": "bg-watercolor-green/15 text-watercolor-green border-watercolor-green/20",
-  "Artwork": "bg-watercolor-purple/15 text-watercolor-purple border-watercolor-purple/20",
+  "Work Project": "bg-watercolor-blue/15 text-foreground border-watercolor-blue/30",
+  "Personal Project": "bg-watercolor-green/15 text-foreground border-watercolor-green/30",
+  "Artwork": "bg-watercolor-purple/15 text-foreground border-watercolor-purple/30",
 };
 
 export function FeaturedWork() {
   return (
     <section id="projects" className="py-24">
       <div className="container mx-auto px-4 lg:px-8">
+        {/* Section header in retro style */}
         <div className="mb-16 text-center">
-          <p className="mb-3 text-sm font-medium uppercase tracking-widest text-muted-foreground">
-            Selected Works
+          <p className="mb-3 font-mono-heading text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
+            // Selected Works
           </p>
-          <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl">
+          <h2 className="font-mono-heading text-3xl font-bold tracking-tight sm:text-4xl">
             Featured <span className="gradient-text">Projects</span>
           </h2>
+          <div className="mx-auto mt-4 h-px w-32 bg-border" />
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, i) => (
             <div
               key={project.title}
-              className="group relative overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-              style={{ animationDelay: `${i * 0.1}s` }}
+              className="retro-window group cursor-pointer transition-all duration-200 hover:shadow-[5px_5px_0px_hsl(var(--foreground)/0.12)] hover:-translate-x-[1px] hover:-translate-y-[1px]"
+              style={{ transform: `rotate(${i % 2 === 0 ? -0.5 : 0.5}deg)` }}
             >
-              {/* Placeholder artwork area */}
+              <div className="retro-titlebar">
+                <span className="truncate text-muted-foreground">{project.file}</span>
+                <div className="retro-btn-group">
+                  <span className="retro-btn-dot">_</span>
+                  <span className="retro-btn-dot">□</span>
+                  <span className="retro-btn-dot">×</span>
+                </div>
+              </div>
+              
+              {/* Image area */}
               <div className={`aspect-[4/3] bg-gradient-to-br ${project.gradient}`}>
-                <div className="flex h-full w-full items-center justify-center opacity-40 transition-opacity group-hover:opacity-60">
-                  <span className="text-3xl">✦</span>
+                <div className="flex h-full w-full items-center justify-center">
+                  <div className="dashed-frame p-4 opacity-30 transition-opacity group-hover:opacity-50">
+                    <span className="font-pixel text-2xl">✦</span>
+                  </div>
                 </div>
               </div>
 
-              {/* Overlay on hover */}
-              <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-card/90 via-card/30 to-transparent p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <Badge variant="outline" className={`mb-2 w-fit text-xs ${categoryColors[project.category] || ""}`}>
+              {/* Info bar */}
+              <div className="border-t-2 border-border p-3">
+                <Badge variant="outline" className={`mb-1.5 font-mono-heading text-[10px] uppercase tracking-wider ${categoryColors[project.category] || ""}`}>
                   {project.category}
                 </Badge>
-                <h3 className="font-display text-lg font-semibold text-card-foreground">
-                  {project.title}
-                </h3>
-              </div>
-
-              {/* Always-visible info on mobile */}
-              <div className="border-t border-border p-4 group-hover:opacity-0 transition-opacity duration-300 md:block">
-                <Badge variant="outline" className={`mb-1.5 text-xs ${categoryColors[project.category] || ""}`}>
-                  {project.category}
-                </Badge>
-                <h3 className="font-display text-sm font-semibold text-card-foreground">
+                <h3 className="font-mono-heading text-sm font-bold text-card-foreground">
                   {project.title}
                 </h3>
               </div>

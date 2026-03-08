@@ -22,20 +22,22 @@ export function Navbar() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-lg">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-8">
-        {/* Logo */}
-        <a href="/" className="font-display text-xl font-bold tracking-tight text-foreground">
-          <span className="gradient-text">Portfolio</span>
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b-2 border-border bg-background/95 backdrop-blur-sm">
+      <div className="container mx-auto flex h-14 items-center justify-between px-4 lg:px-8">
+        {/* Logo — retro style */}
+        <a href="/" className="font-mono-heading text-sm font-bold uppercase tracking-widest text-foreground">
+          <span className="inline-block border-2 border-foreground px-3 py-1">
+            Portfolio
+          </span>
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-0 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="rounded-md px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="font-mono-heading border-r border-border px-5 py-4 text-xs font-bold uppercase tracking-wider text-muted-foreground transition-colors hover:bg-muted hover:text-foreground first:border-l"
             >
               {link.label}
             </a>
@@ -43,14 +45,14 @@ export function Navbar() {
         </div>
 
         {/* Desktop Right */}
-        <div className="hidden items-center gap-2 md:flex">
+        <div className="hidden items-center gap-1 md:flex">
           {socialLinks.map((s) => (
             <a
               key={s.label}
               href={s.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-md p-2 text-muted-foreground transition-colors hover:text-foreground"
+              className="p-2 text-muted-foreground transition-colors hover:text-foreground"
               aria-label={s.label}
             >
               <s.icon className="h-4 w-4" />
@@ -59,6 +61,7 @@ export function Navbar() {
           <Button
             variant="ghost"
             size="icon"
+            className="ml-1 border border-border"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             aria-label="Toggle theme"
           >
@@ -72,13 +75,14 @@ export function Navbar() {
           <Button
             variant="ghost"
             size="icon"
+            className="border border-border"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             aria-label="Toggle theme"
           >
             <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
             <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
           </Button>
-          <Button variant="ghost" size="icon" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
+          <Button variant="ghost" size="icon" className="border border-border" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
         </div>
@@ -87,22 +91,22 @@ export function Navbar() {
       {/* Mobile Menu */}
       <div
         className={cn(
-          "overflow-hidden border-b border-border/50 bg-background/95 backdrop-blur-lg transition-all duration-300 md:hidden",
-          mobileOpen ? "max-h-80 py-4" : "max-h-0 py-0"
+          "overflow-hidden border-b-2 border-border bg-background transition-all duration-300 md:hidden",
+          mobileOpen ? "max-h-80 py-2" : "max-h-0 py-0"
         )}
       >
-        <div className="container mx-auto flex flex-col gap-1 px-4">
+        <div className="container mx-auto flex flex-col px-4">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="rounded-md px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+              className="font-mono-heading border-b border-border px-4 py-3 text-xs font-bold uppercase tracking-wider text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             >
               {link.label}
             </a>
           ))}
-          <div className="mt-2 flex gap-3 px-4">
+          <div className="mt-3 flex gap-3 px-4 pb-2">
             {socialLinks.map((s) => (
               <a
                 key={s.label}
