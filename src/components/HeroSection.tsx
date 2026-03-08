@@ -47,22 +47,21 @@ export function HeroSection() {
                 <p className="mb-6 max-w-lg text-sm leading-relaxed text-muted-foreground">
                   Ex-TikTok Product Manager with 8+ years of experience creating customer-centric products in digital health and mental wellbeing. I blend technology with creativity — from designing Singapore's first national gamified digital health program to building an art brand as a mental wellbeing project. This is a curated collection of my work projects, personal explorations, and artwork.
                 </p>
+                <div className="flex flex-wrap gap-3">
+                  <Button size="lg" className="gradient-hero-bg border-0 px-6 font-mono-heading text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-[3px_3px_0px_hsl(var(--foreground)/0.15)] transition-all hover:shadow-[1px_1px_0px_hsl(var(--foreground)/0.15)] hover:translate-x-[2px] hover:translate-y-[2px]">
+                    View My Work
+                    <ArrowDown className="ml-1 h-4 w-4" />
+                  </Button>
+                  <Button variant="outline" size="lg" className="border-2 px-6 font-mono-heading text-xs font-bold uppercase tracking-wider shadow-[3px_3px_0px_hsl(var(--foreground)/0.15)] transition-all hover:shadow-[1px_1px_0px_hsl(var(--foreground)/0.15)] hover:translate-x-[2px] hover:translate-y-[2px]">
+                    Get in Touch
+                  </Button>
+                </div>
               </div>
               {/* Profile image placeholder */}
               <div className="hidden shrink-0 sm:block">
                 <div className="dashed-frame flex h-28 w-28 items-center justify-center bg-gradient-to-br from-watercolor-orange/20 to-watercolor-purple/20">
                   <span className="font-pixel text-3xl text-muted-foreground/50">📷</span>
                 </div>
-              </div>
-            </div>
-              <div className="flex flex-wrap gap-3">
-                <Button size="lg" className="gradient-hero-bg border-0 px-6 font-mono-heading text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-[3px_3px_0px_hsl(var(--foreground)/0.15)] transition-all hover:shadow-[1px_1px_0px_hsl(var(--foreground)/0.15)] hover:translate-x-[2px] hover:translate-y-[2px]">
-                  View My Work
-                  <ArrowDown className="ml-1 h-4 w-4" />
-                </Button>
-                <Button variant="outline" size="lg" className="border-2 px-6 font-mono-heading text-xs font-bold uppercase tracking-wider shadow-[3px_3px_0px_hsl(var(--foreground)/0.15)] transition-all hover:shadow-[1px_1px_0px_hsl(var(--foreground)/0.15)] hover:translate-x-[2px] hover:translate-y-[2px]">
-                  Get in Touch
-                </Button>
               </div>
             </div>
           </div>
