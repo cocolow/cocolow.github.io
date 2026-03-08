@@ -15,7 +15,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ["DM Sans", "system-ui", "sans-serif"],
-        display: ["Playfair Display", "Georgia", "serif"],
+        display: ["Space Mono", "monospace"],
+        pixel: ["VT323", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",
