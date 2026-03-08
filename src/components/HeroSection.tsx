@@ -36,17 +36,15 @@ export function HeroSection() {
             </div>
             <div className="p-6 sm:p-8">
               <div className="mb-4 flex flex-wrap gap-2">
-                <span className="sticker bg-watercolor-orange/20 text-foreground">Artist</span>
-                <span className="sticker rotate-1 bg-watercolor-purple/20 text-foreground">Developer</span>
+                <span className="sticker bg-watercolor-orange/20 text-foreground">Product Manager</span>
+                <span className="sticker rotate-1 bg-watercolor-purple/20 text-foreground">Artist</span>
                 <span className="sticker -rotate-1 bg-watercolor-turquoise/20 text-foreground">Creator</span>
               </div>
               <h1 className="mb-4 font-mono-heading text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-                Bringing Ideas
-                <br />
-                <span className="gradient-text">to Life</span>
+                Hi, I'm <span className="gradient-text">Coco</span>
               </h1>
               <p className="mb-6 max-w-lg text-sm leading-relaxed text-muted-foreground">
-                A curated collection of work projects, personal explorations, and artwork — blending technology with creativity.
+                Ex-TikTok Product Manager with 8+ years of experience creating customer-centric products in digital health and mental wellbeing. I blend technology with creativity — from designing Singapore's first national gamified digital health program to building an art brand as a mental wellbeing project. This is a curated collection of my work projects, personal explorations, and artwork.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Button size="lg" className="gradient-hero-bg border-0 px-6 font-mono-heading text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-[3px_3px_0px_hsl(var(--foreground)/0.15)] transition-all hover:shadow-[1px_1px_0px_hsl(var(--foreground)/0.15)] hover:translate-x-[2px] hover:translate-y-[2px]">
