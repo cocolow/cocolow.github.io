@@ -8,7 +8,6 @@ const navLinks = [
   { label: "Projects", href: "#projects" },
   { label: "About", href: "#about" },
   { label: "Commissions", href: "#commissions" },
-  { label: "Art Shop", href: "#shop" },
 ];
 
 const socialLinks = [
