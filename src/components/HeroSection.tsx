@@ -58,9 +58,9 @@ export function HeroSection() {
                 </div>
               </div>
               {/* Profile image placeholder */}
-              <div className="hidden shrink-0 sm:block">
-                <div className="dashed-frame flex h-28 w-28 items-center justify-center bg-gradient-to-br from-watercolor-orange/20 to-watercolor-purple/20">
-                  <span className="font-pixel text-3xl text-muted-foreground/50">📷</span>
+              <div className="hidden shrink-0 self-stretch sm:flex">
+                <div className="dashed-frame flex w-40 flex-1 items-center justify-center bg-gradient-to-br from-watercolor-orange/20 to-watercolor-purple/20 lg:w-52">
+                  <span className="font-pixel text-4xl text-muted-foreground/50">📷</span>
                 </div>
               </div>
             </div>
