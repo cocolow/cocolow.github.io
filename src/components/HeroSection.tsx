@@ -35,6 +35,12 @@ export function HeroSection() {
               </div>
             </div>
             <div className="p-6 sm:p-8">
+              {/* Profile image placeholder */}
+              <div className="mb-5 inline-block">
+                <div className="dashed-frame flex h-20 w-20 items-center justify-center bg-gradient-to-br from-watercolor-orange/20 to-watercolor-purple/20">
+                  <span className="font-pixel text-2xl text-muted-foreground/50">📷</span>
+                </div>
+              </div>
               <div className="mb-4 flex flex-wrap gap-2">
                 <span className="sticker bg-watercolor-orange/20 text-foreground">Product Manager</span>
                 <span className="sticker rotate-1 bg-watercolor-purple/20 text-foreground">Artist</span>
