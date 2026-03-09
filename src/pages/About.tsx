@@ -25,7 +25,7 @@ const timeline = [
   year: "2025–Present",
   role: "UX Product Manager",
   org: "mindline.sg, Ministry of Health Transformation (MOHT)",
-  logos: [logoMindline, logoMoht],
+  logos: [logoMoht],
   description:
   "Revamping Singapore's national digital mental health platform to improve engagement and personalise care via AI-enabled capabilities."
 },
