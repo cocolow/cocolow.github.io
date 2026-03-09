@@ -279,7 +279,7 @@ export default function About() {
             </div>
 
             {/* Languages */}
-            <div className="mx-auto mb-12 flex max-w-3xl justify-center gap-4">
+            <div className="mx-auto mb-12 grid max-w-3xl grid-cols-3 gap-4">
               {languages.map((lang) =>
               <div
                 key={lang.name}
