@@ -1,53 +1,10 @@
 import { Badge } from "@/components/ui/badge";
-import eclectusImg from "@/assets/eclectus.jpg";
-
-const projects = [
-  {
-    title: "Brand Identity System",
-    category: "Work Project",
-    gradient: "from-watercolor-orange/40 to-watercolor-yellow/30",
-    file: "brand_v3.psd",
-  },
-  {
-    title: "Generative Art Series",
-    category: "Artwork",
-    gradient: "from-watercolor-purple/40 to-watercolor-pink/30",
-    file: "gen_art_07.png",
-  },
-  {
-    title: "Mobile App Redesign",
-    category: "Work Project",
-    gradient: "from-watercolor-blue/40 to-watercolor-turquoise/30",
-    file: "app_mockup.fig",
-    image: eclectusImg,
-  },
-  {
-    title: "Botanical Illustrations",
-    category: "Artwork",
-    gradient: "from-watercolor-green/40 to-watercolor-yellow/30",
-    file: "botanicals.tif",
-  },
-  {
-    title: "Open Source CLI Tool",
-    category: "Personal Project",
-    gradient: "from-watercolor-turquoise/40 to-watercolor-blue/30",
-    file: "cli_tool.rs",
-  },
-  {
-    title: "Watercolor Portraits",
-    category: "Artwork",
-    gradient: "from-watercolor-burgundy/40 to-watercolor-orange/30",
-    file: "portrait_02.png",
-  },
-];
+import { featuredProjects } from "@/data/projects";
 
 const categoryColors: Record<string, string> = {
-  "Work Project":
-    "bg-watercolor-blue/15 text-foreground border-watercolor-blue/30",
-  "Personal Project":
-    "bg-watercolor-green/15 text-foreground border-watercolor-green/30",
-  Artwork:
-    "bg-watercolor-purple/15 text-foreground border-watercolor-purple/30",
+  Work: "bg-watercolor-blue/15 text-foreground border-watercolor-blue/30",
+  Personal: "bg-watercolor-green/15 text-foreground border-watercolor-green/30",
+  Art: "bg-watercolor-purple/15 text-foreground border-watercolor-purple/30",
 };
 
 export function FeaturedWork() {
@@ -82,7 +39,7 @@ export function FeaturedWork() {
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, i) => (
+          {featuredProjects.map((project, i) => (
             <div
               key={project.title}
               className="retro-window group cursor-pointer transition-all duration-200 hover:shadow-[5px_5px_0px_hsl(var(--foreground)/0.12)] hover:-translate-x-[1px] hover:-translate-y-[1px]"
