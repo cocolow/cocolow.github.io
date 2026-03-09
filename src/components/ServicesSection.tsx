@@ -216,6 +216,76 @@ export function ServicesSection() {
           </div>
         </div>
 
+        {/* ── Testimonials ── */}
+        <div className="mb-24">
+          <div className="mb-10 text-center">
+            <p className="mb-2 font-mono-heading text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
+              // Kind Words
+            </p>
+            <h3 className="font-mono-heading text-2xl font-bold tracking-tight">
+              Client <span className="gradient-text">Reviews</span>
+            </h3>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                quote: "Coco's calligraphy work for our wedding was absolutely stunning. Every guest commented on the invitations — they set the tone for the entire celebration.",
+                name: "Sarah & James L.",
+                context: "Wedding Stationery, 2025",
+              },
+              {
+                quote: "The live painting at our corporate gala was the highlight of the evening. Watching the artwork come to life in real-time captivated everyone in the room.",
+                name: "Michelle T.",
+                context: "Live Event Painting",
+                link: {
+                  label: "Featured in Travel Yukon",
+                  url: "https://www.travelyukon.com/en/see-and-do/activities/arts-whitehorse",
+                },
+              },
+              {
+                quote: "Our team workshop was such a refreshing experience. Coco made calligraphy feel approachable for complete beginners — we left with skills and artwork we're proud of.",
+                name: "David K.",
+                context: "Corporate Workshop, 15 pax",
+              },
+            ].map((t, i) => (
+              <div
+                key={i}
+                className="retro-window group transition-all duration-200 hover:shadow-[5px_5px_0px_hsl(var(--foreground)/0.12)] hover:-translate-x-[1px] hover:-translate-y-[1px]"
+              >
+                <div className="retro-titlebar">
+                  <span className="text-muted-foreground">review_{String(i + 1).padStart(2, "0")}.txt</span>
+                  <div className="retro-btn-group">
+                    <span className="retro-btn-dot">_</span>
+                    <span className="retro-btn-dot">□</span>
+                    <span className="retro-btn-dot">×</span>
+                  </div>
+                </div>
+                <div className="p-5 flex flex-col gap-3">
+                  <span className="font-pixel text-2xl gradient-text">"</span>
+                  <p className="text-sm leading-relaxed text-muted-foreground italic -mt-4">
+                    {t.quote}
+                  </p>
+                  <div className="mt-auto pt-2 border-t border-border">
+                    <p className="font-mono-heading text-xs font-bold text-card-foreground">{t.name}</p>
+                    <p className="font-mono-heading text-[10px] text-muted-foreground">{t.context}</p>
+                    {t.link && (
+                      <a
+                        href={t.link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-1.5 inline-flex items-center gap-1 font-mono-heading text-[10px] font-bold uppercase tracking-wider text-primary hover:underline"
+                      >
+                        {t.link.label}
+                        <ArrowRight className="h-3 w-3" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* ── FAQ ── */}
         <div className="mb-24 mx-auto max-w-2xl">
           <div className="mb-10 text-center">
