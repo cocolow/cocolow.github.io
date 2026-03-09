@@ -78,7 +78,7 @@ export function HeroSection() {
                 <Star className="mr-1 inline h-3 w-3" /> NEW
               </span>
             </div>
-            <div className="absolute -bottom-2 -left-4 z-20">
+            <div className="absolute bottom-2 -left-4 z-20">
               <span className="sticker -rotate-3 bg-watercolor-pink/30 text-foreground">
                 <Sparkles className="mr-1 inline h-3 w-3" /> Featured
               </span>
