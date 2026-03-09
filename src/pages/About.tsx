@@ -77,9 +77,36 @@ const languages = [
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="relative min-h-screen bg-background overflow-hidden">
+      {/* Floating decorative stickers */}
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        {/* Top-right star cluster */}
+        <span className="absolute right-[8%] top-[12%] font-pixel text-5xl text-watercolor-yellow/30 rotate-12">✦</span>
+        <span className="absolute right-[12%] top-[15%] font-pixel text-3xl text-watercolor-orange/20 -rotate-6">✦</span>
+
+        {/* Left side doodles */}
+        <span className="absolute left-[3%] top-[30%] font-pixel text-4xl text-watercolor-pink/20 rotate-[-15deg]">♡</span>
+        <span className="absolute left-[5%] top-[55%] font-pixel text-3xl text-watercolor-turquoise/25 rotate-6">~</span>
+
+        {/* Scattered geometric shapes */}
+        <div className="absolute right-[5%] top-[40%] h-16 w-16 rotate-45 border-2 border-dashed border-watercolor-purple/15" />
+        <div className="absolute left-[7%] top-[70%] h-12 w-12 border-2 border-watercolor-orange/15 rotate-12" />
+
+        {/* Right side accents */}
+        <span className="absolute right-[4%] top-[65%] font-pixel text-4xl text-watercolor-green/20 -rotate-12">✿</span>
+        <span className="absolute right-[10%] top-[85%] font-pixel text-3xl text-watercolor-blue/20 rotate-3">◇</span>
+
+        {/* Bottom left */}
+        <span className="absolute bottom-[8%] left-[10%] font-pixel text-5xl text-watercolor-burgundy/15 rotate-[8deg]">★</span>
+
+        {/* Watercolor blobs */}
+        <div className="absolute left-[-5%] top-[20%] h-64 w-64 rounded-full bg-watercolor-purple/5 blur-3xl" />
+        <div className="absolute right-[-8%] top-[50%] h-72 w-72 rounded-full bg-watercolor-orange/5 blur-3xl" />
+        <div className="absolute bottom-[10%] left-[30%] h-48 w-48 rounded-full bg-watercolor-pink/5 blur-3xl" />
+      </div>
+
       <Navbar />
-      <main className="pt-14">
+      <main className="relative pt-14">
         <section className="py-20">
           <div className="container mx-auto px-4 lg:px-8">
             {/* Header */}
