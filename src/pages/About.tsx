@@ -182,6 +182,7 @@ export default function About() {
               <span className="sticker bg-watercolor-green/15 text-foreground" style={{ transform: "rotate(2deg)" }}>
                 Global Teams (NA, APAC, EU)
               </span>
+              </div>
             </div>
 
             {/* Skills */}
