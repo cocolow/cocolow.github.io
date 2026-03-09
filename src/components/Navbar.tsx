@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X, Sun, Moon, Linkedin, Github, Instagram } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
@@ -25,22 +26,22 @@ export function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 border-b-2 border-border bg-background/95 backdrop-blur-sm">
       <div className="container mx-auto flex h-14 items-center justify-between px-4 lg:px-8">
         {/* Logo — retro style */}
-        <a href="/" className="font-mono-heading text-sm font-bold uppercase tracking-widest text-foreground">
+        <Link to="/" className="font-mono-heading text-sm font-bold uppercase tracking-widest text-foreground">
           <span className="inline-block border-2 border-foreground px-3 py-1">COCO LOW
 
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden items-center gap-0 md:flex">
           {navLinks.map((link) =>
-          <a
+          <Link
             key={link.label}
-            href={link.href}
+            to={link.href}
             className="font-mono-heading border-r border-border px-5 py-4 text-xs font-bold uppercase tracking-wider text-muted-foreground transition-colors hover:bg-muted hover:text-foreground first:border-l">
-            
+
               {link.label}
-            </a>
+            </Link>
           )}
         </div>
 
@@ -97,14 +98,14 @@ export function Navbar() {
         
         <div className="container mx-auto flex flex-col px-4">
           {navLinks.map((link) =>
-          <a
+          <Link
             key={link.label}
-            href={link.href}
+            to={link.href}
             onClick={() => setMobileOpen(false)}
             className="font-mono-heading border-b border-border px-4 py-3 text-xs font-bold uppercase tracking-wider text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
-            
+
               {link.label}
-            </a>
+            </Link>
           )}
           <div className="mt-3 flex gap-3 px-4 pb-2">
             {socialLinks.map((s) =>
