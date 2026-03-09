@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import eclectusImg from "@/assets/eclectus.jpg";
 
 const projects = [
   {
@@ -17,6 +18,7 @@ const projects = [
     gradient: "from-watercolor-blue/40 to-watercolor-turquoise/30",
     file: "app_mockup.fig",
     description: "UX/UI redesign for a fintech mobile app",
+    image: eclectusImg,
   },
   {
     title: "E-Commerce Platform",
@@ -147,11 +149,19 @@ export default function Projects() {
                   <div
                     className={`aspect-[4/3] bg-gradient-to-br ${project.gradient}`}
                   >
-                    <div className="flex h-full w-full items-center justify-center">
-                      <div className="dashed-frame p-4 opacity-30 transition-opacity group-hover:opacity-50">
-                        <span className="font-pixel text-2xl">✦</span>
+                    {project.image ? (
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="h-full w-full object-cover"
+                      />
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center">
+                        <div className="dashed-frame p-4 opacity-30 transition-opacity group-hover:opacity-50">
+                          <span className="font-pixel text-2xl">✦</span>
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
 
                   <div className="border-t-2 border-border p-3">

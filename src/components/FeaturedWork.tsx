@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import eclectusImg from "@/assets/eclectus.jpg";
 
 const projects = [
   {
@@ -18,6 +19,7 @@ const projects = [
     category: "Work Project",
     gradient: "from-watercolor-blue/40 to-watercolor-turquoise/30",
     file: "app_mockup.fig",
+    image: eclectusImg,
   },
   {
     title: "Botanical Illustrations",
@@ -101,11 +103,19 @@ export function FeaturedWork() {
               <div
                 className={`aspect-[4/3] bg-gradient-to-br ${project.gradient}`}
               >
-                <div className="flex h-full w-full items-center justify-center">
-                  <div className="dashed-frame p-4 opacity-30 transition-opacity group-hover:opacity-50">
-                    <span className="font-pixel text-2xl">✦</span>
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center">
+                    <div className="dashed-frame p-4 opacity-30 transition-opacity group-hover:opacity-50">
+                      <span className="font-pixel text-2xl">✦</span>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
 
               {/* Info bar */}
