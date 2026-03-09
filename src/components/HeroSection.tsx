@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Star, Sparkles } from "lucide-react";
+import headshot from "@/assets/headshot.png";
 
 export function HeroSection() {
   return (
@@ -59,8 +60,8 @@ export function HeroSection() {
               </div>
               {/* Profile image placeholder */}
               <div className="hidden shrink-0 self-stretch sm:flex">
-                <div className="dashed-frame flex w-40 flex-1 items-center justify-center bg-gradient-to-br from-watercolor-orange/20 to-watercolor-purple/20 lg:w-52">
-                  <span className="font-pixel text-4xl text-muted-foreground/50">📷</span>
+                <div className="dashed-frame w-40 flex-1 overflow-hidden bg-gradient-to-br from-watercolor-orange/10 to-watercolor-purple/10 lg:w-52">
+                  <img src={headshot} alt="Coco Low" className="h-full w-full object-cover object-top" />
                 </div>
               </div>
             </div>
