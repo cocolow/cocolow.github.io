@@ -57,7 +57,7 @@ export function HeroSection() {
                 </Button>
                 <Button asChild variant="outline" size="lg" className="border-2 px-6 font-mono-heading text-xs font-bold uppercase tracking-wider shadow-[3px_3px_0px_hsl(var(--foreground)/0.15)] transition-all hover:shadow-[1px_1px_0px_hsl(var(--foreground)/0.15)] hover:translate-x-[2px] hover:translate-y-[2px]">
                   <a href="/services#book-a-service">
-                    Get in Touch
+                    Enquire Now
                   </a>
                 </Button>
               </div>
