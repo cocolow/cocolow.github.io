@@ -30,6 +30,17 @@ export function FeaturedWork() {
           <div className="mx-auto mt-4 h-px w-32 bg-border" />
         </div>
 
+        {/* Scrolling marquee */}
+        <div className="mb-12 overflow-hidden border-t border-b border-border bg-muted/50 py-2">
+          <div className="animate-marquee flex whitespace-nowrap">
+            {Array.from({ length: 2 }).map((_, i) => (
+              <span key={i} className="mx-8 font-pixel text-lg text-muted-foreground/50">
+                ✦ PORTFOLIO ✦ ART ✦ DESIGN ✦ CODE ✦ ILLUSTRATION ✦ BRANDING ✦ UI/UX ✦ GENERATIVE ✦ PORTFOLIO ✦ ART ✦ DESIGN ✦ CODE ✦ ILLUSTRATION ✦ BRANDING ✦ UI/UX ✦ GENERATIVE&nbsp;
+              </span>
+            ))}
+          </div>
+        </div>
+
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, i) => (
             <div
