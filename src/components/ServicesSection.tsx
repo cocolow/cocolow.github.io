@@ -140,7 +140,7 @@ export function ServicesSection() {
         </div>
 
         {/* ── Featured Artwork ── */}
-        <div className="mb-24 flex justify-center">
+        <div className="mb-24 flex flex-col items-center gap-6">
           <div className="relative">
             <div className="absolute -right-4 -top-5 z-20">
               <span className="sticker rotate-6 bg-watercolor-yellow/40 text-foreground">
@@ -152,20 +152,31 @@ export function ServicesSection() {
                 <Sparkles className="mr-1 inline h-3 w-3" /> Original
               </span>
             </div>
-            <div className="retro-window border-[3px] border-foreground/80" style={{ transform: "rotate(-1deg)" }}>
-              <div className="retro-titlebar">
-                <span className="text-muted-foreground">artwork_01.png</span>
-                <div className="retro-btn-group">
-                  <span className="retro-btn-dot">_</span>
-                  <span className="retro-btn-dot">□</span>
-                  <span className="retro-btn-dot">×</span>
+            <a href="https://www.instagram.com/coconutcalligraphy/?hl=en" target="_blank" rel="noopener noreferrer" className="block transition-transform hover:scale-[1.02]">
+              <div className="retro-window border-[3px] border-foreground/80" style={{ transform: "rotate(-1deg)" }}>
+                <div className="retro-titlebar">
+                  <span className="text-muted-foreground">artwork_01.png</span>
+                  <div className="retro-btn-group">
+                    <span className="retro-btn-dot">_</span>
+                    <span className="retro-btn-dot">□</span>
+                    <span className="retro-btn-dot">×</span>
+                  </div>
+                </div>
+                <div className="aspect-[4/5] w-64 sm:w-72 lg:w-80 overflow-hidden border-t-[3px] border-foreground/80">
+                  <img src={artwork01} alt="Featured watercolor artwork by Coco" className="h-full w-full object-cover" />
                 </div>
               </div>
-              <div className="aspect-[4/5] w-64 sm:w-72 lg:w-80 overflow-hidden border-t-[3px] border-foreground/80">
-                <img src={artwork01} alt="Featured watercolor artwork by Coco" className="h-full w-full object-cover" />
-              </div>
-            </div>
+            </a>
           </div>
+          <a
+            href="https://www.instagram.com/coconutcalligraphy/?hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 font-mono-heading text-xs font-bold uppercase tracking-wider text-primary transition-colors hover:text-primary/80"
+          >
+            @coconutcalligraphy on Instagram
+            <ArrowRight className="h-3 w-3" />
+          </a>
         </div>
 
         {/* ── Services Grid ── */}
