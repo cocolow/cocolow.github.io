@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Star, Sparkles } from "lucide-react";
 import headshot from "@/assets/headshot.png";
+import artwork01 from "@/assets/artwork-01.png";
 
 export function HeroSection() {
   return (
@@ -92,14 +93,8 @@ export function HeroSection() {
                   <span className="retro-btn-dot">×</span>
                 </div>
               </div>
-              <div className="aspect-[4/5] w-64 sm:w-72 lg:w-80">
-                <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-watercolor-yellow/30 via-watercolor-orange/20 to-watercolor-purple/30">
-                  <div className="dashed-frame p-8 text-center">
-                    <div className="mb-2 text-4xl">🎨</div>
-                    <p className="font-mono-heading text-xs font-bold uppercase tracking-wider text-muted-foreground">Featured Artwork</p>
-                    <p className="mt-1 font-pixel text-sm text-muted-foreground/60">drag & drop image here</p>
-                  </div>
-                </div>
+              <div className="aspect-[4/5] w-64 sm:w-72 lg:w-80 overflow-hidden">
+                <img src={artwork01} alt="Featured Artwork - Watercolor florals by Coco" className="h-full w-full object-cover" />
               </div>
             </div>
           </div>
