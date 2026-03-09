@@ -25,6 +25,7 @@ const timeline = [
   year: "2025–Present",
   role: "UX Product Manager",
   org: "mindline.sg, Ministry of Health Transformation (MOHT)",
+  logos: [logoMindline, logoMoht],
   description:
   "Revamping Singapore's national digital mental health platform to improve engagement and personalise care via AI-enabled capabilities."
 },
@@ -32,6 +33,7 @@ const timeline = [
   year: "2024–2025",
   role: "Product Manager (Risk & Operations)",
   org: "Trust & Safety, TikTok, Canada",
+  logos: [logoTiktok],
   description:
   "Built risk detection tools that cut manual detection-handling lag time by over 60 mins daily. Led investigations into risk signals leveraging data analytics."
 },
@@ -39,6 +41,7 @@ const timeline = [
   year: "2022–2024",
   role: "Product Manager, Healthy Ageing",
   org: "Health Promotion Board (HPB), Singapore",
+  logos: [logoHpb],
   description:
   "Designed Singapore's first gamified digital health program for seniors on the Healthy365 app. Achieved 100k+ sign-ups in 3 months."
 },
@@ -46,6 +49,7 @@ const timeline = [
   year: "2018–2022",
   role: "Program Manager, Youth Mental Health",
   org: "Health Promotion Board (HPB), Singapore",
+  logos: [logoHpb],
   description:
   "Spearheaded 5-year roadmap and launched products reaching 700k+ users nationally. Created the award-winning 'Open When' Letters initiative."
 },
@@ -53,6 +57,7 @@ const timeline = [
   year: "2016–2018",
   role: "Assistant Project Manager, Health Screening",
   org: "Health Promotion Board (HPB), Singapore",
+  logos: [logoHpb],
   description:
   "Managed national breast cancer screening operations and implemented a solution reducing customer call requests by 50%."
 }];
