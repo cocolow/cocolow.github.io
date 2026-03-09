@@ -2,6 +2,10 @@ import { Download } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import logoMindline from "@/assets/logo-mindline.png";
+import logoTiktok from "@/assets/logo-tiktok.png";
+import logoHpb from "@/assets/logo-hpb.png";
+import logoMoht from "@/assets/logo-moht.png";
 
 const skills = [
 "Digital Product Strategy & Roadmap",
@@ -21,6 +25,7 @@ const timeline = [
   year: "2025–Present",
   role: "UX Product Manager",
   org: "mindline.sg, Ministry of Health Transformation (MOHT)",
+  logos: [logoMindline, logoMoht],
   description:
   "Revamping Singapore's national digital mental health platform to improve engagement and personalise care via AI-enabled capabilities."
 },
@@ -28,6 +33,7 @@ const timeline = [
   year: "2024–2025",
   role: "Product Manager (Risk & Operations)",
   org: "Trust & Safety, TikTok, Canada",
+  logos: [logoTiktok],
   description:
   "Built risk detection tools that cut manual detection-handling lag time by over 60 mins daily. Led investigations into risk signals leveraging data analytics."
 },
@@ -35,6 +41,7 @@ const timeline = [
   year: "2022–2024",
   role: "Product Manager, Healthy Ageing",
   org: "Health Promotion Board (HPB), Singapore",
+  logos: [logoHpb],
   description:
   "Designed Singapore's first gamified digital health program for seniors on the Healthy365 app. Achieved 100k+ sign-ups in 3 months."
 },
@@ -42,6 +49,7 @@ const timeline = [
   year: "2018–2022",
   role: "Program Manager, Youth Mental Health",
   org: "Health Promotion Board (HPB), Singapore",
+  logos: [logoHpb],
   description:
   "Spearheaded 5-year roadmap and launched products reaching 700k+ users nationally. Created the award-winning 'Open When' Letters initiative."
 },
@@ -49,6 +57,7 @@ const timeline = [
   year: "2016–2018",
   role: "Assistant Project Manager, Health Screening",
   org: "Health Promotion Board (HPB), Singapore",
+  logos: [logoHpb],
   description:
   "Managed national breast cancer screening operations and implemented a solution reducing customer call requests by 50%."
 }];
@@ -235,15 +244,24 @@ export default function About() {
                       </div>
                     </div>
                     <div className="p-4">
-                      <h3 className="font-mono-heading text-sm font-bold text-card-foreground">
-                        {item.role}
-                      </h3>
-                      <p className="mb-2 font-mono-heading text-[11px] text-muted-foreground">
-                        {item.org}
-                      </p>
-                      <p className="text-xs leading-relaxed text-muted-foreground">
-                        {item.description}
-                      </p>
+                      <div className="flex items-start gap-3">
+                        <div className="flex shrink-0 items-center gap-2 pt-0.5">
+                          {item.logos.map((logo, li) => (
+                            <img key={li} src={logo} alt="" className="h-6 w-6 object-contain" />
+                          ))}
+                        </div>
+                        <div className="min-w-0">
+                          <h3 className="font-mono-heading text-sm font-bold text-card-foreground">
+                            {item.role}
+                          </h3>
+                          <p className="mb-2 font-mono-heading text-[11px] text-muted-foreground">
+                            {item.org}
+                          </p>
+                          <p className="text-xs leading-relaxed text-muted-foreground">
+                            {item.description}
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 )}
