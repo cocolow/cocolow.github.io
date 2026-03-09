@@ -2,6 +2,7 @@ import { Download } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import headshot from "@/assets/headshot.png";
 import logoMindline from "@/assets/logo-mindline.png";
 import logoTiktok from "@/assets/logo-tiktok.png";
 import logoHpb from "@/assets/logo-hpb.png";
@@ -152,6 +153,11 @@ export default function About() {
                 </div>
               </div>
               <div className="p-6 sm:p-8">
+                <div className="mb-6 flex flex-col items-center sm:float-left sm:mr-6 sm:mb-4">
+                  <div className="aspect-[3/4] w-40 overflow-hidden border-2 border-border">
+                    <img src={headshot} alt="Coco Low Yu Ting" className="h-full w-full object-cover" />
+                  </div>
+                </div>
                 <p className="mb-4 text-sm leading-relaxed text-card-foreground">
                   Ex-TikTok Product Manager with 8+ years of experience in Singapore and Canada,
                   recognised for using service design and innovative strategies to create
