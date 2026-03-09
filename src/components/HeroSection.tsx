@@ -71,20 +71,20 @@ export function HeroSection() {
 
         {/* Featured Artwork — retro window with stickers */}
         <div className="flex items-center justify-center">
-          <div className="relative">
+          <div className="relative pb-6">
             {/* Decorative stickers around the image */}
             <div className="absolute -right-4 -top-6 z-20">
               <span className="sticker rotate-6 bg-watercolor-yellow/40 text-foreground">
                 <Star className="mr-1 inline h-3 w-3" /> NEW
               </span>
             </div>
-            <div className="absolute -bottom-4 -left-4 z-20">
+            <div className="absolute -bottom-2 -left-4 z-20">
               <span className="sticker -rotate-3 bg-watercolor-pink/30 text-foreground">
                 <Sparkles className="mr-1 inline h-3 w-3" /> Featured
               </span>
             </div>
             
-            <div className="retro-window">
+            <div className="retro-window border-[3px] border-foreground/80">
               <div className="retro-titlebar">
                 <span className="text-muted-foreground">artwork_01.png</span>
                 <div className="retro-btn-group">
@@ -93,7 +93,7 @@ export function HeroSection() {
                   <span className="retro-btn-dot">×</span>
                 </div>
               </div>
-              <div className="aspect-[4/5] w-64 sm:w-72 lg:w-80 overflow-hidden">
+              <div className="aspect-[4/5] w-64 sm:w-72 lg:w-80 overflow-hidden border-t-[3px] border-foreground/80">
                 <img src={artwork01} alt="Featured Artwork - Watercolor florals by Coco" className="h-full w-full object-cover" />
               </div>
             </div>
