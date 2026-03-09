@@ -93,16 +93,6 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Scrolling marquee at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 overflow-hidden border-t border-b border-border bg-muted/50 py-2">
-        <div className="animate-marquee flex whitespace-nowrap">
-          {Array.from({ length: 2 }).map((_, i) => (
-            <span key={i} className="mx-8 font-pixel text-lg text-muted-foreground/50">
-              ✦ PORTFOLIO ✦ ART ✦ DESIGN ✦ CODE ✦ ILLUSTRATION ✦ BRANDING ✦ UI/UX ✦ GENERATIVE ✦ PORTFOLIO ✦ ART ✦ DESIGN ✦ CODE ✦ ILLUSTRATION ✦ BRANDING ✦ UI/UX ✦ GENERATIVE&nbsp;
-            </span>
-          ))}
-        </div>
-      </div>
     </section>
   );
 }
