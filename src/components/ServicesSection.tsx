@@ -358,7 +358,7 @@ export function ServicesSection() {
         </div>
 
         {/* ── Enquiry Form ── */}
-        <div className="mx-auto max-w-xl">
+        <div id="book-a-service" className="mx-auto max-w-xl">
           <div className="mb-10 text-center">
             <p className="mb-2 font-mono-heading text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
               // Get In Touch
