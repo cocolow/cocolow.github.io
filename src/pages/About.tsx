@@ -279,11 +279,11 @@ export default function About() {
             </div>
 
             {/* Languages */}
-            <div className="mx-auto mb-12 flex max-w-3xl justify-center gap-4">
+            <div className="mx-auto mb-12 grid max-w-3xl grid-cols-3 gap-4">
               {languages.map((lang) => (
                 <div
                   key={lang.name}
-                  className="retro-window min-w-[120px] text-center"
+                  className="retro-window text-center"
                 >
                   <div className="retro-titlebar justify-center">
                     <span className="text-muted-foreground">lang</span>
