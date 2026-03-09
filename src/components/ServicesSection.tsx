@@ -264,17 +264,6 @@ export function ServicesSection() {
                   <div className="mt-auto pt-2 border-t border-border">
                     <p className="font-mono-heading text-xs font-bold text-card-foreground">{t.name}</p>
                     <p className="font-mono-heading text-[10px] text-muted-foreground">{t.context}</p>
-                    {t.link && (
-                      <a
-                        href={t.link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-1.5 inline-flex items-center gap-1 font-mono-heading text-[10px] font-bold uppercase tracking-wider text-primary hover:underline"
-                      >
-                        {t.link.label}
-                        <ArrowRight className="h-3 w-3" />
-                      </a>
-                    )}
                   </div>
                 </div>
               </div>
