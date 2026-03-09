@@ -13,9 +13,9 @@ const navLinks = [
 
 
 const socialLinks = [
-{ icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-{ icon: Github, href: "https://github.com", label: "GitHub" },
-{ icon: Instagram, href: "https://instagram.com", label: "Instagram" }];
+{ icon: Linkedin, href: "https://linkedin.com/in/yutinglow", label: "LinkedIn" },
+{ icon: Github, href: "https://github.com/cocolow", label: "GitHub" },
+{ icon: Instagram, href: "https://instagram.com/coconutcalligraphy", label: "Instagram" }];
 
 
 export function Navbar() {
