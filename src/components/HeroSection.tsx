@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Star, Sparkles } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import headshot from "@/assets/headshot.png";
-import artwork01 from "@/assets/artwork-01.png";
 
 export function HeroSection() {
   return (
