@@ -5,9 +5,10 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-{ label: "About", href: "/about" },
-{ label: "Projects", href: "/projects" },
-{ label: "Services", href: "#services" }];
+  { label: "About", href: "/about" },
+  { label: "Projects", href: "/projects" },
+  { label: "Services", href: "/services" },
+];
 
 
 const socialLinks = [
