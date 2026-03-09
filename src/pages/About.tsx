@@ -244,15 +244,24 @@ export default function About() {
                       </div>
                     </div>
                     <div className="p-4">
-                      <h3 className="font-mono-heading text-sm font-bold text-card-foreground">
-                        {item.role}
-                      </h3>
-                      <p className="mb-2 font-mono-heading text-[11px] text-muted-foreground">
-                        {item.org}
-                      </p>
-                      <p className="text-xs leading-relaxed text-muted-foreground">
-                        {item.description}
-                      </p>
+                      <div className="flex items-start gap-3">
+                        <div className="flex shrink-0 items-center gap-2 pt-0.5">
+                          {item.logos.map((logo, li) => (
+                            <img key={li} src={logo} alt="" className="h-6 w-6 object-contain" />
+                          ))}
+                        </div>
+                        <div className="min-w-0">
+                          <h3 className="font-mono-heading text-sm font-bold text-card-foreground">
+                            {item.role}
+                          </h3>
+                          <p className="mb-2 font-mono-heading text-[11px] text-muted-foreground">
+                            {item.org}
+                          </p>
+                          <p className="text-xs leading-relaxed text-muted-foreground">
+                            {item.description}
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 )}
