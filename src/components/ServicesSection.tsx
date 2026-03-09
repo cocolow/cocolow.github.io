@@ -35,7 +35,7 @@ const services = [
     color: "from-watercolor-pink/30 to-watercolor-burgundy/20",
     badgeColor:
       "bg-watercolor-pink/15 text-foreground border-watercolor-pink/30",
-    starting: "Starting from $150",
+    
   },
   {
     icon: ImageIcon,
@@ -46,7 +46,7 @@ const services = [
     color: "from-watercolor-purple/30 to-watercolor-blue/20",
     badgeColor:
       "bg-watercolor-purple/15 text-foreground border-watercolor-purple/30",
-    starting: "Starting from $80",
+    
   },
   {
     icon: Palette,
@@ -57,7 +57,7 @@ const services = [
     color: "from-watercolor-orange/30 to-watercolor-yellow/20",
     badgeColor:
       "bg-watercolor-orange/15 text-foreground border-watercolor-orange/30",
-    starting: "Starting from $400",
+    
   },
   {
     icon: BookOpen,
@@ -68,7 +68,7 @@ const services = [
     color: "from-watercolor-green/30 to-watercolor-turquoise/20",
     badgeColor:
       "bg-watercolor-green/15 text-foreground border-watercolor-green/30",
-    starting: "Starting from $60/pax",
+    
   },
 ];
 
@@ -178,9 +178,6 @@ export function ServicesSection() {
                     </Badge>
                   ))}
                 </div>
-                <p className="font-mono-heading text-xs font-bold text-foreground/70">
-                  {svc.starting}
-                </p>
               </div>
             </div>
           ))}
