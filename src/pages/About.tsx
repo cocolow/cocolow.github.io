@@ -2,6 +2,10 @@ import { Download } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import logoMindline from "@/assets/logo-mindline.png";
+import logoTiktok from "@/assets/logo-tiktok.png";
+import logoHpb from "@/assets/logo-hpb.png";
+import logoMoht from "@/assets/logo-moht.png";
 
 const skills = [
 "Digital Product Strategy & Roadmap",
