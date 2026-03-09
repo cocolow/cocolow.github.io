@@ -1,31 +1,24 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
-import headshot from "@/assets/headshot.png";
 
 export function HeroSection() {
   return (
     <section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden pt-14">
       {/* Scattered decorative elements */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {/* Gradient color blocks — collage style */}
         <div className="absolute -left-8 top-20 h-48 w-48 rotate-6 border-2 border-border bg-watercolor-orange/15" />
         <div className="absolute right-12 top-16 h-32 w-56 -rotate-3 border-2 border-border bg-watercolor-purple/15" />
         <div className="absolute bottom-20 left-1/4 h-36 w-36 rotate-12 border-2 border-border bg-watercolor-pink/10" />
         <div className="absolute -bottom-4 right-1/3 h-44 w-44 -rotate-6 border-2 border-border bg-watercolor-turquoise/10" />
-        
-        {/* Doodle lines */}
         <div className="absolute left-[15%] top-[30%] h-px w-32 rotate-45 bg-border" />
         <div className="absolute right-[20%] bottom-[35%] h-px w-24 -rotate-12 bg-border" />
-        
-        {/* Corner marks scattered */}
         <span className="absolute left-[10%] top-[20%] font-mono-heading text-xs text-muted-foreground/40">+</span>
         <span className="absolute right-[15%] top-[25%] font-mono-heading text-xs text-muted-foreground/40">+</span>
         <span className="absolute left-[60%] bottom-[20%] font-mono-heading text-xs text-muted-foreground/40">+</span>
       </div>
 
-      <div className="container relative z-10 mx-auto grid gap-12 px-4 lg:grid-cols-2 lg:gap-16 lg:px-8">
-        {/* Text Content — in a retro window */}
-        <div className="flex flex-col justify-center">
+      <div className="container relative z-10 mx-auto flex justify-center px-4 lg:px-8">
+        <div className="flex max-w-2xl flex-col justify-center">
           <div className="retro-window">
             <div className="retro-titlebar">
               <span className="text-muted-foreground">intro.txt</span>
@@ -63,27 +56,7 @@ export function HeroSection() {
             </div>
           </div>
         </div>
-
-        {/* Headshot */}
-        <div className="flex items-center justify-center">
-          <div className="relative pb-6">
-            <div className="retro-window border-[3px] border-foreground/80">
-              <div className="retro-titlebar">
-                <span className="text-muted-foreground">headshot.png</span>
-                <div className="retro-btn-group">
-                  <span className="retro-btn-dot">_</span>
-                  <span className="retro-btn-dot">□</span>
-                  <span className="retro-btn-dot">×</span>
-                </div>
-              </div>
-              <div className="aspect-[4/5] w-64 sm:w-72 lg:w-80 overflow-hidden border-t-[3px] border-foreground/80">
-                <img src={headshot} alt="Coco - Product Manager and Artist" className="h-full w-full object-cover" />
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-
     </section>
   );
 }

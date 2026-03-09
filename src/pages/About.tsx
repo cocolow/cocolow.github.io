@@ -2,6 +2,7 @@ import { Download } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import headshot from "@/assets/headshot.png";
 import logoMindline from "@/assets/logo-mindline.png";
 import logoTiktok from "@/assets/logo-tiktok.png";
 import logoHpb from "@/assets/logo-hpb.png";
