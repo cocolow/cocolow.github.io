@@ -4,76 +4,76 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 
 const skills = [
-  "Digital Product Strategy & Roadmap",
-  "Certified Scrum Product Owner",
-  "UX/UI Flows & Figma",
-  "Market Research & Data Analytics",
-  "Program & Project Management",
-  "Stakeholder Engagement",
-  "Facilitation & Mentoring",
-  "Confluence & JIRA",
-  "Power BI",
-  "Miro & Procreate",
-];
+"Digital Product Strategy & Roadmap",
+"Certified Scrum Product Owner",
+"UX/UI Flows & Figma",
+"Market Research & Data Analytics",
+"Program & Project Management",
+"Stakeholder Engagement",
+"Facilitation & Mentoring",
+"Confluence & JIRA",
+"Power BI",
+"Miro & Procreate"];
+
 
 const timeline = [
-  {
-    year: "2025–Present",
-    role: "UX Product Manager",
-    org: "mindline.sg, Ministry of Health Transformation (MOHT)",
-    description:
-      "Revamping Singapore's national digital mental health platform to improve engagement and personalise care via AI-enabled capabilities.",
-  },
-  {
-    year: "2024–2025",
-    role: "Product Manager (Risk & Operations)",
-    org: "Trust & Safety, TikTok, Canada",
-    description:
-      "Built risk detection tools that cut manual detection-handling lag time by over 60 mins daily. Led investigations into risk signals leveraging data analytics.",
-  },
-  {
-    year: "2022–2024",
-    role: "Product Manager, Healthy Ageing",
-    org: "Health Promotion Board (HPB), Singapore",
-    description:
-      "Designed Singapore's first gamified digital health program for seniors on the Healthy365 app. Achieved 100k+ sign-ups in 3 months.",
-  },
-  {
-    year: "2018–2022",
-    role: "Program Manager, Youth Mental Health",
-    org: "Health Promotion Board (HPB), Singapore",
-    description:
-      "Spearheaded 5-year roadmap and launched products reaching 700k+ users nationally. Created the award-winning 'Open When' Letters initiative.",
-  },
-  {
-    year: "2016–2018",
-    role: "Assistant Project Manager, Health Screening",
-    org: "Health Promotion Board (HPB), Singapore",
-    description:
-      "Managed national breast cancer screening operations and implemented a solution reducing customer call requests by 50%.",
-  },
-];
+{
+  year: "2025–Present",
+  role: "UX Product Manager",
+  org: "mindline.sg, Ministry of Health Transformation (MOHT)",
+  description:
+  "Revamping Singapore's national digital mental health platform to improve engagement and personalise care via AI-enabled capabilities."
+},
+{
+  year: "2024–2025",
+  role: "Product Manager (Risk & Operations)",
+  org: "Trust & Safety, TikTok, Canada",
+  description:
+  "Built risk detection tools that cut manual detection-handling lag time by over 60 mins daily. Led investigations into risk signals leveraging data analytics."
+},
+{
+  year: "2022–2024",
+  role: "Product Manager, Healthy Ageing",
+  org: "Health Promotion Board (HPB), Singapore",
+  description:
+  "Designed Singapore's first gamified digital health program for seniors on the Healthy365 app. Achieved 100k+ sign-ups in 3 months."
+},
+{
+  year: "2018–2022",
+  role: "Program Manager, Youth Mental Health",
+  org: "Health Promotion Board (HPB), Singapore",
+  description:
+  "Spearheaded 5-year roadmap and launched products reaching 700k+ users nationally. Created the award-winning 'Open When' Letters initiative."
+},
+{
+  year: "2016–2018",
+  role: "Assistant Project Manager, Health Screening",
+  org: "Health Promotion Board (HPB), Singapore",
+  description:
+  "Managed national breast cancer screening operations and implemented a solution reducing customer call requests by 50%."
+}];
+
 
 const education = [
-  {
-    institution: "National University of Singapore",
-    details: [
-      "Graduate Certificate in Designing & Managing Products and Platforms (2022–2024)",
-      "Certified Scrum Product Owner – Scrum Alliance (2023)",
-      "BSc (Hons) Life Sciences & University Scholars Program (2012–2016)",
-    ],
-  },
-  {
-    institution: "University of British Columbia, Canada",
-    details: ["Overseas Student Exchange Program (2014)"],
-  },
-];
+{
+  institution: "National University of Singapore",
+  details: [
+  "Graduate Certificate in Designing & Managing Products and Platforms (2022–2024)",
+  "Certified Scrum Product Owner – Scrum Alliance (2023)",
+  "BSc (Hons) Life Sciences & University Scholars Program (2012–2016)"]
+
+},
+{
+  institution: "University of British Columbia, Canada",
+  details: ["Overseas Student Exchange Program (2014)"]
+}];
+
 
 const languages = [
-  { name: "English", level: "Bilingual" },
-  { name: "Mandarin", level: "Bilingual" },
-  { name: "Thai", level: "Intermediate / Certified Level 4" },
-];
+{ name: "English", level: "Bilingual" },
+{ name: "Mandarin", level: "Bilingual" },
+{ name: "Thai", level: "Intermediate / Certified Level 4" }];
+
 
 export default function About() {
   return (
@@ -196,15 +196,15 @@ export default function About() {
                 </div>
               </div>
               <div className="flex flex-wrap gap-2 p-6">
-                {skills.map((skill, i) => (
-                  <span
-                    key={skill}
-                    className="border border-border bg-muted px-3 py-1.5 font-mono-heading text-[11px] font-bold uppercase tracking-wider text-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
-                    style={{ animationDelay: `${i * 40}ms` }}
-                  >
+                {skills.map((skill, i) =>
+                <span
+                  key={skill}
+                  className="border border-border bg-muted px-3 py-1.5 font-mono-heading text-[11px] font-bold uppercase tracking-wider text-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+                  style={{ animationDelay: `${i * 40}ms` }}>
+                  
                     {skill}
                   </span>
-                ))}
+                )}
               </div>
             </div>
 
@@ -217,12 +217,12 @@ export default function About() {
               </div>
 
               <div className="relative border-l-2 border-border pl-6 sm:pl-8">
-                {timeline.map((item, i) => (
-                  <div
-                    key={i}
-                    className="retro-window relative mb-6 animate-fade-in-up"
-                    style={{ animationDelay: `${i * 80}ms` }}
-                  >
+                {timeline.map((item, i) =>
+                <div
+                  key={i}
+                  className="retro-window relative mb-6 animate-fade-in-up"
+                  style={{ animationDelay: `${i * 80}ms` }}>
+                  
                     {/* Dot on timeline */}
                     <div className="absolute -left-[calc(1.5rem+7px)] top-4 h-3 w-3 border-2 border-primary bg-background sm:-left-[calc(2rem+7px)]" />
 
@@ -246,7 +246,7 @@ export default function About() {
                       </p>
                     </div>
                   </div>
-                ))}
+                )}
               </div>
             </div>
 
@@ -261,32 +261,32 @@ export default function About() {
                 </div>
               </div>
               <div className="divide-y divide-border">
-                {education.map((edu) => (
-                  <div key={edu.institution} className="p-5">
+                {education.map((edu) =>
+                <div key={edu.institution} className="p-5">
                     <h3 className="mb-2 font-mono-heading text-sm font-bold text-card-foreground">
                       {edu.institution}
                     </h3>
                     <ul className="space-y-1">
-                      {edu.details.map((d) => (
-                        <li key={d} className="text-xs leading-relaxed text-muted-foreground">
+                      {edu.details.map((d) =>
+                    <li key={d} className="text-xs leading-relaxed text-muted-foreground">
                           → {d}
                         </li>
-                      ))}
+                    )}
                     </ul>
                   </div>
-                ))}
+                )}
               </div>
             </div>
 
             {/* Languages */}
-            <div className="mx-auto mb-12 grid max-w-3xl grid-cols-3 gap-4">
-              {languages.map((lang) => (
-                <div
-                  key={lang.name}
-                  className="retro-window text-center"
-                >
+            <div className="mx-auto mb-12 flex max-w-3xl justify-center gap-4">
+              {languages.map((lang) =>
+              <div
+                key={lang.name}
+                className="retro-window min-w-[120px] text-center">
+                
                   <div className="retro-titlebar justify-center">
-                    <span className="text-muted-foreground">lang</span>
+                    <span className="text-muted-foreground">LANGUAGE</span>
                   </div>
                   <div className="p-3">
                     <p className="font-mono-heading text-sm font-bold text-card-foreground">
@@ -295,12 +295,12 @@ export default function About() {
                     <p className="mt-1 text-[10px] text-muted-foreground">{lang.level}</p>
                   </div>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>);
+
 }
