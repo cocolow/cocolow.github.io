@@ -99,6 +99,18 @@ export default function About() {
         {/* Bottom left */}
         <span className="absolute bottom-[8%] left-[10%] font-pixel text-5xl text-watercolor-burgundy/15 rotate-[8deg]">★</span>
 
+        {/* Additional stickers */}
+        <span className="absolute left-[15%] top-[18%] font-pixel text-3xl text-watercolor-blue/20 rotate-[10deg]">◆</span>
+        <span className="absolute right-[18%] top-[28%] font-pixel text-4xl text-watercolor-pink/18 -rotate-[8deg]">✧</span>
+        <span className="absolute left-[8%] top-[45%] font-pixel text-3xl text-watercolor-yellow/20 rotate-[20deg]">☆</span>
+        <span className="absolute right-[6%] top-[55%] font-pixel text-3xl text-watercolor-burgundy/15 rotate-[-10deg]">❋</span>
+        <span className="absolute left-[12%] top-[82%] font-pixel text-4xl text-watercolor-green/18 rotate-[5deg]">~</span>
+        <span className="absolute right-[15%] top-[75%] font-pixel text-3xl text-watercolor-turquoise/20 -rotate-[12deg]">✦</span>
+        <span className="absolute left-[20%] top-[60%] font-pixel text-3xl text-watercolor-orange/15 rotate-[15deg]">◇</span>
+        <div className="absolute right-[12%] top-[48%] h-10 w-10 rotate-[30deg] border-2 border-dashed border-watercolor-yellow/12" />
+        <div className="absolute left-[4%] top-[90%] h-14 w-14 border-2 border-watercolor-turquoise/12 -rotate-[20deg]" />
+        <div className="absolute top-[5%] left-[40%] h-56 w-56 rounded-full bg-watercolor-yellow/4 blur-3xl" />
+
         {/* Watercolor blobs */}
         <div className="absolute left-[-5%] top-[20%] h-64 w-64 rounded-full bg-watercolor-purple/5 blur-3xl" />
         <div className="absolute right-[-8%] top-[50%] h-72 w-72 rounded-full bg-watercolor-orange/5 blur-3xl" />
