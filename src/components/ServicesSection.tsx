@@ -37,7 +37,6 @@ const services = [
     color: "from-watercolor-pink/30 to-watercolor-burgundy/20",
     badgeColor:
       "bg-watercolor-pink/15 text-foreground border-watercolor-pink/30",
-    
   },
   {
     icon: ImageIcon,
@@ -48,7 +47,6 @@ const services = [
     color: "from-watercolor-purple/30 to-watercolor-blue/20",
     badgeColor:
       "bg-watercolor-purple/15 text-foreground border-watercolor-purple/30",
-    
   },
   {
     icon: Palette,
@@ -59,7 +57,6 @@ const services = [
     color: "from-watercolor-orange/30 to-watercolor-yellow/20",
     badgeColor:
       "bg-watercolor-orange/15 text-foreground border-watercolor-orange/30",
-    
   },
   {
     icon: BookOpen,
@@ -70,15 +67,30 @@ const services = [
     color: "from-watercolor-green/30 to-watercolor-turquoise/20",
     badgeColor:
       "bg-watercolor-green/15 text-foreground border-watercolor-green/30",
-    
   },
 ];
 
 const steps = [
-  { num: "01", label: "Enquire", desc: "Fill in the form below with your ideas and event details." },
-  { num: "02", label: "Discuss & Quote", desc: "We chat through the scope, timeline, and a tailored quote is sent." },
-  { num: "03", label: "Create", desc: "Coco brings your vision to life with regular progress updates." },
-  { num: "04", label: "Deliver", desc: "Your finished piece is delivered digitally or shipped to your door." },
+  {
+    num: "01",
+    label: "Enquire",
+    desc: "Fill in the form below with your ideas and event details.",
+  },
+  {
+    num: "02",
+    label: "Discuss & Quote",
+    desc: "We chat through the scope, timeline, and a tailored quote is sent.",
+  },
+  {
+    num: "03",
+    label: "Create",
+    desc: "Coco brings your vision to life with regular progress updates.",
+  },
+  {
+    num: "04",
+    label: "Deliver",
+    desc: "Your finished piece is delivered digitally or shipped to your door.",
+  },
 ];
 
 const faqs = [
@@ -123,7 +135,6 @@ export function ServicesSection() {
   return (
     <section id="services" className="py-24">
       <div className="container mx-auto px-4 lg:px-8">
-
         {/* ── Section Header ── */}
         <div className="mb-16 text-center">
           <p className="mb-3 font-mono-heading text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
@@ -134,8 +145,8 @@ export function ServicesSection() {
           </h2>
           <div className="mx-auto mt-4 h-px w-32 bg-border" />
           <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
-            From wedding stationery and bespoke artwork to live event painting and
-            art workshops — every piece is handcrafted with intention.
+            From wedding stationery and bespoke artwork to live event painting
+            and art workshops — every piece is handcrafted with intention.
           </p>
         </div>
 
@@ -152,8 +163,16 @@ export function ServicesSection() {
                 <Sparkles className="mr-1 inline h-3 w-3" /> Original
               </span>
             </div>
-            <a href="https://www.instagram.com/coconutcalligraphy/?hl=en" target="_blank" rel="noopener noreferrer" className="block transition-transform hover:scale-[1.02]">
-              <div className="retro-window border-[3px] border-foreground/80" style={{ transform: "rotate(-1deg)" }}>
+            <a
+              href="https://www.instagram.com/coconutcalligraphy/?hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block transition-transform hover:scale-[1.02]"
+            >
+              <div
+                className="retro-window border-[3px] border-foreground/80"
+                style={{ transform: "rotate(-1deg)" }}
+              >
                 <div className="retro-titlebar">
                   <span className="text-muted-foreground">artwork_01.png</span>
                   <div className="retro-btn-group">
@@ -163,7 +182,11 @@ export function ServicesSection() {
                   </div>
                 </div>
                 <div className="aspect-[4/5] w-64 sm:w-72 lg:w-80 overflow-hidden border-t-[3px] border-foreground/80">
-                  <img src={artwork01} alt="Featured watercolor artwork by Coco" className="h-full w-full object-cover" />
+                  <img
+                    src={artwork01}
+                    alt="Featured watercolor artwork by Coco"
+                    className="h-full w-full object-cover"
+                  />
                 </div>
               </div>
             </a>
@@ -188,7 +211,9 @@ export function ServicesSection() {
               style={{ transform: `rotate(${i % 2 === 0 ? -0.4 : 0.4}deg)` }}
             >
               <div className="retro-titlebar">
-                <span className="text-muted-foreground">service_{String(i + 1).padStart(2, "0")}.txt</span>
+                <span className="text-muted-foreground">
+                  service_{String(i + 1).padStart(2, "0")}.txt
+                </span>
                 <div className="retro-btn-group">
                   <span className="retro-btn-dot">_</span>
                   <span className="retro-btn-dot">□</span>
@@ -199,7 +224,9 @@ export function ServicesSection() {
               <div className={`h-2 bg-gradient-to-r ${svc.color}`} />
               <div className="p-5">
                 <div className="mb-3 flex items-center gap-3">
-                  <div className={`flex h-9 w-9 items-center justify-center border-2 border-border bg-gradient-to-br ${svc.color}`}>
+                  <div
+                    className={`flex h-9 w-9 items-center justify-center border-2 border-border bg-gradient-to-br ${svc.color}`}
+                  >
                     <svc.icon className="h-4 w-4 text-foreground" />
                   </div>
                   <h3 className="font-mono-heading text-sm font-bold text-card-foreground">
@@ -237,19 +264,31 @@ export function ServicesSection() {
           </div>
           <div className="relative grid gap-6 sm:grid-cols-4">
             {/* Connecting line — desktop only */}
-            <div className="absolute left-0 right-0 top-7 hidden h-px bg-border sm:block" style={{ zIndex: 0 }} />
+            <div
+              className="absolute left-0 right-0 top-7 hidden h-px bg-border sm:block"
+              style={{ zIndex: 0 }}
+            />
             {steps.map((step, i) => (
-              <div key={step.num} className="relative z-10 flex flex-col items-center text-center">
+              <div
+                key={step.num}
+                className="relative z-10 flex flex-col items-center text-center"
+              >
                 <div className="mb-3 flex h-14 w-14 items-center justify-center border-2 border-border bg-card shadow-[3px_3px_0px_hsl(var(--foreground)/0.12)]">
-                  <span className="font-pixel text-2xl gradient-text">{step.num}</span>
+                  <span className="font-pixel text-2xl gradient-text">
+                    {step.num}
+                  </span>
                 </div>
                 <div className="flex items-center gap-1 mb-1">
-                  <h4 className="font-mono-heading text-sm font-bold">{step.label}</h4>
+                  <h4 className="font-mono-heading text-sm font-bold">
+                    {step.label}
+                  </h4>
                   {i < steps.length - 1 && (
                     <ArrowRight className="h-3 w-3 text-muted-foreground sm:hidden" />
                   )}
                 </div>
-                <p className="text-xs leading-relaxed text-muted-foreground">{step.desc}</p>
+                <p className="text-xs leading-relaxed text-muted-foreground">
+                  {step.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -268,17 +307,20 @@ export function ServicesSection() {
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                quote: "Coco's calligraphy work for our wedding was absolutely stunning. Every guest commented on the invitations — they set the tone for the entire celebration.",
+                quote:
+                  "Coco's calligraphy work for our wedding was absolutely stunning. Every guest commented on the invitations — they set the tone for the entire celebration.",
                 name: "Sarah & James L.",
                 context: "Wedding Stationery, 2025",
               },
               {
-                quote: "The live painting at our corporate gala was the highlight of the evening. Watching the artwork come to life in real-time captivated everyone in the room.",
+                quote:
+                  "The live painting at our corporate gala was the highlight of the evening. Watching the artwork come to life in real-time captivated everyone in the room.",
                 name: "Michelle T.",
                 context: "Live Event Painting",
               },
               {
-                quote: "Our team workshop was such a refreshing experience. Coco made calligraphy feel approachable for complete beginners — we left with skills and artwork we're proud of.",
+                quote:
+                  "Our team workshop was such a refreshing experience. Coco made calligraphy feel approachable for complete beginners — we left with skills and artwork we're proud of.",
                 name: "David K.",
                 context: "Corporate Workshop, 15 pax",
               },
@@ -288,7 +330,9 @@ export function ServicesSection() {
                 className="retro-window group transition-all duration-200 hover:shadow-[5px_5px_0px_hsl(var(--foreground)/0.12)] hover:-translate-x-[1px] hover:-translate-y-[1px]"
               >
                 <div className="retro-titlebar">
-                  <span className="text-muted-foreground">review_{String(i + 1).padStart(2, "0")}.txt</span>
+                  <span className="text-muted-foreground">
+                    review_{String(i + 1).padStart(2, "0")}.txt
+                  </span>
                   <div className="retro-btn-group">
                     <span className="retro-btn-dot">_</span>
                     <span className="retro-btn-dot">□</span>
@@ -301,8 +345,12 @@ export function ServicesSection() {
                     {t.quote}
                   </p>
                   <div className="mt-auto pt-2 border-t border-border">
-                    <p className="font-mono-heading text-xs font-bold text-card-foreground">{t.name}</p>
-                    <p className="font-mono-heading text-[10px] text-muted-foreground">{t.context}</p>
+                    <p className="font-mono-heading text-xs font-bold text-card-foreground">
+                      {t.name}
+                    </p>
+                    <p className="font-mono-heading text-[10px] text-muted-foreground">
+                      {t.context}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -324,7 +372,8 @@ export function ServicesSection() {
             {[
               {
                 title: "Travel Yukon",
-                description: "Arts & culture spotlight featuring Coco's live painting and calligraphy work in Whitehorse.",
+                description:
+                  "Arts & culture spotlight featuring Coco's live painting and calligraphy work in Whitehorse.",
                 url: "https://www.travelyukon.com/en/see-and-do/activities/arts-whitehorse",
               },
             ].map((feature, i) => (
@@ -336,7 +385,9 @@ export function ServicesSection() {
                 className="retro-window group transition-all duration-200 hover:shadow-[5px_5px_0px_hsl(var(--foreground)/0.12)] hover:-translate-x-[1px] hover:-translate-y-[1px] block"
               >
                 <div className="retro-titlebar">
-                  <span className="text-muted-foreground">feature_{String(i + 1).padStart(2, "0")}.txt</span>
+                  <span className="text-muted-foreground">
+                    feature_{String(i + 1).padStart(2, "0")}.txt
+                  </span>
                   <div className="retro-btn-group">
                     <span className="retro-btn-dot">_</span>
                     <span className="retro-btn-dot">□</span>
@@ -426,14 +477,21 @@ export function ServicesSection() {
                     Message Received!
                   </h4>
                   <p className="text-sm text-muted-foreground">
-                    Thank you for reaching out. Coco will get back to you within 2–3 business days.
+                    Thank you for reaching out. Coco will get back to you within
+                    2–3 business days.
                   </p>
                   <Button
                     variant="outline"
                     className="border-2 font-mono-heading text-xs font-bold uppercase tracking-wider"
                     onClick={() => {
                       setSubmitted(false);
-                      setFormData({ name: "", email: "", serviceType: "", eventDate: "", message: "" });
+                      setFormData({
+                        name: "",
+                        email: "",
+                        serviceType: "",
+                        eventDate: "",
+                        message: "",
+                      });
                     }}
                   >
                     Send Another
@@ -490,11 +548,21 @@ export function ServicesSection() {
                         <SelectValue placeholder="Select a service…" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="wedding-stationery">Custom Wedding Stationery</SelectItem>
-                        <SelectItem value="private-artwork">Private Artwork</SelectItem>
-                        <SelectItem value="live-painting">Live Painting & Art Booths</SelectItem>
-                        <SelectItem value="workshops">Workshops & Teaching</SelectItem>
-                        <SelectItem value="other">Other / Not Sure Yet</SelectItem>
+                        <SelectItem value="wedding-stationery">
+                          Custom Wedding Stationery
+                        </SelectItem>
+                        <SelectItem value="private-artwork">
+                          Private Artwork
+                        </SelectItem>
+                        <SelectItem value="live-painting">
+                          Live Painting & Art Booths
+                        </SelectItem>
+                        <SelectItem value="workshops">
+                          Workshops & Teaching
+                        </SelectItem>
+                        <SelectItem value="other">
+                          Other / Not Sure Yet
+                        </SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -507,7 +575,10 @@ export function ServicesSection() {
                       type="date"
                       value={formData.eventDate}
                       onChange={(e) =>
-                        setFormData((f) => ({ ...f, eventDate: e.target.value }))
+                        setFormData((f) => ({
+                          ...f,
+                          eventDate: e.target.value,
+                        }))
                       }
                       className="border-2 border-border font-mono-heading text-sm"
                     />
@@ -546,7 +617,6 @@ export function ServicesSection() {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

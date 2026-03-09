@@ -20,8 +20,13 @@ export function Footer() {
         <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between">
           {/* Logo & Copyright */}
           <div className="text-center md:text-left">
-            <a href="/" className="font-mono-heading text-xs font-bold uppercase tracking-widest text-foreground">
-              <span className="inline-block border-2 border-foreground px-3 py-1">Portfolio</span>
+            <a
+              href="/"
+              className="font-mono-heading text-xs font-bold uppercase tracking-widest text-foreground"
+            >
+              <span className="inline-block border-2 border-foreground px-3 py-1">
+                Portfolio
+              </span>
             </a>
             <p className="mt-2 font-pixel text-base text-muted-foreground">
               © {new Date().getFullYear()} All rights reserved.

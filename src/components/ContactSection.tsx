@@ -125,7 +125,9 @@ export function ContactSection() {
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
             >
               <Mail className="h-4 w-4" />
-              <span className="font-mono-heading text-sm">lowyuting@gmail.com</span>
+              <span className="font-mono-heading text-sm">
+                lowyuting@gmail.com
+              </span>
             </a>
           </div>
         </div>

@@ -1,18 +1,51 @@
 import { Badge } from "@/components/ui/badge";
 
 const projects = [
-  { title: "Brand Identity System", category: "Work Project", gradient: "from-watercolor-orange/40 to-watercolor-yellow/30", file: "brand_v3.psd" },
-  { title: "Generative Art Series", category: "Artwork", gradient: "from-watercolor-purple/40 to-watercolor-pink/30", file: "gen_art_07.png" },
-  { title: "Mobile App Redesign", category: "Work Project", gradient: "from-watercolor-blue/40 to-watercolor-turquoise/30", file: "app_mockup.fig" },
-  { title: "Botanical Illustrations", category: "Artwork", gradient: "from-watercolor-green/40 to-watercolor-yellow/30", file: "botanicals.tif" },
-  { title: "Open Source CLI Tool", category: "Personal Project", gradient: "from-watercolor-turquoise/40 to-watercolor-blue/30", file: "cli_tool.rs" },
-  { title: "Watercolor Portraits", category: "Artwork", gradient: "from-watercolor-burgundy/40 to-watercolor-orange/30", file: "portrait_02.png" },
+  {
+    title: "Brand Identity System",
+    category: "Work Project",
+    gradient: "from-watercolor-orange/40 to-watercolor-yellow/30",
+    file: "brand_v3.psd",
+  },
+  {
+    title: "Generative Art Series",
+    category: "Artwork",
+    gradient: "from-watercolor-purple/40 to-watercolor-pink/30",
+    file: "gen_art_07.png",
+  },
+  {
+    title: "Mobile App Redesign",
+    category: "Work Project",
+    gradient: "from-watercolor-blue/40 to-watercolor-turquoise/30",
+    file: "app_mockup.fig",
+  },
+  {
+    title: "Botanical Illustrations",
+    category: "Artwork",
+    gradient: "from-watercolor-green/40 to-watercolor-yellow/30",
+    file: "botanicals.tif",
+  },
+  {
+    title: "Open Source CLI Tool",
+    category: "Personal Project",
+    gradient: "from-watercolor-turquoise/40 to-watercolor-blue/30",
+    file: "cli_tool.rs",
+  },
+  {
+    title: "Watercolor Portraits",
+    category: "Artwork",
+    gradient: "from-watercolor-burgundy/40 to-watercolor-orange/30",
+    file: "portrait_02.png",
+  },
 ];
 
 const categoryColors: Record<string, string> = {
-  "Work Project": "bg-watercolor-blue/15 text-foreground border-watercolor-blue/30",
-  "Personal Project": "bg-watercolor-green/15 text-foreground border-watercolor-green/30",
-  "Artwork": "bg-watercolor-purple/15 text-foreground border-watercolor-purple/30",
+  "Work Project":
+    "bg-watercolor-blue/15 text-foreground border-watercolor-blue/30",
+  "Personal Project":
+    "bg-watercolor-green/15 text-foreground border-watercolor-green/30",
+  Artwork:
+    "bg-watercolor-purple/15 text-foreground border-watercolor-purple/30",
 };
 
 export function FeaturedWork() {
@@ -34,8 +67,13 @@ export function FeaturedWork() {
         <div className="mb-12 overflow-hidden border-t border-b border-border bg-muted/50 py-2">
           <div className="animate-marquee flex whitespace-nowrap">
             {Array.from({ length: 2 }).map((_, i) => (
-              <span key={i} className="mx-8 font-pixel text-lg text-muted-foreground/50">
-                ✦ PORTFOLIO ✦ ART ✦ DESIGN ✦ ILLUSTRATION ✦ UI/UX ✦ USER-CENTRICITY ✦ PORTFOLIO ✦ ART ✦ DESIGN ✦ ILLUSTRATION ✦ UI/UX ✦ USER-CENTRICITY&nbsp;
+              <span
+                key={i}
+                className="mx-8 font-pixel text-lg text-muted-foreground/50"
+              >
+                ✦ PORTFOLIO ✦ ART ✦ DESIGN ✦ ILLUSTRATION ✦ UI/UX ✦
+                USER-CENTRICITY ✦ PORTFOLIO ✦ ART ✦ DESIGN ✦ ILLUSTRATION ✦
+                UI/UX ✦ USER-CENTRICITY&nbsp;
               </span>
             ))}
           </div>
@@ -49,16 +87,20 @@ export function FeaturedWork() {
               style={{ transform: `rotate(${i % 2 === 0 ? -0.5 : 0.5}deg)` }}
             >
               <div className="retro-titlebar">
-                <span className="truncate text-muted-foreground">{project.file}</span>
+                <span className="truncate text-muted-foreground">
+                  {project.file}
+                </span>
                 <div className="retro-btn-group">
                   <span className="retro-btn-dot">_</span>
                   <span className="retro-btn-dot">□</span>
                   <span className="retro-btn-dot">×</span>
                 </div>
               </div>
-              
+
               {/* Image area */}
-              <div className={`aspect-[4/3] bg-gradient-to-br ${project.gradient}`}>
+              <div
+                className={`aspect-[4/3] bg-gradient-to-br ${project.gradient}`}
+              >
                 <div className="flex h-full w-full items-center justify-center">
                   <div className="dashed-frame p-4 opacity-30 transition-opacity group-hover:opacity-50">
                     <span className="font-pixel text-2xl">✦</span>
@@ -68,7 +110,10 @@ export function FeaturedWork() {
 
               {/* Info bar */}
               <div className="border-t-2 border-border p-3">
-                <Badge variant="outline" className={`mb-1.5 font-mono-heading text-[10px] uppercase tracking-wider ${categoryColors[project.category] || ""}`}>
+                <Badge
+                  variant="outline"
+                  className={`mb-1.5 font-mono-heading text-[10px] uppercase tracking-wider ${categoryColors[project.category] || ""}`}
+                >
                   {project.category}
                 </Badge>
                 <h3 className="font-mono-heading text-sm font-bold text-card-foreground">

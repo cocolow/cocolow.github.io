@@ -23,7 +23,9 @@ export function AboutTeaser() {
                     <div className="flex h-full w-full items-center justify-center">
                       <div className="text-center">
                         <div className="mb-1 text-3xl">👤</div>
-                        <p className="font-pixel text-sm text-muted-foreground">Your Photo</p>
+                        <p className="font-pixel text-sm text-muted-foreground">
+                          Your Photo
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -47,11 +49,19 @@ export function AboutTeaser() {
                   <span className="gradient-text">Technical by Trade</span>
                 </h2>
                 <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
-                  I'm a multidisciplinary creative who bridges the worlds of art and technology. With a passion for visual storytelling and a background in software development, I create work that's both beautiful and functional. From brand identities to generative art to open-source tools — every project is an opportunity to explore and innovate.
+                  I'm a multidisciplinary creative who bridges the worlds of art
+                  and technology. With a passion for visual storytelling and a
+                  background in software development, I create work that's both
+                  beautiful and functional. From brand identities to generative
+                  art to open-source tools — every project is an opportunity to
+                  explore and innovate.
                 </p>
                 <div>
                   <a href="/about">
-                    <Button variant="outline" className="group border-2 font-mono-heading text-xs font-bold uppercase tracking-wider shadow-[3px_3px_0px_hsl(var(--foreground)/0.15)] transition-all hover:shadow-[1px_1px_0px_hsl(var(--foreground)/0.15)] hover:translate-x-[2px] hover:translate-y-[2px]">
+                    <Button
+                      variant="outline"
+                      className="group border-2 font-mono-heading text-xs font-bold uppercase tracking-wider shadow-[3px_3px_0px_hsl(var(--foreground)/0.15)] transition-all hover:shadow-[1px_1px_0px_hsl(var(--foreground)/0.15)] hover:translate-x-[2px] hover:translate-y-[2px]"
+                    >
                       Learn More
                       <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Button>
