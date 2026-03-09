@@ -237,10 +237,6 @@ export function ServicesSection() {
                 quote: "The live painting at our corporate gala was the highlight of the evening. Watching the artwork come to life in real-time captivated everyone in the room.",
                 name: "Michelle T.",
                 context: "Live Event Painting",
-                link: {
-                  label: "Featured in Travel Yukon",
-                  url: "https://www.travelyukon.com/en/see-and-do/activities/arts-whitehorse",
-                },
               },
               {
                 quote: "Our team workshop was such a refreshing experience. Coco made calligraphy feel approachable for complete beginners — we left with skills and artwork we're proud of.",
@@ -282,6 +278,55 @@ export function ServicesSection() {
                   </div>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ── Featured ── */}
+        <div className="mb-24">
+          <div className="mb-10 text-center">
+            <p className="mb-2 font-mono-heading text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
+              // Press & Mentions
+            </p>
+            <h3 className="font-mono-heading text-2xl font-bold tracking-tight">
+              Featured <span className="gradient-text">In</span>
+            </h3>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                title: "Travel Yukon",
+                description: "Arts & culture spotlight featuring Coco's live painting and calligraphy work in Whitehorse.",
+                url: "https://www.travelyukon.com/en/see-and-do/activities/arts-whitehorse",
+              },
+            ].map((feature, i) => (
+              <a
+                key={i}
+                href={feature.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="retro-window group transition-all duration-200 hover:shadow-[5px_5px_0px_hsl(var(--foreground)/0.12)] hover:-translate-x-[1px] hover:-translate-y-[1px] block"
+              >
+                <div className="retro-titlebar">
+                  <span className="text-muted-foreground">feature_{String(i + 1).padStart(2, "0")}.txt</span>
+                  <div className="retro-btn-group">
+                    <span className="retro-btn-dot">_</span>
+                    <span className="retro-btn-dot">□</span>
+                    <span className="retro-btn-dot">×</span>
+                  </div>
+                </div>
+                <div className="p-5 flex flex-col gap-2">
+                  <h4 className="font-mono-heading text-sm font-bold text-card-foreground group-hover:text-primary transition-colors">
+                    {feature.title}
+                  </h4>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {feature.description}
+                  </p>
+                  <span className="mt-2 inline-flex items-center gap-1 font-mono-heading text-[10px] font-bold uppercase tracking-wider text-primary">
+                    Read More <ArrowRight className="h-3 w-3" />
+                  </span>
+                </div>
+              </a>
             ))}
           </div>
         </div>
