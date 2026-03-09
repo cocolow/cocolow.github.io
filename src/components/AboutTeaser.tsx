@@ -50,10 +50,12 @@ export function AboutTeaser() {
                   I'm a multidisciplinary creative who bridges the worlds of art and technology. With a passion for visual storytelling and a background in software development, I create work that's both beautiful and functional. From brand identities to generative art to open-source tools — every project is an opportunity to explore and innovate.
                 </p>
                 <div>
-                  <Button variant="outline" className="group border-2 font-mono-heading text-xs font-bold uppercase tracking-wider shadow-[3px_3px_0px_hsl(var(--foreground)/0.15)] transition-all hover:shadow-[1px_1px_0px_hsl(var(--foreground)/0.15)] hover:translate-x-[2px] hover:translate-y-[2px]">
-                    Learn More
-                    <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Button>
+                  <a href="/about">
+                    <Button variant="outline" className="group border-2 font-mono-heading text-xs font-bold uppercase tracking-wider shadow-[3px_3px_0px_hsl(var(--foreground)/0.15)] transition-all hover:shadow-[1px_1px_0px_hsl(var(--foreground)/0.15)] hover:translate-x-[2px] hover:translate-y-[2px]">
+                      Learn More
+                      <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Button>
+                  </a>
                 </div>
               </div>
             </div>
