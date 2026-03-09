@@ -165,7 +165,13 @@ export default function About() {
             </div>
 
             {/* Key achievements stickers */}
-            <div className="mx-auto mb-16 flex max-w-3xl flex-wrap justify-center gap-3">
+            <div className="mx-auto mb-16 max-w-3xl">
+              <div className="mb-6 text-center">
+                <h2 className="font-mono-heading text-xl font-bold sm:text-2xl">
+                  Key <span className="gradient-text">Achievements</span>
+                </h2>
+              </div>
+              <div className="flex flex-wrap justify-center gap-3">
               <span className="sticker bg-watercolor-orange/15 text-foreground">100k+ sign-ups in 3 months</span>
               <span className="sticker bg-watercolor-purple/15 text-foreground" style={{ transform: "rotate(1.5deg)" }}>
                 700k+ users reached
@@ -176,6 +182,7 @@ export default function About() {
               <span className="sticker bg-watercolor-green/15 text-foreground" style={{ transform: "rotate(2deg)" }}>
                 Global Teams (NA, APAC, EU)
               </span>
+              </div>
             </div>
 
             {/* Skills */}
