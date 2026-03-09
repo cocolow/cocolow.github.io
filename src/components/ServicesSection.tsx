@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Star, Sparkles } from "lucide-react";
+import artwork01 from "@/assets/artwork-01.png";
 import {
   Accordion,
   AccordionContent,
