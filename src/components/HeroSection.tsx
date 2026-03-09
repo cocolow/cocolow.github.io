@@ -36,34 +36,26 @@ export function HeroSection() {
                 <span className="retro-btn-dot">×</span>
               </div>
             </div>
-            <div className="flex items-start gap-6 p-6 sm:p-8">
-              <div className="flex-1">
-                <div className="mb-4 flex flex-wrap gap-2">
-                  <span className="sticker bg-watercolor-orange/20 text-foreground">Product Manager</span>
-                  <span className="sticker rotate-1 bg-watercolor-purple/20 text-foreground">Artist</span>
-                  <span className="sticker -rotate-1 bg-watercolor-turquoise/20 text-foreground">Creator</span>
-                </div>
-                <h1 className="mb-4 font-mono-heading text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-                  Hi, I'm <span className="gradient-text">Coco</span>
-                </h1>
-                <p className="mb-6 max-w-lg text-sm leading-relaxed text-muted-foreground">
-                  Ex-TikTok Product Manager with 8+ years of experience creating customer-centric products in digital health and mental wellbeing. I blend technology with creativity — from designing Singapore's first national gamified digital health program to building an art brand as a mental wellbeing project. This is a curated collection of my work projects, personal explorations, and artwork.
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  <Button size="lg" className="gradient-hero-bg border-0 px-6 font-mono-heading text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-[3px_3px_0px_hsl(var(--foreground)/0.15)] transition-all hover:shadow-[1px_1px_0px_hsl(var(--foreground)/0.15)] hover:translate-x-[2px] hover:translate-y-[2px]">
-                    View My Work
-                    <ArrowDown className="ml-1 h-4 w-4" />
-                  </Button>
-                  <Button variant="outline" size="lg" className="border-2 px-6 font-mono-heading text-xs font-bold uppercase tracking-wider shadow-[3px_3px_0px_hsl(var(--foreground)/0.15)] transition-all hover:shadow-[1px_1px_0px_hsl(var(--foreground)/0.15)] hover:translate-x-[2px] hover:translate-y-[2px]">
-                    Get in Touch
-                  </Button>
-                </div>
+            <div className="p-6 sm:p-8">
+              <div className="mb-4 flex flex-wrap gap-2">
+                <span className="sticker bg-watercolor-orange/20 text-foreground">Product Manager</span>
+                <span className="sticker rotate-1 bg-watercolor-purple/20 text-foreground">Artist</span>
+                <span className="sticker -rotate-1 bg-watercolor-turquoise/20 text-foreground">Creator</span>
               </div>
-              {/* Profile image placeholder */}
-              <div className="hidden shrink-0 self-stretch sm:flex">
-                <div className="dashed-frame w-40 flex-1 overflow-hidden bg-gradient-to-br from-watercolor-orange/10 to-watercolor-purple/10 lg:w-52">
-                  <img src={headshot} alt="Coco Low" className="h-full w-full object-cover object-top" />
-                </div>
+              <h1 className="mb-4 font-mono-heading text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+                Hi, I'm <span className="gradient-text">Coco</span>
+              </h1>
+              <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
+                Ex-TikTok Product Manager with 8+ years of experience creating customer-centric products in digital health and mental wellbeing. I blend technology with creativity — from designing Singapore's first national gamified digital health program to building an art brand as a mental wellbeing project. This is a curated collection of my work projects, personal explorations, and artwork.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Button size="lg" className="gradient-hero-bg border-0 px-6 font-mono-heading text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-[3px_3px_0px_hsl(var(--foreground)/0.15)] transition-all hover:shadow-[1px_1px_0px_hsl(var(--foreground)/0.15)] hover:translate-x-[2px] hover:translate-y-[2px]">
+                  View My Work
+                  <ArrowDown className="ml-1 h-4 w-4" />
+                </Button>
+                <Button variant="outline" size="lg" className="border-2 px-6 font-mono-heading text-xs font-bold uppercase tracking-wider shadow-[3px_3px_0px_hsl(var(--foreground)/0.15)] transition-all hover:shadow-[1px_1px_0px_hsl(var(--foreground)/0.15)] hover:translate-x-[2px] hover:translate-y-[2px]">
+                  Get in Touch
+                </Button>
               </div>
             </div>
           </div>
