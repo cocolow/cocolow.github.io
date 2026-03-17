@@ -1,10 +1,9 @@
 import { Linkedin, Github, Instagram } from "lucide-react";
 
 const navLinks = [
-  { label: "Projects", href: "#projects" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Art Shop", href: "#shop" },
+  { label: "About", href: "/about" },
+  { label: "Projects", href: "/projects" },
+  { label: "Services", href: "/services" },
 ];
 
 const socialLinks = [
@@ -25,7 +24,7 @@ export function Footer() {
               className="font-mono-heading text-xs font-bold uppercase tracking-widest text-foreground"
             >
               <span className="inline-block border-2 border-foreground px-3 py-1">
-                Portfolio
+                COCO LOW
               </span>
             </a>
             <p className="mt-2 font-pixel text-base text-muted-foreground">
