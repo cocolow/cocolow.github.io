@@ -1,22 +1,51 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { projects } from "@/data/projects";
+import { projects, type Project } from "@/data/projects";
 
-const filters = ["All", "Work", "Art"] as const;
+const filters = ["All", "Work", "Art", "Personal"] as const;
 type Filter = (typeof filters)[number];
 
 const filterStyles: Record<string, string> = {
   Work: "bg-watercolor-blue/15 text-foreground border-watercolor-blue/30",
   Art: "bg-watercolor-purple/15 text-foreground border-watercolor-purple/30",
+  Personal: "bg-amber-500/15 text-foreground border-amber-500/30",
 };
 
 export default function Projects() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [active, setActive] = useState<Filter>("All");
+  const [selected, setSelected] = useState<Project | null>(() => {
+    const projectTitle = searchParams.get("project");
+    if (projectTitle)
+      return projects.find((p) => p.title === projectTitle) ?? null;
+    return null;
+  });
 
   const filtered =
     active === "All" ? projects : projects.filter((p) => p.category === active);
+
+  // Close modal on Escape key
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelected(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  // Lock body scroll when modal is open & clean up query param on close
+  useEffect(() => {
+    document.body.style.overflow = selected ? "hidden" : "";
+    if (!selected && searchParams.has("project")) {
+      setSearchParams({}, { replace: true });
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selected]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -24,7 +53,7 @@ export default function Projects() {
       <main className="pt-14">
         <section className="py-20">
           <div className="container mx-auto px-4 lg:px-8">
-            {/* Header */}
+            {/* —— Header —— */}
             <div className="mb-12 text-center">
               <p className="mb-3 font-mono-heading text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
                 // All Works
@@ -35,11 +64,11 @@ export default function Projects() {
               <div className="mx-auto mt-4 h-px w-32 bg-border" />
             </div>
 
-            {/* Filter bar */}
+            {/* —— Filter bar —— */}
             <div className="mb-10 flex justify-center">
               <div className="retro-window inline-flex">
                 <div className="retro-titlebar">
-                  <span className="text-muted-foreground">filter.exe</span>
+                  <span className="text-muted-foreground">FILTER.EXE</span>
                   <div className="retro-btn-group">
                     <span className="retro-btn-dot">_</span>
                     <span className="retro-btn-dot">□</span>
@@ -55,7 +84,7 @@ export default function Projects() {
                         active === f
                           ? "bg-primary text-primary-foreground"
                           : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                      } ${f !== "Art" ? "border-r border-border" : ""}`}
+                      } ${f !== "Personal" ? "border-r border-border" : ""}`}
                     >
                       {f}
                     </button>
@@ -64,11 +93,12 @@ export default function Projects() {
               </div>
             </div>
 
-            {/* Project grid */}
+            {/* —— Project grid —— */}
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {filtered.map((project, i) => (
                 <div
                   key={project.title}
+                  onClick={() => setSelected(project)}
                   className="retro-window group cursor-pointer transition-all duration-200 hover:shadow-[5px_5px_0px_hsl(var(--foreground)/0.12)] hover:-translate-x-[1px] hover:-translate-y-[1px] animate-fade-in-up"
                   style={{
                     transform: `rotate(${i % 2 === 0 ? -0.5 : 0.5}deg)`,
@@ -111,12 +141,25 @@ export default function Projects() {
                     >
                       {project.category}
                     </Badge>
-                    <h3 className="font-mono-heading text-sm font-bold text-card-foreground">
+                    <h3 className="font-mono-heading text-sm font-bold text-card-foreground leading-snug">
                       {project.title}
                     </h3>
-                    <p className="mt-1 text-xs text-muted-foreground">
+                    <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
                       {project.description}
                     </p>
+                    {/* Top 2 metrics as pills */}
+                    {project.metrics && project.metrics.length > 0 && (
+                      <div className="mt-2.5 flex flex-wrap gap-1.5">
+                        {project.metrics.slice(0, 2).map((m) => (
+                          <span
+                            key={m.label}
+                            className="font-mono-heading text-[10px] font-bold text-foreground border border-border rounded px-1.5 py-0.5"
+                          >
+                            {m.value}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
@@ -136,6 +179,204 @@ export default function Projects() {
         </section>
       </main>
       <Footer />
+
+      {/* ————————————————————————————————————————————————————————
+          Case study modal
+      ———————————————————————————————————————————————————————— */}
+      {selected && (
+        <div
+          className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto p-4 py-8 bg-background/85 backdrop-blur-sm"
+          onClick={() => setSelected(null)}
+        >
+          <div
+            className="retro-window w-full max-w-4xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal title bar */}
+            <div className="retro-titlebar flex-shrink-0">
+              <span className="truncate text-muted-foreground font-mono-heading text-xs">
+                {selected.file}
+              </span>
+              <div className="retro-btn-group">
+                <span className="retro-btn-dot">_</span>
+                <span className="retro-btn-dot">□</span>
+                <button
+                  onClick={() => setSelected(null)}
+                  className="retro-btn-dot cursor-pointer hover:bg-destructive hover:text-destructive-foreground transition-colors"
+                  aria-label="Close"
+                >
+                  ×
+                </button>
+              </div>
+            </div>
+
+            {/* —— Modal header —— */}
+            <div className="border-b border-border p-6">
+              <div className="flex flex-wrap items-start gap-3 mb-3">
+                <Badge
+                  variant="outline"
+                  className={`font-mono-heading text-[10px] uppercase tracking-wider ${filterStyles[selected.category] || ""}`}
+                >
+                  {selected.category}
+                </Badge>
+                {selected.note && (
+                  <span className="font-mono-heading text-[10px] border border-border rounded px-2 py-0.5 text-muted-foreground">
+                    ⚠ {selected.note}
+                  </span>
+                )}
+              </div>
+
+              <h2 className="font-mono-heading text-xl font-bold text-foreground leading-snug sm:text-2xl">
+                {selected.title}
+              </h2>
+
+              {(selected.org || selected.period) && (
+                <p className="mt-1.5 font-mono-heading text-xs text-muted-foreground uppercase tracking-wider">
+                  {selected.org}
+                  {selected.period ? ` · ${selected.period}` : ""}
+                </p>
+              )}
+
+              {/* Metric tiles */}
+              {selected.metrics && selected.metrics.length > 0 && (
+                <div className="mt-5 flex flex-wrap gap-3">
+                  {selected.metrics.map((m) => (
+                    <div key={m.label} className="retro-window">
+                      <div className="px-4 py-2.5 text-center">
+                        <p className="font-mono-heading text-lg font-bold text-foreground leading-none">
+                          {m.value}
+                        </p>
+                        <p className="font-mono-heading text-[10px] uppercase tracking-wider text-muted-foreground mt-1">
+                          {m.label}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* —— Modal body: two columns —— */}
+            <div className="grid sm:grid-cols-2 border-b border-border divide-y sm:divide-y-0 sm:divide-x divide-border">
+              {/* Left: Problem + Approach */}
+              <div className="p-6 space-y-6">
+                {selected.problem && selected.problem.length > 0 && (
+                  <div>
+                    <p className="mb-3 font-mono-heading text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+                      // Problem
+                    </p>
+                    <ul className="space-y-2.5">
+                      {selected.problem.map((p, i) => (
+                        <li
+                          key={i}
+                          className="flex gap-2 text-sm text-foreground/80 leading-relaxed"
+                        >
+                          <span className="font-mono-heading text-muted-foreground mt-0.5 flex-shrink-0">
+                            ›
+                          </span>
+                          <span>{p}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {selected.approach && selected.approach.length > 0 && (
+                  <div>
+                    <p className="mb-3 font-mono-heading text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+                      // Approach
+                    </p>
+                    <ul className="space-y-2.5">
+                      {selected.approach.map((a, i) => (
+                        <li
+                          key={i}
+                          className="flex gap-2 text-sm text-foreground/80 leading-relaxed"
+                        >
+                          <span className="font-mono-heading text-muted-foreground mt-0.5 flex-shrink-0">
+                            ›
+                          </span>
+                          <span>{a}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+
+              {/* Right: What was built + Outcomes */}
+              <div className="p-6 space-y-6">
+                {selected.built && selected.built.length > 0 && (
+                  <div>
+                    <p className="mb-3 font-mono-heading text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+                      // What was built
+                    </p>
+                    <div className="space-y-5">
+                      {selected.built.map((track, i) => (
+                        <div key={i}>
+                          {track.track && (
+                            <p className="mb-2 font-mono-heading text-[10px] font-bold uppercase tracking-wider text-foreground border-l-2 border-border pl-2.5">
+                              {track.track}
+                            </p>
+                          )}
+                          <ul className="space-y-2.5">
+                            {track.points.map((pt, j) => (
+                              <li
+                                key={j}
+                                className="flex gap-2 text-sm text-foreground/80 leading-relaxed"
+                              >
+                                <span className="font-mono-heading text-muted-foreground mt-0.5 flex-shrink-0">
+                                  ›
+                                </span>
+                                <span>{pt}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {selected.outcomes && selected.outcomes.length > 0 && (
+                  <div>
+                    <p className="mb-3 font-mono-heading text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+                      // Outcomes
+                    </p>
+                    <ul className="space-y-2.5">
+                      {selected.outcomes.map((o, i) => (
+                        <li
+                          key={i}
+                          className="flex gap-2 text-sm text-foreground/80 leading-relaxed"
+                        >
+                          <span className="font-mono-heading text-muted-foreground mt-0.5 flex-shrink-0">
+                            ✦
+                          </span>
+                          <span>{o}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* —— Modal footer: tags —— */}
+            {selected.tags && selected.tags.length > 0 && (
+              <div className="p-5 flex flex-wrap gap-2">
+                {selected.tags.map((tag) => (
+                  <Badge
+                    key={tag}
+                    variant="outline"
+                    className="font-mono-heading text-[10px] uppercase tracking-wider"
+                  >
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
