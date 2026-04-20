@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
+import { CTAButton, RetroWindow, Sticker } from "@/design-system";
 
 export function HeroSection() {
   return (
@@ -25,26 +25,18 @@ export function HeroSection() {
 
       <div className="container relative z-10 mx-auto flex justify-center px-4 lg:px-8">
         <div className="flex max-w-2xl flex-col justify-center">
-          <div className="retro-window">
-            <div className="retro-titlebar">
-              <span className="text-muted-foreground">intro.txt</span>
-              <div className="retro-btn-group">
-                <span className="retro-btn-dot">_</span>
-                <span className="retro-btn-dot">□</span>
-                <span className="retro-btn-dot">×</span>
-              </div>
-            </div>
+          <RetroWindow title="intro.txt">
             <div className="p-6 sm:p-8">
               <div className="mb-4 flex flex-wrap gap-2">
-                <span className="sticker bg-watercolor-orange/20 text-foreground">
+                <Sticker className="bg-watercolor-orange/20 text-foreground">
                   Product Manager
-                </span>
-                <span className="sticker rotate-1 bg-watercolor-purple/20 text-foreground">
+                </Sticker>
+                <Sticker className="rotate-1 bg-watercolor-purple/20 text-foreground">
                   Artist
-                </span>
-                <span className="sticker -rotate-1 bg-watercolor-turquoise/20 text-foreground">
+                </Sticker>
+                <Sticker className="-rotate-1 bg-watercolor-turquoise/20 text-foreground">
                   Creator
-                </span>
+                </Sticker>
               </div>
               <h1 className="mb-4 font-mono-heading text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
                 Hi, I'm <span className="gradient-text">Coco</span>
@@ -59,27 +51,13 @@ export function HeroSection() {
                 and artwork.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Button
-                  asChild
-                  size="lg"
-                  className="gradient-hero-bg border-0 px-6 font-mono-heading text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-[3px_3px_0px_hsl(var(--foreground)/0.15)] transition-all hover:shadow-[1px_1px_0px_hsl(var(--foreground)/0.15)] hover:translate-x-[2px] hover:translate-y-[2px]"
-                >
-                  <a href="/projects">
-                    View My Work
-                    <ArrowDown className="ml-1 h-4 w-4" />
-                  </a>
-                </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="border-2 px-6 font-mono-heading text-xs font-bold uppercase tracking-wider shadow-[3px_3px_0px_hsl(var(--foreground)/0.15)] transition-all hover:shadow-[1px_1px_0px_hsl(var(--foreground)/0.15)] hover:translate-x-[2px] hover:translate-y-[2px]"
-                >
-                  <a href="/services#book-a-service">Enquire Now</a>
-                </Button>
+                <CTAButton href="/projects">
+                  View My Work
+                  <ArrowDown className="ml-1 h-4 w-4" />
+                </CTAButton>
               </div>
             </div>
-          </div>
+          </RetroWindow>
         </div>
       </div>
     </section>
