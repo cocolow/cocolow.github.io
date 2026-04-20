@@ -5,4 +5,8 @@
 export const features = {
   /** When false: hides Services nav links and redirects /services to home. */
   showServices: false,
+  /** When false: hides Art-category projects and the Art filter button. */
+  showArtProjects: false,
+  /** When false: hides the "Download Resume" button on the About page. */
+  showResumeDownload: false,
 } as const;

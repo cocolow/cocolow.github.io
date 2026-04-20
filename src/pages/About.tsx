@@ -1,9 +1,8 @@
-import { Download } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Button } from "@/components/ui/button";
+import { DownloadResumeButton } from "@/design-system";
+import { features } from "@/config/features";
 import headshot from "@/assets/headshot.png";
-import logoMindline from "@/assets/logo-mindline.png";
 import logoTiktok from "@/assets/logo-tiktok.png";
 import logoHpb from "@/assets/logo-hpb.png";
 import logoMoht from "@/assets/logo-moht.png";
@@ -205,15 +204,7 @@ export default function About() {
                   built an art brand on social media as a mental wellbeing
                   project.
                 </p>
-                <a href="/Resume_Coco_Low_2026.pdf" download>
-                  <Button
-                    variant="outline"
-                    className="font-mono-heading text-xs uppercase tracking-wider"
-                  >
-                    <Download className="mr-2 h-4 w-4" />
-                    Download Resume (PDF)
-                  </Button>
-                </a>
+                {features.showResumeDownload && <DownloadResumeButton />}
               </div>
             </div>
 

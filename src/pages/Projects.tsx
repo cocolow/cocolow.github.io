@@ -4,9 +4,17 @@ import { Badge } from "@/components/ui/badge";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { projects, type Project } from "@/data/projects";
+import { features } from "@/config/features";
 
-const filters = ["All", "Work", "Art", "Personal"] as const;
-type Filter = (typeof filters)[number];
+const allFilters = ["All", "Work", "Art", "Personal"] as const;
+type Filter = (typeof allFilters)[number];
+const filters = features.showArtProjects
+  ? allFilters
+  : (allFilters.filter((f) => f !== "Art") as readonly Filter[]);
+
+const visibleProjects = features.showArtProjects
+  ? projects
+  : projects.filter((p) => p.category !== "Art");
 
 const filterStyles: Record<string, string> = {
   Work: "bg-watercolor-blue/15 text-foreground border-watercolor-blue/30",
@@ -20,12 +28,14 @@ export default function Projects() {
   const [selected, setSelected] = useState<Project | null>(() => {
     const projectTitle = searchParams.get("project");
     if (projectTitle)
-      return projects.find((p) => p.title === projectTitle) ?? null;
+      return visibleProjects.find((p) => p.title === projectTitle) ?? null;
     return null;
   });
 
   const filtered =
-    active === "All" ? projects : projects.filter((p) => p.category === active);
+    active === "All"
+      ? visibleProjects
+      : visibleProjects.filter((p) => p.category === active);
 
   // Close modal on Escape key
   useEffect(() => {

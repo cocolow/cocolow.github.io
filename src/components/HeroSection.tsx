@@ -42,13 +42,14 @@ export function HeroSection() {
                 Hi, I'm <span className="gradient-text">Coco</span>
               </h1>
               <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
-                Ex-TikTok Product Manager with 8+ years of experience creating
-                customer-centric products in digital health and mental
-                wellbeing. I blend technology with creativity — from designing
-                Singapore's first national gamified digital health program to
-                building an art brand as a mental wellbeing project. This is a
-                curated collection of my work projects, personal explorations,
-                and artwork.
+                A Product Manager with 9 years designing B2C and B2B digital
+                products across Singapore and Canada — spanning digital health,
+                mental wellbeing, and Trust & Safety at TikTok. Recent work
+                includes responsible AI use cases for mental health. Past
+                flagships include AgeStrong (100k+ sign-ups in 3 months). On the
+                side, I paint and run Coconut Calligraphy — an art brand I
+                started as a passion project, with wellbeing workshops for 100+
+                youth and seniors.
               </p>
               <div className="flex flex-wrap gap-3">
                 <CTAButton href="/projects">

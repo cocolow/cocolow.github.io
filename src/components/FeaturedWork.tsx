@@ -1,6 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { featuredProjects } from "@/data/projects";
+import { features } from "@/config/features";
+
+const visibleFeaturedProjects = features.showArtProjects
+  ? featuredProjects
+  : featuredProjects.filter((p) => p.category !== "Art");
 
 const categoryColors: Record<string, string> = {
   Work: "bg-watercolor-blue/15 text-foreground border-watercolor-blue/30",
@@ -42,7 +47,7 @@ export function FeaturedWork() {
         </div>
 
         <div className="flex flex-wrap justify-center gap-5 [&>*]:w-full [&>*]:sm:w-[calc(50%-0.625rem)] [&>*]:lg:w-[calc(33.333%-0.875rem)]">
-          {featuredProjects.map((project, i) => (
+          {visibleFeaturedProjects.map((project, i) => (
             <div
               key={project.title}
               onClick={() =>
