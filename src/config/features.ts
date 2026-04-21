@@ -13,4 +13,6 @@ export const features = {
   showFeaturedProjects: false,
   /** When false: hides the TikTok Trust & Safety project (sensitive content). */
   showTiktokTrustSafety: false,
+  /** When false: hides the mindline.sg project (work in progress, not yet rolled out). */
+  showMindline: false,
 } as const;

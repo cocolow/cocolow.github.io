@@ -205,7 +205,110 @@ const allProjects: Project[] = [
     ],
   },
 
-  // ——— 3. Open When Letters ——————————————————————————————————————————————
+  // ——— 3. Healthy365 Enhanced Filtering ———————————————————————————————————
+  {
+    file: "HEALTHY365_FILTERING.FIG",
+    category: "Work",
+    gradient: "from-lime-400/15 to-green-300/15",
+    title:
+      "Healthy365 Enhanced Filtering — Helping users discover relevant health events",
+    description:
+      "B2C filtering and map-view feature on Healthy365 (Singapore's national healthy-living app), helping users navigate 1,000+ daily events with date, time, location, and age filters.",
+    org: "Health Promotion Board (HPB), Singapore",
+    period: "2022 – 2024",
+    tags: [
+      "B2C",
+      "Digital Health",
+      "Feature Design",
+      "Filters & Taxonomy",
+      "Seniors / 50+",
+      "Figma",
+    ],
+    metrics: [
+      { value: ">10%", label: "more senior event sign-ups" },
+      { value: "1,000+", label: "daily events to navigate" },
+    ],
+    problem: [
+      "Users found it difficult to navigate and find health events that suited their needs (e.g., exercise classes for a specific age group) amid ~1,000 events daily",
+      "Hard to identify events in users' preferred locations",
+      "Tedious to find and book events in advance",
+    ],
+    approach: [
+      "Benchmarked consumer apps (e.g., Disney) — chronological sorting, interactive maps, and proper taxonomy surfaced as key enablers of search and filtering",
+      "Translated those patterns into H365's health-events context — prioritising clarity and low cognitive load for the senior user base",
+    ],
+    built: [
+      {
+        track: "Filtering & map view",
+        points: [
+          "Filter health events by date, time, location, and suitable age range — directly targeting the navigation pain points",
+          "Map view for spatial event discovery, enabling users to quickly see which events are nearby",
+          "Taxonomy and grouping updates to make filters predictable and usable — a foundational step before adding more event types",
+        ],
+      },
+    ],
+    outcomes: [
+      ">10% increase in event sign-ups for seniors, optimising on-ground senior health event attendance",
+    ],
+  },
+
+  // ——— 4. Digital Functional Health Assessment ————————————————————————————
+  {
+    file: "FUNCTIONAL_ASSESSMENT.FIG",
+    category: "Work",
+    gradient: "from-sky-400/15 to-cyan-300/15",
+    title:
+      "Digital Functional Health Assessment — Measurement tool for on-ground trainers",
+    description:
+      "Two-part B2B system: an on-ground mobile app for trainers conducting functional health measurements, and a web portal for admins to create and customise metric-based assessments.",
+    org: "Health Promotion Board (HPB), Singapore",
+    period: "2022 – 2024",
+    tags: [
+      "B2B",
+      "Digital Health",
+      "Clinical Workflow",
+      "Operational Efficiency",
+      "Measurement",
+      "Figma",
+    ],
+    metrics: [
+      { value: "15%+", label: "operational efficiency gain" },
+      { value: "20+", label: "mins saved per assessment" },
+    ],
+    problem: [
+      "Trainers took physical functional health measurements on-ground and manually calculated participants' functional health status — slow and error-prone",
+      "No reusable digital tool existed to create and customise metric-based assessments for different target groups — every new assessment required custom work",
+    ],
+    approach: [
+      "Designed two paired touchpoints — one for admins creating assessments, one for trainers running them — so the workflow was continuous end-to-end",
+      "Kept trainer-side flows scannable and low-friction, since they operate on-ground with limited time per participant",
+      "Aligned with clinical stakeholders to ensure measurement metrics and scoring bands remained clinically valid",
+    ],
+    built: [
+      {
+        track: "Trainer-side — H365 Pal app (B2B)",
+        points: [
+          "QR-scan-based participant lookup, with grouping, search, and real-time check-in status",
+          "Step-by-step measurement flow — conduct CFS or custom assessments with automated score calculation",
+          "Participant profile with contextual info and full assessment history in one place",
+        ],
+      },
+      {
+        track: "Admin-side — Business Web-Portal (B2B)",
+        points: [
+          "Assessment builder — configure general info (description, unit of measurement, timing device, duration, scoring rules)",
+          "Metric tables with per-age-range and per-gender scoring bands for precise, clinically-informed assessments",
+          "Published assessments feed directly into the H365 Pal app for trainers to run on-ground",
+        ],
+      },
+    ],
+    outcomes: [
+      "15%+ operational efficiency gain, with 20+ minutes saved per assessment",
+      "Eliminated manual calculation errors by automating scoring at point-of-measurement",
+    ],
+  },
+
+  // ——— 5. Open When Letters ——————————————————————————————————————————————
   {
     file: "OPENWHEN_LETTERS.TXT",
     category: "Work",
@@ -267,7 +370,58 @@ const allProjects: Project[] = [
     ],
   },
 
-  // ——— 4. TikTok Trust & Safety ——————————————————————————————————————————
+  // ——— 6. Common Space ———————————————————————————————————————————————————
+  {
+    file: "COMMON_SPACE.JPG",
+    category: "Work",
+    gradient: "from-fuchsia-400/15 to-rose-300/15",
+    title: "Common Space — A non-stigmatising mental health space in schools",
+    description:
+      "Physical product expanding on the Open When Letters Vending Machine — student-led advocacy spaces built into school campuses to normalise mental health conversations.",
+    org: "Health Promotion Board (HPB), Singapore",
+    period: "2018 – 2022",
+    tags: [
+      "Youth Mental Health",
+      "Physical Product",
+      "Peer-Led",
+      "De-stigmatisation",
+      "Stakeholder Management",
+      "Vendor Management",
+    ],
+    metrics: [{ value: "30,000", label: "students reached" }],
+    problem: [
+      "The Open When Letters Vending Machine validated demand for non-threatening mental health touchpoints, but vending machines alone couldn't sustain peer-led engagement",
+      "Schools needed a dedicated physical space for student-led advocacy — normalising mental health the way common spaces normalise casual conversation",
+    ],
+    approach: [
+      "Led end-to-end development across schools, stakeholders, vendors, and operations — reusing the vending-machine playbook and extending it into furnished, student-run spaces",
+      "Co-developed with student groups (e.g., TP PSIA) to ensure spaces were genuinely student-led, not top-down",
+      "Activated spaces with student takeovers, Instagram content, and recurring sessions to build ongoing engagement",
+    ],
+    built: [
+      {
+        track: "Physical spaces",
+        points: [
+          "Designated areas in school libraries and campuses, branded with HPB Common Space visual identity and furnished for small-group peer conversations",
+          "Co-located with Open When Letters Vending Machines — a supported space to sit and read, not just grab-and-go",
+        ],
+      },
+      {
+        track: "End-to-end delivery",
+        points: [
+          "Stakeholders' buy-in across schools, HPB leadership, and partner organisations",
+          "Vendor management for furniture, signage, vending machines, and content production",
+          "Resolved operational considerations — space activation calendar, peer-supporter training, and maintenance",
+        ],
+      },
+    ],
+    outcomes: [
+      "30,000 students reached across participating schools",
+      "Active student advocacy communities continued programming beyond initial launch (e.g., TP PSIA Common Space at Temasek Poly)",
+    ],
+  },
+
+  // ——— 7. TikTok Trust & Safety ——————————————————————————————————————————
   {
     file: "TIKTOK_TRUST_SAFETY.RS",
     category: "Work",
@@ -326,7 +480,7 @@ const allProjects: Project[] = [
     note: "Details kept appropriately high-level given Trust & Safety context.",
   },
 
-  // ——— 5. Coconut Calligraphy ———————————————————————————————————————————
+  // ——— 8. Coconut Calligraphy ———————————————————————————————————————————
   {
     file: "COCONUT_CALLIGRAPHY.PNG",
     category: "Art",
@@ -370,7 +524,7 @@ const allProjects: Project[] = [
     ],
   },
 
-  // ——— 6. Personal Finance Tracker ———————————————————————————————————————
+  // ——— 9. Personal Finance Tracker ———————————————————————————————————————
   {
     file: "FINANCE_TRACKER.FIG",
     category: "Personal",
@@ -403,8 +557,11 @@ const allProjects: Project[] = [
   },
 ];
 
-export const projects: Project[] = allProjects.filter(
-  (p) => features.showTiktokTrustSafety || p.file !== "TIKTOK_TRUST_SAFETY.RS",
-);
+export const projects: Project[] = allProjects
+  .filter(
+    (p) =>
+      features.showTiktokTrustSafety || p.file !== "TIKTOK_TRUST_SAFETY.RS",
+  )
+  .filter((p) => features.showMindline || p.file !== "MINDLINE_REVAMP.FIG");
 
 export const featuredProjects = projects.filter((p) => p.featured);
