@@ -114,7 +114,6 @@ export const projects: Project[] = [
       "B2C",
       "B2B",
       "Figma",
-      "Power BI",
     ],
     metrics: [
       { value: "100k+", label: "sign-ups in 3 months" },

@@ -483,7 +483,9 @@ export default function About() {
             {/* Beyond Work — Coconut Calligraphy */}
             <div className="retro-window mx-auto mb-12 max-w-3xl">
               <div className="retro-titlebar">
-                <span className="text-muted-foreground">5-to-9.txt</span>
+                <span className="text-muted-foreground">
+                  Beyond Work: My 5-to-9
+                </span>
                 <div className="retro-btn-group">
                   <span className="retro-btn-dot">_</span>
                   <span className="retro-btn-dot">□</span>
@@ -492,8 +494,8 @@ export default function About() {
               </div>
               <div className="p-6 sm:p-8">
                 <h2 className="mb-4 font-mono-heading text-xl font-bold sm:text-2xl">
-                  My 5-to-9,{" "}
-                  <span className="gradient-text">Fueling the 9-to-5</span>
+                  My First Startup Was{" "}
+                  <span className="gradient-text">An Art Brand</span>
                 </h2>
                 <p className="mb-6 text-sm leading-relaxed text-card-foreground">
                   I founded Coconut Calligraphy in 2016 as a creative outlet — a

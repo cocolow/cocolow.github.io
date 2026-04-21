@@ -17,17 +17,17 @@ function toYouTubeEmbedUrl(url: string): string {
 
 export function MediaEmbed({ type, url, caption, className }: MediaEmbedProps) {
   return (
-    <figure className={cn("flex flex-col gap-2", className)}>
+    <figure className={cn("flex w-full flex-col gap-2", className)}>
       {type === "image" ? (
-        <div className="flex items-center justify-center overflow-hidden border-2 border-border bg-muted">
+        <div className="aspect-[9/16] w-full overflow-hidden border-2 border-border bg-muted">
           <img
             src={url}
             alt={caption ?? ""}
-            className="max-h-full max-w-full object-contain"
+            className="h-full w-full object-contain"
           />
         </div>
       ) : (
-        <div className="aspect-video overflow-hidden border-2 border-border bg-muted">
+        <div className="aspect-video w-full overflow-hidden border-2 border-border bg-muted">
           <iframe
             src={toYouTubeEmbedUrl(url)}
             title={caption ?? "YouTube video"}
@@ -38,7 +38,7 @@ export function MediaEmbed({ type, url, caption, className }: MediaEmbedProps) {
         </div>
       )}
       {caption && (
-        <figcaption className="font-mono-heading text-[10px] uppercase tracking-wider text-muted-foreground">
+        <figcaption className="line-clamp-2 min-h-[2rem] font-mono-heading text-[10px] uppercase leading-tight tracking-wider text-muted-foreground">
           {caption}
         </figcaption>
       )}
