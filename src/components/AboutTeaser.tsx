@@ -36,17 +36,20 @@ export function AboutTeaser() {
                   // About Me
                 </p>
                 <h2 className="mb-4 font-mono-heading text-2xl font-bold tracking-tight sm:text-3xl">
-                  Creative at Heart,
+                  Building Products,
                   <br />
-                  <span className="gradient-text">Technical by Trade</span>
+                  <span className="gradient-text">
+                    Rooted in User-Centricity
+                  </span>
                 </h2>
                 <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
-                  I'm a multidisciplinary creative who bridges the worlds of art
-                  and technology. With a passion for visual storytelling and a
-                  background in software development, I create work that's both
-                  beautiful and functional. From brand identities to generative
-                  art to open-source tools — every project is an opportunity to
-                  explore and innovate.
+                  I lead 0-to-1 product launches in regulated, multi-stakeholder
+                  environments — where clinical workflows, AI feasibility,
+                  policy constraints, and user needs all have to resolve into
+                  something intuitive. My approach combines user research,
+                  service design, and behaviour change, with a track record of
+                  earning trust across clinical, AI/data, engineering, and
+                  policy teams.
                 </p>
                 <div>
                   <CTAButton href="/about" variant="outline" className="group">

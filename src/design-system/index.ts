@@ -5,4 +5,5 @@ export { CTAButton } from "./CTAButton";
 export { ContactForm } from "./ContactForm";
 export { BookAServiceForm } from "./BookAServiceForm";
 export { DownloadResumeButton } from "./DownloadResumeButton";
+export { MediaEmbed } from "./MediaEmbed";
 export { LinkedInIcon, InstagramIcon, GithubIcon } from "./icons/SocialIcons";

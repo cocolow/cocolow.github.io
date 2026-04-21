@@ -3,6 +3,18 @@ export interface ProjectTrack {
   points: string[];
 }
 
+export interface ProjectLearning {
+  theme: string;
+  detail: string;
+}
+
+export interface ProjectMedia {
+  type: "image" | "youtube";
+  /** For images: path or URL. For YouTube: any watch/youtu.be/embed URL. */
+  url: string;
+  caption?: string;
+}
+
 export interface Project {
   file: string;
   category: "Work" | "Art" | "Personal";
@@ -18,6 +30,8 @@ export interface Project {
   approach?: string[];
   built?: ProjectTrack[];
   outcomes?: string[];
+  learnings?: ProjectLearning[];
+  media?: ProjectMedia[];
   note?: string;
   featured?: boolean;
 }
@@ -143,6 +157,50 @@ export const projects: Project[] = [
       "100,000+ sign-ups within 3 months of launch — first national gamified digital health programme for seniors",
       "HPB Epic Award 2024 (AgeStrong)",
       "HPB Epic Award 2023 — Business Transformation Team Gold Award (Prefrailty digital health tool)",
+    ],
+    learnings: [
+      {
+        theme: "Scale comes from systems, not products",
+        detail:
+          "Designing a reusable programme template meant the team's biggest impact wasn't AgeStrong itself — it was the 500k+ users reached through programmes other health domain teams launched independently afterward.",
+      },
+      {
+        theme: "Clinical rigour + consumer UX need a translator",
+        detail:
+          "Turning clinical frailty scoring into a gamified senior experience required holding tension between two valid logics — clinicians wanted precision, users wanted simplicity. The PM's job was making both true without either side feeling compromised.",
+      },
+      {
+        theme: "E-commerce patterns translate — with translation",
+        detail:
+          "Check-in and reward mechanics proven in consumer apps drove habit formation for seniors, but only after concept testing confirmed simple UI with clear CTAs was non-negotiable. Transferring patterns isn't copy-paste — it's translation into a new user context.",
+      },
+      {
+        theme: "Front-load stakeholder disagreement",
+        detail:
+          "Aligning 5+ teams (clinical, ops, vendors, engineering, leadership) upfront through tailored materials — strategic decks for leaders, workflow training for operators — front-loaded disagreement and saved weeks of rework mid-build.",
+      },
+    ],
+    media: [
+      {
+        type: "image",
+        url: "/projects/agestrong-overview.png",
+        caption: "Overview — one simple task a day",
+      },
+      {
+        type: "image",
+        url: "/projects/agestrong-workout.png",
+        caption: "Guided workout flow",
+      },
+      {
+        type: "image",
+        url: "/projects/agestrong-feedback.png",
+        caption: "Post-workout feedback & rewards",
+      },
+      {
+        type: "image",
+        url: "/projects/agestrong-quiz.png",
+        caption: "Gamified health quiz flow",
+      },
     ],
   },
 

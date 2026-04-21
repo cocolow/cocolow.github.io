@@ -1,6 +1,7 @@
+import { ArrowRight } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { DownloadResumeButton } from "@/design-system";
+import { DownloadResumeButton, InstagramIcon } from "@/design-system";
 import { features } from "@/config/features";
 import headshot from "@/assets/headshot.png";
 import logoTiktok from "@/assets/logo-tiktok.png";
@@ -22,44 +23,145 @@ const skills = [
 
 const timeline = [
   {
-    year: "2025–Present",
+    year: "2025–2026",
     role: "UX Product Manager",
     org: "mindline.sg, Ministry of Health Transformation (MOHT)",
     logos: [logoMoht],
-    description:
-      "Revamping Singapore's national digital mental health platform to improve engagement and personalise care via AI-enabled capabilities.",
+    description: [
+      <>
+        Led product revamp of <strong>mindline.sg</strong> (Singapore's national
+        mental health platform, <strong>12k+ weekly users</strong>) alongside a
+        new AI-assisted platform for capability building
+      </>,
+      <>
+        Co-designed and co-led <strong>12 end-user research sessions</strong>,
+        synthesising insights with designers across Brazil and Singapore to
+        prioritise prototype changes and feature development
+      </>,
+      <>
+        Partnered with Clinical and AI/Data Science teams on{" "}
+        <strong>responsible AI use cases</strong> balancing user engagement,
+        clinical safety, and feasibility
+      </>,
+    ],
   },
   {
     year: "2024–2025",
     role: "Product Manager (Risk & Operations)",
     org: "Trust & Safety, TikTok, Canada",
     logos: [logoTiktok],
-    description:
-      "Built risk detection tools that cut manual detection-handling lag time by over 60 mins daily. Led investigations into risk signals leveraging data analytics.",
+    description: [
+      <>
+        Built risk detection capability roadmap across{" "}
+        <strong>three workstreams</strong> — reducing manual detection-handling
+        lag by <strong>60+ minutes daily</strong>
+      </>,
+      <>
+        Designed and implemented a{" "}
+        <strong>structured triage and handover log</strong> for ambiguous and
+        emerging risk cases, standardising documentation and handover across
+        teams — cutting per-trend handling time by <strong>30+ minutes</strong>
+      </>,
+      <>
+        Proactively identified an emerging risk pattern through content
+        monitoring and mobilised cross-functional teams, resulting in{" "}
+        <strong>
+          large-scale removal of violative posts and deactivation of accounts
+        </strong>
+      </>,
+    ],
   },
   {
     year: "2022–2024",
     role: "Product Manager, Healthy Ageing",
     org: "Health Promotion Board (HPB), Singapore",
     logos: [logoHpb],
-    description:
-      "Designed Singapore's first gamified digital health program for seniors on the Healthy365 app. Achieved 100k+ sign-ups in 3 months.",
+    description: [
+      <>
+        Spearheaded{" "}
+        <a
+          href="https://www.healthhub.sg/programmes/age-strong"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-bold text-primary transition-colors hover:underline"
+        >
+          AgeStrong
+        </a>
+        , Singapore's first gamified digital health programme for older adults
+        on Healthy365 —{" "}
+        <strong>100k+ sign-ups in 3 months with 30% completion</strong>
+      </>,
+      <>
+        Co-created HPB's first reusable cross-team programme system, a
+        configurable digital template adopted by other health domain teams—{" "}
+        <strong>500k+ users reached</strong> via independently launched
+        programmes
+      </>,
+      <>
+        Designed a digital functional health measurement tool driving{" "}
+        <strong>15%+ efficiency gains</strong> and saving{" "}
+        <strong>20+ minutes per assessment</strong>
+      </>,
+      <>
+        Identified and formally proposed a product feature enabling programme
+        managers to <strong>independently create digital tasks</strong> without
+        third-party vendors — saving{" "}
+        <strong>24+ hours per task creation request</strong> by eliminating
+        third-party turnaround time
+      </>,
+    ],
   },
   {
     year: "2018–2022",
     role: "Program Manager, Youth Mental Health",
     org: "Health Promotion Board (HPB), Singapore",
     logos: [logoHpb],
-    description:
-      "Spearheaded 5-year roadmap and launched products reaching 700k+ users nationally. Created the award-winning 'Open When' Letters initiative.",
+    description: [
+      <>
+        Conceived the <strong>'Open When' Letters Vending Machine</strong> —
+        winning <strong>HPB's 1st Innovation Award</strong>
+      </>,
+      <>
+        Identified a gap in post-school peer support and secured Youth Corps
+        Singapore's buy-in to co-launch{" "}
+        <a
+          href="https://linktr.ee/projectreground"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-bold text-primary transition-colors hover:underline"
+        >
+          Project Reground
+        </a>
+        , Singapore's first community peer support group (
+        <strong>100+ youths recruited</strong>)
+      </>,
+      <>
+        Developed a peer support curriculum proposal, drawing on 15-school
+        relationships,{" "}
+        <strong>adopted nationwide across polytechnics and universities</strong>
+      </>,
+      <>
+        Grew overall youth mental health programme reach by{" "}
+        <strong>100%+ in one year</strong>
+      </>,
+    ],
   },
   {
     year: "2016–2018",
     role: "Assistant Project Manager, Health Screening",
     org: "Health Promotion Board (HPB), Singapore",
     logos: [logoHpb],
-    description:
-      "Managed national breast cancer screening operations and implemented a solution reducing customer call requests by 50%.",
+    description: [
+      <>
+        Managed <strong>national breast cancer screening operations</strong> in
+        partnership with radiologists and nurses
+      </>,
+      <>
+        Identified a recurring customer service issue through call data analysis
+        and implemented a solution that{" "}
+        <strong>reduced related call volume by 50%</strong>
+      </>,
+    ],
   },
 ];
 
@@ -190,19 +292,25 @@ export default function About() {
                   </div>
                 </div>
                 <p className="mb-4 text-sm leading-relaxed text-card-foreground">
-                  Ex-TikTok Product Manager with 8+ years of experience in
-                  Singapore and Canada, recognised for using service design and
-                  innovative strategies to create customer-centric products and
-                  programs in digital health and mental wellbeing.
+                  A Product Manager with 9 years building digital health and
+                  wellbeing products across Singapore and Canada — from B2C
+                  experiences that help older adults manage their functional
+                  health with confidence, to B2B platforms that save
+                  practitioners time on admin so they can focus on their
+                  patients. My work spans digital health (Healthy365's
+                  AgeStrong, Singapore's first gamified digital health programme
+                  for older adults), mental wellbeing (mindline.sg, Singapore's
+                  national mental health platform), and Trust & Safety (risk
+                  detection at TikTok).
                 </p>
                 <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
-                  Led design of Singapore's first national gamified digital
-                  public health program for older adults. Skilled in stakeholder
-                  engagement, fostering partnerships, and leading
-                  cross-functional teams across NA, APAC, and EU. Creative,
-                  curious problem solver passionate about improving lives. Also
-                  built an art brand on social media as a mental wellbeing
-                  project.
+                  I specialise in 0-to-1 launches in regulated environments —
+                  where clinical workflows, AI feasibility, policy, and user
+                  needs all have to resolve into something intuitive. My
+                  practice blends user research, service design, and behaviour
+                  change, with a track record of earning trust across
+                  multistakeholder teams — and caring about the person on the
+                  other side of every product decision.
                 </p>
                 {features.showResumeDownload && <DownloadResumeButton />}
               </div>
@@ -215,28 +323,18 @@ export default function About() {
                   Key <span className="gradient-text">Achievements</span>
                 </h2>
               </div>
-              <div className="flex flex-wrap justify-center gap-3">
-                <span className="sticker bg-watercolor-orange/15 text-foreground">
-                  100k+ sign-ups in 3 months
-                </span>
-                <span
-                  className="sticker bg-watercolor-purple/15 text-foreground"
-                  style={{ transform: "rotate(1.5deg)" }}
-                >
-                  700k+ users reached
-                </span>
-                <span
-                  className="sticker bg-watercolor-blue/15 text-foreground"
-                  style={{ transform: "rotate(-1deg)" }}
-                >
-                  Innovation Award Winner
-                </span>
-                <span
-                  className="sticker bg-watercolor-green/15 text-foreground"
-                  style={{ transform: "rotate(2deg)" }}
-                >
-                  Global Teams (NA, APAC, EU)
-                </span>
+              <div className="flex flex-col gap-3">
+                <div className="flex items-center justify-center border-[1.5px] border-foreground bg-watercolor-orange/15 px-5 py-4 text-center text-sm leading-relaxed text-foreground">
+                  <strong>AgeStrong</strong>: 100k+ sign-ups, 30% completion
+                </div>
+                <div className="flex items-center justify-center border-[1.5px] border-foreground bg-watercolor-purple/15 px-5 py-4 text-center text-sm leading-relaxed text-foreground">
+                  <strong>HPB 1st Innovation Award</strong> — Open When Letters
+                  Vending Machine
+                </div>
+                <div className="flex items-center justify-center border-[1.5px] border-foreground bg-watercolor-blue/15 px-5 py-4 text-center text-sm leading-relaxed text-foreground">
+                  <strong>SG's national peer support curriculum</strong> —
+                  adopted across polytechnics & universities
+                </div>
               </div>
             </div>
 
@@ -308,9 +406,19 @@ export default function About() {
                           <p className="mb-2 font-mono-heading text-[11px] text-muted-foreground">
                             {item.org}
                           </p>
-                          <p className="text-xs leading-relaxed text-muted-foreground">
-                            {item.description}
-                          </p>
+                          <ul className="space-y-1.5">
+                            {item.description.map((d, di) => (
+                              <li
+                                key={di}
+                                className="flex gap-2 text-xs leading-relaxed text-muted-foreground"
+                              >
+                                <span className="mt-0.5 flex-shrink-0 font-mono-heading text-foreground">
+                                  ›
+                                </span>
+                                <span>{d}</span>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
                       </div>
                     </div>
@@ -370,6 +478,70 @@ export default function About() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Beyond Work — Coconut Calligraphy */}
+            <div className="retro-window mx-auto mb-12 max-w-3xl">
+              <div className="retro-titlebar">
+                <span className="text-muted-foreground">5-to-9.txt</span>
+                <div className="retro-btn-group">
+                  <span className="retro-btn-dot">_</span>
+                  <span className="retro-btn-dot">□</span>
+                  <span className="retro-btn-dot">×</span>
+                </div>
+              </div>
+              <div className="p-6 sm:p-8">
+                <h2 className="mb-4 font-mono-heading text-xl font-bold sm:text-2xl">
+                  My 5-to-9,{" "}
+                  <span className="gradient-text">Fueling the 9-to-5</span>
+                </h2>
+                <p className="mb-6 text-sm leading-relaxed text-card-foreground">
+                  I founded Coconut Calligraphy in 2016 as a creative outlet — a
+                  way to process a demanding day job and explore a craft I love.
+                  Over time, it grew into a small art brand with commissions,
+                  wedding stationery, and wellbeing workshops for 100+ youth and
+                  seniors. Running it end-to-end taught me product instincts no
+                  PM course could: how to price and position a product, handle
+                  logistics from inventory to shipping, build an audience from
+                  zero, and design an experience from first glance to final
+                  delivery. Those lessons — paired with the empathy of teaching
+                  wellbeing to youth and seniors — directly shape how I approach
+                  health product work.
+                </p>
+                <p className="mb-3 font-mono-heading text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+                  // Skills Picked Up
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "Pricing & Positioning",
+                    "Logistics & Fulfilment",
+                    "Content Creation",
+                    "End-to-End Experience",
+                    "User Empathy",
+                    "Workshop Facilitation",
+                  ].map((lesson) => (
+                    <span
+                      key={lesson}
+                      className="border border-border bg-muted px-3 py-1.5 font-mono-heading text-[11px] font-bold uppercase tracking-wider text-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+                    >
+                      {lesson}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="mt-6 border-t border-border pt-5">
+                  <a
+                    href="https://www.instagram.com/coconutcalligraphy/?hl=en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 font-mono-heading text-xs font-bold uppercase tracking-wider text-primary transition-colors hover:text-primary/80"
+                  >
+                    <InstagramIcon className="h-4 w-4" />
+                    See @coconutcalligraphy on Instagram
+                    <ArrowRight className="h-3 w-3" />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>

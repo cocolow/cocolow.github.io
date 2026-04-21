@@ -5,6 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { projects, type Project } from "@/data/projects";
 import { features } from "@/config/features";
+import { MediaEmbed } from "@/design-system";
 
 const allFilters = ["All", "Work", "Art", "Personal"] as const;
 type Filter = (typeof allFilters)[number];
@@ -369,6 +370,46 @@ export default function Projects() {
                 )}
               </div>
             </div>
+
+            {/* —— PM Learnings —— */}
+            {selected.learnings && selected.learnings.length > 0 && (
+              <div className="border-b border-border p-6">
+                <p className="mb-4 font-mono-heading text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+                  // PM Learnings
+                </p>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {selected.learnings.map((l, i) => (
+                    <div key={i} className="border-2 border-border bg-card p-4">
+                      <h4 className="mb-2 font-mono-heading text-sm font-bold text-foreground">
+                        {l.theme}
+                      </h4>
+                      <p className="text-sm leading-relaxed text-muted-foreground">
+                        {l.detail}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* —— Media Gallery —— */}
+            {selected.media && selected.media.length > 0 && (
+              <div className="border-b border-border p-6">
+                <p className="mb-4 font-mono-heading text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+                  // Media
+                </p>
+                <div className="grid justify-items-center gap-4 sm:grid-cols-2 md:grid-cols-4">
+                  {selected.media.map((m, i) => (
+                    <MediaEmbed
+                      key={i}
+                      type={m.type}
+                      url={m.url}
+                      caption={m.caption}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* —— Modal footer: tags —— */}
             {selected.tags && selected.tags.length > 0 && (
