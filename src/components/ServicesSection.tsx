@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Star, Sparkles } from "lucide-react";
 import artwork01 from "@/assets/artwork-01.png";
@@ -10,22 +8,13 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import {
   Feather,
   ImageIcon,
   Palette,
   BookOpen,
   ArrowRight,
-  Send,
 } from "lucide-react";
+import { InstagramIcon, RetroWindow, Sticker } from "@/design-system";
 
 const services = [
   {
@@ -117,21 +106,6 @@ const faqs = [
 ];
 
 export function ServicesSection() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    serviceType: "",
-    eventDate: "",
-    message: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Placeholder — wire up to backend when ready
-    setSubmitted(true);
-  };
-
   return (
     <section id="services" className="py-24">
       <div className="container mx-auto px-4 lg:px-8">
@@ -154,14 +128,14 @@ export function ServicesSection() {
         <div className="mb-24 flex flex-col items-center gap-6">
           <div className="relative">
             <div className="absolute -right-4 -top-5 z-20">
-              <span className="sticker rotate-6 bg-watercolor-yellow/40 text-foreground">
+              <Sticker className="rotate-6 bg-watercolor-yellow/40 text-foreground">
                 <Star className="mr-1 inline h-3 w-3" /> Handmade
-              </span>
+              </Sticker>
             </div>
             <div className="absolute -left-4 bottom-4 z-20">
-              <span className="sticker -rotate-3 bg-watercolor-pink/30 text-foreground">
+              <Sticker className="-rotate-3 bg-watercolor-pink/30 text-foreground">
                 <Sparkles className="mr-1 inline h-3 w-3" /> Original
-              </span>
+              </Sticker>
             </div>
             <a
               href="https://www.instagram.com/coconutcalligraphy/?hl=en"
@@ -169,18 +143,11 @@ export function ServicesSection() {
               rel="noopener noreferrer"
               className="block transition-transform hover:scale-[1.02]"
             >
-              <div
-                className="retro-window border-[3px] border-foreground/80"
+              <RetroWindow
+                title="artwork_01.png"
+                className="border-[3px] border-foreground/80"
                 style={{ transform: "rotate(-1deg)" }}
               >
-                <div className="retro-titlebar">
-                  <span className="text-muted-foreground">artwork_01.png</span>
-                  <div className="retro-btn-group">
-                    <span className="retro-btn-dot">_</span>
-                    <span className="retro-btn-dot">□</span>
-                    <span className="retro-btn-dot">×</span>
-                  </div>
-                </div>
                 <div className="aspect-[4/5] w-64 sm:w-72 lg:w-80 overflow-hidden border-t-[3px] border-foreground/80">
                   <img
                     src={artwork01}
@@ -188,7 +155,7 @@ export function ServicesSection() {
                     className="h-full w-full object-cover"
                   />
                 </div>
-              </div>
+              </RetroWindow>
             </a>
           </div>
           <a
@@ -205,21 +172,12 @@ export function ServicesSection() {
         {/* ── Services Grid ── */}
         <div className="mb-24 grid gap-5 sm:grid-cols-2">
           {services.map((svc, i) => (
-            <div
+            <RetroWindow
               key={svc.title}
-              className="retro-window group transition-all duration-200 hover:shadow-[5px_5px_0px_hsl(var(--foreground)/0.12)] hover:-translate-x-[1px] hover:-translate-y-[1px]"
+              title={`service_${String(i + 1).padStart(2, "0")}.txt`}
+              className="group transition-all duration-200 hover:shadow-[5px_5px_0px_hsl(var(--foreground)/0.12)] hover:-translate-x-[1px] hover:-translate-y-[1px]"
               style={{ transform: `rotate(${i % 2 === 0 ? -0.4 : 0.4}deg)` }}
             >
-              <div className="retro-titlebar">
-                <span className="text-muted-foreground">
-                  service_{String(i + 1).padStart(2, "0")}.txt
-                </span>
-                <div className="retro-btn-group">
-                  <span className="retro-btn-dot">_</span>
-                  <span className="retro-btn-dot">□</span>
-                  <span className="retro-btn-dot">×</span>
-                </div>
-              </div>
               {/* Colour strip */}
               <div className={`h-2 bg-gradient-to-r ${svc.color}`} />
               <div className="p-5">
@@ -248,7 +206,7 @@ export function ServicesSection() {
                   ))}
                 </div>
               </div>
-            </div>
+            </RetroWindow>
           ))}
         </div>
 
@@ -325,20 +283,11 @@ export function ServicesSection() {
                 context: "Corporate Workshop, 15 pax",
               },
             ].map((t, i) => (
-              <div
+              <RetroWindow
                 key={i}
-                className="retro-window group transition-all duration-200 hover:shadow-[5px_5px_0px_hsl(var(--foreground)/0.12)] hover:-translate-x-[1px] hover:-translate-y-[1px]"
+                title={`review_${String(i + 1).padStart(2, "0")}.txt`}
+                className="group transition-all duration-200 hover:shadow-[5px_5px_0px_hsl(var(--foreground)/0.12)] hover:-translate-x-[1px] hover:-translate-y-[1px]"
               >
-                <div className="retro-titlebar">
-                  <span className="text-muted-foreground">
-                    review_{String(i + 1).padStart(2, "0")}.txt
-                  </span>
-                  <div className="retro-btn-group">
-                    <span className="retro-btn-dot">_</span>
-                    <span className="retro-btn-dot">□</span>
-                    <span className="retro-btn-dot">×</span>
-                  </div>
-                </div>
                 <div className="p-5 flex flex-col gap-3">
                   <span className="font-pixel text-2xl gradient-text">"</span>
                   <p className="text-sm leading-relaxed text-muted-foreground italic -mt-4">
@@ -353,7 +302,7 @@ export function ServicesSection() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </RetroWindow>
             ))}
           </div>
         </div>
@@ -420,15 +369,7 @@ export function ServicesSection() {
               FAQ
             </h3>
           </div>
-          <div className="retro-window">
-            <div className="retro-titlebar">
-              <span className="text-muted-foreground">faq.txt</span>
-              <div className="retro-btn-group">
-                <span className="retro-btn-dot">_</span>
-                <span className="retro-btn-dot">□</span>
-                <span className="retro-btn-dot">×</span>
-              </div>
-            </div>
+          <RetroWindow title="faq.txt">
             <div className="p-4 sm:p-6">
               <Accordion type="single" collapsible className="w-full">
                 {faqs.map((faq, i) => (
@@ -447,175 +388,39 @@ export function ServicesSection() {
                 ))}
               </Accordion>
             </div>
-          </div>
+          </RetroWindow>
         </div>
 
-        {/* ── Enquiry Form ── */}
+        {/* ── Get in Touch ── */}
         <div id="book-a-service" className="mx-auto max-w-xl">
           <div className="mb-10 text-center">
             <p className="mb-2 font-mono-heading text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
               // Get In Touch
             </p>
             <h3 className="font-mono-heading text-2xl font-bold tracking-tight">
-              Book a <span className="gradient-text">Service</span>
+              Let's <span className="gradient-text">Connect</span>
             </h3>
+            <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
+              Interested in commissioning a piece or booking a service? DM me on
+              Instagram — I reply there quickest.
+            </p>
           </div>
-          <div className="retro-window">
-            <div className="retro-titlebar">
-              <span className="text-muted-foreground">enquiry_form.txt</span>
-              <div className="retro-btn-group">
-                <span className="retro-btn-dot">_</span>
-                <span className="retro-btn-dot">□</span>
-                <span className="retro-btn-dot">×</span>
-              </div>
+          <a
+            href="https://www.instagram.com/coconutcalligraphy/?hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group mx-auto flex max-w-sm flex-col items-center gap-3 rounded-2xl border border-border/50 bg-card p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+          >
+            <InstagramIcon className="h-6 w-6 text-muted-foreground transition-colors group-hover:text-foreground" />
+            <div className="text-center">
+              <p className="font-mono-heading text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                Instagram
+              </p>
+              <p className="mt-1 font-mono-heading text-sm text-foreground">
+                @coconutcalligraphy
+              </p>
             </div>
-            <div className="p-6 sm:p-8">
-              {submitted ? (
-                <div className="flex flex-col items-center gap-4 py-8 text-center">
-                  <span className="font-pixel text-4xl gradient-text">✦</span>
-                  <h4 className="font-mono-heading text-lg font-bold">
-                    Message Received!
-                  </h4>
-                  <p className="text-sm text-muted-foreground">
-                    Thank you for reaching out. Coco will get back to you within
-                    2–3 business days.
-                  </p>
-                  <Button
-                    variant="outline"
-                    className="border-2 font-mono-heading text-xs font-bold uppercase tracking-wider"
-                    onClick={() => {
-                      setSubmitted(false);
-                      setFormData({
-                        name: "",
-                        email: "",
-                        serviceType: "",
-                        eventDate: "",
-                        message: "",
-                      });
-                    }}
-                  >
-                    Send Another
-                  </Button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <div className="flex flex-col gap-1.5">
-                      <label className="font-mono-heading text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-                        Name *
-                      </label>
-                      <Input
-                        required
-                        maxLength={100}
-                        placeholder="Your name"
-                        value={formData.name}
-                        onChange={(e) =>
-                          setFormData((f) => ({ ...f, name: e.target.value }))
-                        }
-                        className="border-2 border-border font-mono-heading text-sm"
-                      />
-                    </div>
-                    <div className="flex flex-col gap-1.5">
-                      <label className="font-mono-heading text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-                        Email *
-                      </label>
-                      <Input
-                        required
-                        type="email"
-                        maxLength={255}
-                        placeholder="you@email.com"
-                        value={formData.email}
-                        onChange={(e) =>
-                          setFormData((f) => ({ ...f, email: e.target.value }))
-                        }
-                        className="border-2 border-border font-mono-heading text-sm"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col gap-1.5">
-                    <label className="font-mono-heading text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-                      Service Type *
-                    </label>
-                    <Select
-                      required
-                      value={formData.serviceType}
-                      onValueChange={(v) =>
-                        setFormData((f) => ({ ...f, serviceType: v }))
-                      }
-                    >
-                      <SelectTrigger className="border-2 border-border font-mono-heading text-sm">
-                        <SelectValue placeholder="Select a service…" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="wedding-stationery">
-                          Custom Wedding Stationery
-                        </SelectItem>
-                        <SelectItem value="private-artwork">
-                          Private Artwork
-                        </SelectItem>
-                        <SelectItem value="live-painting">
-                          Live Painting & Art Booths
-                        </SelectItem>
-                        <SelectItem value="workshops">
-                          Workshops & Teaching
-                        </SelectItem>
-                        <SelectItem value="other">
-                          Other / Not Sure Yet
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  <div className="flex flex-col gap-1.5">
-                    <label className="font-mono-heading text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-                      Event / Delivery Date (if applicable)
-                    </label>
-                    <Input
-                      type="date"
-                      value={formData.eventDate}
-                      onChange={(e) =>
-                        setFormData((f) => ({
-                          ...f,
-                          eventDate: e.target.value,
-                        }))
-                      }
-                      className="border-2 border-border font-mono-heading text-sm"
-                    />
-                  </div>
-
-                  <div className="flex flex-col gap-1.5">
-                    <label className="font-mono-heading text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-                      Tell Me About Your Project *
-                    </label>
-                    <Textarea
-                      required
-                      maxLength={1000}
-                      rows={4}
-                      placeholder="Describe your vision, inspiration, size, colours, quantities…"
-                      value={formData.message}
-                      onChange={(e) =>
-                        setFormData((f) => ({ ...f, message: e.target.value }))
-                      }
-                      className="border-2 border-border font-mono-heading text-sm resize-none"
-                    />
-                    <p className="font-mono-heading text-[10px] text-muted-foreground text-right">
-                      {formData.message.length}/1000
-                    </p>
-                  </div>
-
-                  <Button
-                    type="submit"
-                    disabled={!formData.serviceType}
-                    className="gradient-hero-bg border-0 font-mono-heading text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-[3px_3px_0px_hsl(var(--foreground)/0.15)] transition-all hover:shadow-[1px_1px_0px_hsl(var(--foreground)/0.15)] hover:translate-x-[2px] hover:translate-y-[2px] disabled:opacity-50"
-                  >
-                    Send Enquiry
-                    <Send className="ml-2 h-3.5 w-3.5" />
-                  </Button>
-                </form>
-              )}
-            </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>

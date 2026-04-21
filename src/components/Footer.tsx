@@ -1,15 +1,16 @@
-import { Linkedin, Github, Instagram } from "lucide-react";
+import { LinkedInIcon, InstagramIcon, GithubIcon } from "@/design-system";
+import { features } from "@/config/features";
 
 const navLinks = [
   { label: "About", href: "/about" },
   { label: "Projects", href: "/projects" },
-  { label: "Services", href: "/services" },
+  ...(features.showServices ? [{ label: "Services", href: "/services" }] : []),
 ];
 
 const socialLinks = [
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+  { icon: LinkedInIcon, href: "https://linkedin.com", label: "LinkedIn" },
+  { icon: GithubIcon, href: "https://github.com", label: "GitHub" },
+  { icon: InstagramIcon, href: "https://instagram.com", label: "Instagram" },
 ];
 
 export function Footer() {

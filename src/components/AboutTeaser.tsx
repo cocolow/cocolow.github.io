@@ -1,20 +1,12 @@
-import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { CTAButton, RetroWindow, Sticker } from "@/design-system";
 
 export function AboutTeaser() {
   return (
     <section id="about" className="py-24">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="mx-auto max-w-4xl">
-          <div className="retro-window">
-            <div className="retro-titlebar">
-              <span className="text-muted-foreground">about_me.txt</span>
-              <div className="retro-btn-group">
-                <span className="retro-btn-dot">_</span>
-                <span className="retro-btn-dot">□</span>
-                <span className="retro-btn-dot">×</span>
-              </div>
-            </div>
+          <RetroWindow title="about_me.txt">
             <div className="grid gap-8 p-6 sm:p-8 lg:grid-cols-5 lg:gap-12">
               {/* Avatar placeholder */}
               <div className="flex justify-center lg:col-span-2">
@@ -31,9 +23,9 @@ export function AboutTeaser() {
                   </div>
                   {/* Decorative sticker */}
                   <div className="absolute -bottom-3 -right-3">
-                    <span className="sticker rotate-6 bg-watercolor-green/20 text-foreground text-[10px]">
+                    <Sticker className="rotate-6 bg-watercolor-green/20 text-foreground text-[10px]">
                       ♡ hello!
-                    </span>
+                    </Sticker>
                   </div>
                 </div>
               </div>
@@ -44,32 +36,30 @@ export function AboutTeaser() {
                   // About Me
                 </p>
                 <h2 className="mb-4 font-mono-heading text-2xl font-bold tracking-tight sm:text-3xl">
-                  Creative at Heart,
+                  Building Products,
                   <br />
-                  <span className="gradient-text">Technical by Trade</span>
+                  <span className="gradient-text">
+                    Rooted in User-Centricity
+                  </span>
                 </h2>
                 <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
-                  I'm a multidisciplinary creative who bridges the worlds of art
-                  and technology. With a passion for visual storytelling and a
-                  background in software development, I create work that's both
-                  beautiful and functional. From brand identities to generative
-                  art to open-source tools — every project is an opportunity to
-                  explore and innovate.
+                  I lead 0-to-1 product launches in regulated, multi-stakeholder
+                  environments — where clinical workflows, AI feasibility,
+                  policy constraints, and user needs all have to resolve into
+                  something intuitive. My approach combines user research,
+                  service design, and behaviour change, with a track record of
+                  earning trust across clinical, AI/data, engineering, and
+                  policy teams.
                 </p>
                 <div>
-                  <a href="/about">
-                    <Button
-                      variant="outline"
-                      className="group border-2 font-mono-heading text-xs font-bold uppercase tracking-wider shadow-[3px_3px_0px_hsl(var(--foreground)/0.15)] transition-all hover:shadow-[1px_1px_0px_hsl(var(--foreground)/0.15)] hover:translate-x-[2px] hover:translate-y-[2px]"
-                    >
-                      Learn More
-                      <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </Button>
-                  </a>
+                  <CTAButton href="/about" variant="outline" className="group">
+                    Learn More
+                    <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </CTAButton>
                 </div>
               </div>
             </div>
-          </div>
+          </RetroWindow>
         </div>
       </div>
     </section>

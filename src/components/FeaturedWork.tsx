@@ -1,5 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { featuredProjects } from "@/data/projects";
+import { features } from "@/config/features";
+
+const visibleFeaturedProjects = features.showArtProjects
+  ? featuredProjects
+  : featuredProjects.filter((p) => p.category !== "Art");
 
 const categoryColors: Record<string, string> = {
   Work: "bg-watercolor-blue/15 text-foreground border-watercolor-blue/30",
@@ -8,6 +14,8 @@ const categoryColors: Record<string, string> = {
 };
 
 export function FeaturedWork() {
+  const navigate = useNavigate();
+
   return (
     <section id="projects" className="py-24">
       <div className="container mx-auto px-4 lg:px-8">
@@ -30,18 +38,23 @@ export function FeaturedWork() {
                 key={i}
                 className="mx-8 font-pixel text-lg text-muted-foreground/50"
               >
-                ✦ PORTFOLIO ✦ ART ✦ DESIGN ✦ ILLUSTRATION ✦ UI/UX ✦
-                USER-CENTRICITY ✦ PORTFOLIO ✦ ART ✦ DESIGN ✦ ILLUSTRATION ✦
-                UI/UX ✦ USER-CENTRICITY&nbsp;
+                ✦ PUBLIC & DIGITAL HEALTH ✦ HEALTHY AGEING ✦ MENTAL WELLBEING ✦
+                TRUST & SAFETY ✦ PUBLIC & DIGITAL HEALTH ✦ HEALTHY AGEING ✦
+                MENTAL WELLBEING ✦ TRUST & SAFETY&nbsp;
               </span>
             ))}
           </div>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {featuredProjects.map((project, i) => (
+        <div className="flex flex-wrap justify-center gap-5 [&>*]:w-full [&>*]:sm:w-[calc(50%-0.625rem)] [&>*]:lg:w-[calc(33.333%-0.875rem)]">
+          {visibleFeaturedProjects.map((project, i) => (
             <div
               key={project.title}
+              onClick={() =>
+                navigate(
+                  `/projects?project=${encodeURIComponent(project.title)}`,
+                )
+              }
               className="retro-window group cursor-pointer transition-all duration-200 hover:shadow-[5px_5px_0px_hsl(var(--foreground)/0.12)] hover:-translate-x-[1px] hover:-translate-y-[1px]"
               style={{ transform: `rotate(${i % 2 === 0 ? -0.5 : 0.5}deg)` }}
             >

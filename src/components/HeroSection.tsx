@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
+import { CTAButton, RetroWindow, Sticker } from "@/design-system";
 
 export function HeroSection() {
   return (
@@ -25,61 +25,40 @@ export function HeroSection() {
 
       <div className="container relative z-10 mx-auto flex justify-center px-4 lg:px-8">
         <div className="flex max-w-2xl flex-col justify-center">
-          <div className="retro-window">
-            <div className="retro-titlebar">
-              <span className="text-muted-foreground">intro.txt</span>
-              <div className="retro-btn-group">
-                <span className="retro-btn-dot">_</span>
-                <span className="retro-btn-dot">□</span>
-                <span className="retro-btn-dot">×</span>
-              </div>
-            </div>
+          <RetroWindow title="intro.txt">
             <div className="p-6 sm:p-8">
               <div className="mb-4 flex flex-wrap gap-2">
-                <span className="sticker bg-watercolor-orange/20 text-foreground">
+                <Sticker className="bg-watercolor-orange/20 text-foreground">
                   Product Manager
-                </span>
-                <span className="sticker rotate-1 bg-watercolor-purple/20 text-foreground">
+                </Sticker>
+                <Sticker className="rotate-1 bg-watercolor-purple/20 text-foreground">
                   Artist
-                </span>
-                <span className="sticker -rotate-1 bg-watercolor-turquoise/20 text-foreground">
+                </Sticker>
+                <Sticker className="-rotate-1 bg-watercolor-turquoise/20 text-foreground">
                   Creator
-                </span>
+                </Sticker>
               </div>
               <h1 className="mb-4 font-mono-heading text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
                 Hi, I'm <span className="gradient-text">Coco</span>
               </h1>
               <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
-                Ex-TikTok Product Manager with 8+ years of experience creating
-                customer-centric products in digital health and mental
-                wellbeing. I blend technology with creativity — from designing
-                Singapore's first national gamified digital health program to
-                building an art brand as a mental wellbeing project. This is a
-                curated collection of my work projects, personal explorations,
-                and artwork.
+                A Product Manager with 9 years designing B2C and B2B digital
+                products across Singapore and Canada — spanning digital health,
+                mental wellbeing, and Trust & Safety at TikTok. Recent work
+                includes responsible AI use cases for mental health. Past
+                flagships include AgeStrong (100k+ sign-ups in 3 months). On the
+                side, I paint and run Coconut Calligraphy — an art brand I
+                started as a passion project, with wellbeing workshops for 100+
+                youth and seniors.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Button
-                  asChild
-                  size="lg"
-                  className="gradient-hero-bg border-0 px-6 font-mono-heading text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-[3px_3px_0px_hsl(var(--foreground)/0.15)] transition-all hover:shadow-[1px_1px_0px_hsl(var(--foreground)/0.15)] hover:translate-x-[2px] hover:translate-y-[2px]"
-                >
-                  <a href="/projects">
-                    View My Work
-                    <ArrowDown className="ml-1 h-4 w-4" />
-                  </a>
-                </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="border-2 px-6 font-mono-heading text-xs font-bold uppercase tracking-wider shadow-[3px_3px_0px_hsl(var(--foreground)/0.15)] transition-all hover:shadow-[1px_1px_0px_hsl(var(--foreground)/0.15)] hover:translate-x-[2px] hover:translate-y-[2px]"
-                >
-                  <a href="/services#book-a-service">Enquire Now</a>
-                </Button>
+                <CTAButton href="/projects">
+                  View My Work
+                  <ArrowDown className="ml-1 h-4 w-4" />
+                </CTAButton>
               </div>
             </div>
-          </div>
+          </RetroWindow>
         </div>
       </div>
     </section>

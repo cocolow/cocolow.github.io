@@ -1,25 +1,27 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Sun, Moon, Linkedin, Github, Instagram } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { LinkedInIcon, InstagramIcon, GithubIcon } from "@/design-system";
+import { features } from "@/config/features";
 
 const navLinks = [
   { label: "About", href: "/about" },
   { label: "Projects", href: "/projects" },
-  { label: "Services", href: "/services" },
+  ...(features.showServices ? [{ label: "Services", href: "/services" }] : []),
 ];
 
 const socialLinks = [
   {
-    icon: Linkedin,
+    icon: LinkedInIcon,
     href: "https://linkedin.com/in/yutinglow",
     label: "LinkedIn",
   },
-  { icon: Github, href: "https://github.com/cocolow", label: "GitHub" },
+  { icon: GithubIcon, href: "https://github.com/cocolow", label: "GitHub" },
   {
-    icon: Instagram,
+    icon: InstagramIcon,
     href: "https://instagram.com/coconutcalligraphy",
     label: "Instagram",
   },
