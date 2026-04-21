@@ -9,4 +9,6 @@ export const features = {
   showArtProjects: false,
   /** When false: hides the "Download Resume" button on the About page. */
   showResumeDownload: false,
+  /** When false: hides the Featured Projects section on the home page. */
+  showFeaturedProjects: false,
 } as const;

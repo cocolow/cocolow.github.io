@@ -5,6 +5,7 @@ import { AboutTeaser } from "@/components/AboutTeaser";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 import { ScrollingMarquee } from "@/design-system";
+import { features } from "@/config/features";
 
 const marqueeItems = [
   "PUBLIC & DIGITAL HEALTH",
@@ -20,7 +21,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <ScrollingMarquee items={marqueeItems} />
-        <FeaturedWork />
+        {features.showFeaturedProjects && <FeaturedWork />}
         <AboutTeaser />
         <ContactSection />
       </main>
