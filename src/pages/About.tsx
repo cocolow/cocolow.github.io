@@ -1,9 +1,8 @@
 import { ArrowRight } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { DownloadResumeButton, InstagramIcon } from "@/design-system";
-import { features } from "@/config/features";
-import headshot from "@/assets/headshot.png";
+import { AboutMeCard } from "@/components/AboutMeCard";
+import { InstagramIcon } from "@/design-system";
 import logoTiktok from "@/assets/logo-tiktok.png";
 import logoHpb from "@/assets/logo-hpb.png";
 import logoMoht from "@/assets/logo-moht.png";
@@ -272,53 +271,15 @@ export default function About() {
               <div className="mx-auto mt-4 h-px w-32 bg-border" />
             </div>
 
-            {/* Bio window */}
-            <div className="retro-window mx-auto mb-12 max-w-3xl">
-              <div className="retro-titlebar">
-                <span className="text-muted-foreground">about_me.txt</span>
-                <div className="retro-btn-group">
-                  <span className="retro-btn-dot">_</span>
-                  <span className="retro-btn-dot">□</span>
-                  <span className="retro-btn-dot">×</span>
-                </div>
-              </div>
-              <div className="p-6 sm:p-8">
-                <div className="mb-6 flex flex-col items-center sm:float-left sm:mr-6 sm:mb-4">
-                  <div className="aspect-[3/4] w-40 overflow-hidden border-2 border-border">
-                    <img
-                      src={headshot}
-                      alt="Coco Low Yu Ting"
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                </div>
-                <p className="mb-4 text-sm leading-relaxed text-card-foreground">
-                  A Product Manager with 9 years building digital health and
-                  wellbeing products across Singapore and Canada — from B2C
-                  experiences that help older adults manage their functional
-                  health with confidence, to B2B platforms that save
-                  practitioners time on admin so they can focus on their
-                  patients. My work spans digital health (Healthy365's
-                  AgeStrong, Singapore's first gamified digital health programme
-                  for older adults), mental wellbeing (mindline.sg, Singapore's
-                  national mental health platform), and Trust & Safety (risk
-                  detection at TikTok).
-                </p>
-                <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
-                  I specialise in 0-to-1 launches in regulated environments —
-                  where clinical workflows, AI feasibility, policy, and user
-                  needs all have to resolve into something intuitive. My
-                  practice blends user research, service design, and behaviour
-                  change, with a track record of earning trust across
-                  multistakeholder teams — and caring about the person on the
-                  other side of every product decision.
-                </p>
-                {features.showResumeDownload && <DownloadResumeButton />}
-              </div>
+            <div className="mx-auto mb-12 max-w-4xl">
+              <AboutMeCard ctaHref="#key-achievements" />
             </div>
 
             {/* Key achievements stickers */}
-            <div className="mx-auto mb-16 max-w-3xl">
+            <div
+              id="key-achievements"
+              className="mx-auto mb-16 max-w-3xl scroll-mt-24"
+            >
               <div className="mb-6 text-center">
                 <h2 className="font-mono-heading text-xl font-bold sm:text-2xl">
                   Key <span className="gradient-text">Achievements</span>
