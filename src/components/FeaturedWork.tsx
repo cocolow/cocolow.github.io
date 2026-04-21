@@ -30,23 +30,7 @@ export function FeaturedWork() {
           <div className="mx-auto mt-4 h-px w-32 bg-border" />
         </div>
 
-        {/* Scrolling marquee */}
-        <div className="mb-12 overflow-hidden border-t border-b border-border bg-muted/50 py-2">
-          <div className="animate-marquee flex whitespace-nowrap">
-            {Array.from({ length: 2 }).map((_, i) => (
-              <span
-                key={i}
-                className="mx-8 font-pixel text-lg text-muted-foreground/50"
-              >
-                ✦ PUBLIC & DIGITAL HEALTH ✦ HEALTHY AGEING ✦ MENTAL WELLBEING ✦
-                TRUST & SAFETY ✦ PUBLIC & DIGITAL HEALTH ✦ HEALTHY AGEING ✦
-                MENTAL WELLBEING ✦ TRUST & SAFETY&nbsp;
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="flex flex-wrap justify-center gap-5 [&>*]:w-full [&>*]:sm:w-[calc(50%-0.625rem)] [&>*]:lg:w-[calc(33.333%-0.875rem)]">
+        <div className="mt-12 flex flex-wrap justify-center gap-5 [&>*]:w-full [&>*]:sm:w-[calc(50%-0.625rem)] [&>*]:lg:w-[calc(33.333%-0.875rem)]">
           {visibleFeaturedProjects.map((project, i) => (
             <div
               key={project.title}

@@ -6,4 +6,5 @@ export { ContactForm } from "./ContactForm";
 export { BookAServiceForm } from "./BookAServiceForm";
 export { DownloadResumeButton } from "./DownloadResumeButton";
 export { MediaEmbed } from "./MediaEmbed";
+export { ScrollingMarquee } from "./ScrollingMarquee";
 export { LinkedInIcon, InstagramIcon, GithubIcon } from "./icons/SocialIcons";
