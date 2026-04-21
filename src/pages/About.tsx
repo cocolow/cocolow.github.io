@@ -272,7 +272,10 @@ export default function About() {
             </div>
 
             <div className="mx-auto mb-12 max-w-4xl">
-              <AboutMeCard ctaHref="#key-achievements" />
+              <AboutMeCard
+                ctaHref="#key-achievements"
+                ctaLabel="Achievements and Work Experience"
+              />
             </div>
 
             {/* Key achievements stickers */}

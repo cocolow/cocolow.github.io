@@ -11,6 +11,7 @@ const navLinks = [
   { label: "About", href: "/about" },
   { label: "Projects", href: "/projects" },
   ...(features.showServices ? [{ label: "Services", href: "/services" }] : []),
+  { label: "Contact", href: "/contact" },
 ];
 
 const socialLinks = [

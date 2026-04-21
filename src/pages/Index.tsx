@@ -2,7 +2,6 @@ import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
 import { FeaturedWork } from "@/components/FeaturedWork";
 import { AboutTeaser } from "@/components/AboutTeaser";
-import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 import { ScrollingMarquee } from "@/design-system";
 import { features } from "@/config/features";
@@ -23,7 +22,6 @@ const Index = () => {
         <ScrollingMarquee items={marqueeItems} />
         {features.showFeaturedProjects && <FeaturedWork />}
         <AboutTeaser />
-        <ContactSection />
       </main>
       <Footer />
     </div>
