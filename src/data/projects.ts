@@ -15,6 +15,8 @@ export interface ProjectMedia {
   caption?: string;
 }
 
+import { features } from "@/config/features";
+
 export interface Project {
   file: string;
   category: "Work" | "Art" | "Personal";
@@ -36,7 +38,7 @@ export interface Project {
   featured?: boolean;
 }
 
-export const projects: Project[] = [
+const allProjects: Project[] = [
   // ——— 1. mindline.sg ———————————————————————————————————————————————————
   {
     file: "MINDLINE_REVAMP.FIG",
@@ -400,5 +402,9 @@ export const projects: Project[] = [
     ],
   },
 ];
+
+export const projects: Project[] = allProjects.filter(
+  (p) => features.showTiktokTrustSafety || p.file !== "TIKTOK_TRUST_SAFETY.RS",
+);
 
 export const featuredProjects = projects.filter((p) => p.featured);

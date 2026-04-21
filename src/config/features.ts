@@ -11,4 +11,6 @@ export const features = {
   showResumeDownload: false,
   /** When false: hides the Featured Projects section on the home page. */
   showFeaturedProjects: false,
+  /** When false: hides the TikTok Trust & Safety project (sensitive content). */
+  showTiktokTrustSafety: false,
 } as const;
