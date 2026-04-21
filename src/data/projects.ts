@@ -13,6 +13,8 @@ export interface ProjectMedia {
   /** For images: path or URL. For YouTube: any watch/youtu.be/embed URL. */
   url: string;
   caption?: string;
+  /** CSS aspect-ratio for images (e.g. "9/16", "4/3", "1/1"). Defaults to "9/16". Ignored for YouTube (always 16/9). */
+  aspectRatio?: string;
 }
 
 import { features } from "@/config/features";
@@ -20,9 +22,13 @@ import { features } from "@/config/features";
 export interface Project {
   file: string;
   category: "Work" | "Art" | "Personal";
+  /** Business-to-business / business-to-consumer audience indicator. Some projects are both. */
+  audience?: ("B2B" | "B2C")[];
   gradient: string;
   image?: string;
   title: string;
+  /** When set, hyperlinks the first segment of the title (before " — ") in the project modal. */
+  titleUrl?: string;
   description: string;
   org?: string;
   period?: string;
@@ -43,6 +49,7 @@ const allProjects: Project[] = [
   {
     file: "MINDLINE_REVAMP.FIG",
     category: "Work",
+    audience: ["B2C", "B2B"],
     gradient: "from-teal-400/15 to-cyan-300/15",
     title:
       "mindline.sg — Personalising Singapore's national mental health platform",
@@ -99,10 +106,13 @@ const allProjects: Project[] = [
   {
     file: "AGESTRONG.FIG",
     category: "Work",
+    audience: ["B2C", "B2B"],
     featured: true,
     gradient: "from-amber-400/15 to-orange-300/15",
+    image: "/projects/agestrong-feedback.png",
     title:
       "AgeStrong — Singapore's first gamified digital health programme for seniors",
+    titleUrl: "https://www.healthhub.sg/programmes/age-strong",
     description:
       "End-to-end product development of a gamified digital health challenge on Healthy365. 100,000+ sign-ups in 3 months.",
     org: "Health Promotion Board (HPB), Singapore",
@@ -209,7 +219,9 @@ const allProjects: Project[] = [
   {
     file: "HEALTHY365_FILTERING.FIG",
     category: "Work",
+    audience: ["B2C"],
     gradient: "from-lime-400/15 to-green-300/15",
+    image: "/projects/healthy365-filter-date.png",
     title:
       "Healthy365 Enhanced Filtering — Helping users discover relevant health events",
     description:
@@ -250,13 +262,29 @@ const allProjects: Project[] = [
     outcomes: [
       ">10% increase in event sign-ups for seniors, optimising on-ground senior health event attendance",
     ],
+    media: [
+      {
+        type: "image",
+        url: "/projects/healthy365-filter-date.png",
+        caption: "Date / time / location / age-range filters",
+        aspectRatio: "9/16",
+      },
+      {
+        type: "image",
+        url: "/projects/healthy365-map-view.png",
+        caption: "Map view — spatial event discovery",
+        aspectRatio: "9/16",
+      },
+    ],
   },
 
   // ——— 4. Digital Functional Health Assessment ————————————————————————————
   {
     file: "FUNCTIONAL_ASSESSMENT.FIG",
     category: "Work",
+    audience: ["B2B"],
     gradient: "from-sky-400/15 to-cyan-300/15",
+    image: "/projects/functional-assessment-portalentry.png",
     title:
       "Digital Functional Health Assessment — Measurement tool for on-ground trainers",
     description:
@@ -306,14 +334,31 @@ const allProjects: Project[] = [
       "15%+ operational efficiency gain, with 20+ minutes saved per assessment",
       "Eliminated manual calculation errors by automating scoring at point-of-measurement",
     ],
+    media: [
+      {
+        type: "image",
+        url: "/projects/functional-assessment-app.png",
+        caption: "H365 Pal app — trainer-side measurement flow",
+        aspectRatio: "4/3",
+      },
+      {
+        type: "image",
+        url: "/projects/functional-assessment-portal.png",
+        caption:
+          "Business Web-Portal — create and customise metric-based assessments",
+        aspectRatio: "4/3",
+      },
+    ],
   },
 
   // ——— 5. Open When Letters ——————————————————————————————————————————————
   {
     file: "OPENWHEN_LETTERS.TXT",
     category: "Work",
+    audience: ["B2C"],
     featured: true,
     gradient: "from-purple-400/15 to-pink-300/15",
+    image: "/projects/openwhen-vendingportalentry.png",
     title: "Open When Letters — Making mental health accessible to youth",
     description:
       "Innovation Award-winning physical product. 700,000+ users. A CBT-embedded letter series and vending machine that normalised mental health support in schools.",
@@ -368,13 +413,29 @@ const allProjects: Project[] = [
       "HPB Epic Award 2020 — Innovation & Collaboration Champion for Mental Wellbeing",
       "Programme reach grew by 100%+ within a single year",
     ],
+    media: [
+      {
+        type: "image",
+        url: "/projects/openwhen-cards.png",
+        caption: "Open When Letters — card examples",
+        aspectRatio: "4/3",
+      },
+      {
+        type: "image",
+        url: "/projects/openwhen-vending.png",
+        caption: "Open When Letters Vending Machine",
+        aspectRatio: "4/3",
+      },
+    ],
   },
 
   // ——— 6. Common Space ———————————————————————————————————————————————————
   {
     file: "COMMON_SPACE.JPG",
     category: "Work",
+    audience: ["B2C"],
     gradient: "from-fuchsia-400/15 to-rose-300/15",
+    image: "/projects/commonspace-portalentry.png",
     title: "Common Space — A non-stigmatising mental health space in schools",
     description:
       "Physical product expanding on the Open When Letters Vending Machine — student-led advocacy spaces built into school campuses to normalise mental health conversations.",
@@ -419,12 +480,27 @@ const allProjects: Project[] = [
       "30,000 students reached across participating schools",
       "Active student advocacy communities continued programming beyond initial launch (e.g., TP PSIA Common Space at Temasek Poly)",
     ],
+    media: [
+      {
+        type: "image",
+        url: "/projects/commonspace-promo.png",
+        caption: "TP PSIA promotional posts for Common Space",
+        aspectRatio: "4/3",
+      },
+      {
+        type: "image",
+        url: "/projects/commonspace-campuses.png",
+        caption: "Common Space installations at Republic Poly and Temasek Poly",
+        aspectRatio: "4/3",
+      },
+    ],
   },
 
   // ——— 7. TikTok Trust & Safety ——————————————————————————————————————————
   {
     file: "TIKTOK_TRUST_SAFETY.RS",
     category: "Work",
+    audience: ["B2B"],
     gradient: "from-slate-400/15 to-gray-300/15",
     title: "TikTok Trust & Safety — Risk detection at scale",
     description:
@@ -484,6 +560,7 @@ const allProjects: Project[] = [
   {
     file: "COCONUT_CALLIGRAPHY.PNG",
     category: "Art",
+    audience: ["B2C"],
     gradient: "from-rose-400/15 to-pink-300/15",
     title: "Coconut Calligraphy — Art brand & wellbeing workshops",
     description:
@@ -528,7 +605,9 @@ const allProjects: Project[] = [
   {
     file: "FINANCE_TRACKER.FIG",
     category: "Personal",
+    audience: ["B2C"],
     gradient: "from-blue-400/15 to-indigo-300/15",
+    image: "/projects/finance-tracker-portalentry.png",
     title: "Personal Finance Tracker — UX Bootcamp Capstone",
     description:
       "Self-directed UX project. Full process from lo-fi wireframes in Procreate to hi-fi prototype in Figma, validated through user interviews.",
@@ -552,6 +631,14 @@ const allProjects: Project[] = [
           "Conducted user interviews to extract insights and validate assumptions about user flows and feature priorities",
           "Synthesised research findings in Miro to inform final design decisions",
         ],
+      },
+    ],
+    media: [
+      {
+        type: "image",
+        url: "/projects/finance-tracker-wireframes.png",
+        caption: "Sample wireframes — Personal Finance Tracker",
+        aspectRatio: "4/3",
       },
     ],
   },

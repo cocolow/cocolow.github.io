@@ -34,28 +34,30 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b-2 border-border bg-background/95 backdrop-blur-sm">
-      <div className="container mx-auto flex h-14 items-center justify-between px-4 lg:px-8">
+      <div className="container relative mx-auto flex h-14 items-center justify-between px-4 lg:px-8">
         {/* Logo — retro style */}
         <Link
           to="/"
-          className="font-mono-heading text-sm font-bold uppercase tracking-widest text-foreground"
+          className="relative z-10 font-mono-heading text-sm font-bold uppercase tracking-widest text-foreground"
         >
           <span className="inline-block border-2 border-foreground px-3 py-1">
             COCO LOW
           </span>
         </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden items-center gap-0 md:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              to={link.href}
-              className="font-mono-heading border-r border-border px-5 py-4 text-xs font-bold uppercase tracking-wider text-muted-foreground transition-colors hover:bg-muted hover:text-foreground first:border-l"
-            >
-              {link.label}
-            </Link>
-          ))}
+        {/* Desktop Nav — absolutely centered so it aligns with the footer nav regardless of side-element widths */}
+        <div className="pointer-events-none absolute inset-0 hidden items-center justify-center md:flex">
+          <div className="pointer-events-auto flex items-center gap-0">
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                to={link.href}
+                className="font-mono-heading border-r border-border px-5 py-4 text-xs font-bold uppercase tracking-wider text-muted-foreground transition-colors hover:bg-muted hover:text-foreground first:border-l"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </div>
 
         {/* Desktop Right */}
