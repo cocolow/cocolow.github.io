@@ -9,4 +9,10 @@ export const features = {
   showArtProjects: false,
   /** When false: hides the "Download Resume" button on the About page. */
   showResumeDownload: false,
+  /** When false: hides the Featured Projects section on the home page. */
+  showFeaturedProjects: false,
+  /** When false: hides the TikTok Trust & Safety project (sensitive content). */
+  showTiktokTrustSafety: false,
+  /** When false: hides the mindline.sg project (work in progress, not yet rolled out). */
+  showMindline: false,
 } as const;

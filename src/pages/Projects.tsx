@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { projects, type Project } from "@/data/projects";
+import { projects, type Project, type ProjectMedia } from "@/data/projects";
 import { features } from "@/config/features";
 import { MediaEmbed } from "@/design-system";
 
@@ -23,6 +24,19 @@ const filterStyles: Record<string, string> = {
   Personal: "bg-amber-500/15 text-foreground border-amber-500/30",
 };
 
+const audienceStyles: Record<string, string> = {
+  B2C: "bg-watercolor-green/15 text-foreground border-watercolor-green/30",
+  B2B: "bg-watercolor-orange/15 text-foreground border-watercolor-orange/30",
+};
+
+/** Portrait media (e.g. mobile 9/16) renders in a 4-col grid so thumbnails don't blow up; landscape stays 2-col for readability. */
+function isPortraitMedia(media: ProjectMedia[]): boolean {
+  const firstImage = media.find((m) => m.type === "image");
+  if (!firstImage) return false;
+  const [w, h] = (firstImage.aspectRatio ?? "9/16").split("/").map(Number);
+  return w < h;
+}
+
 export default function Projects() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [active, setActive] = useState<Filter>("All");
@@ -32,6 +46,7 @@ export default function Projects() {
       return visibleProjects.find((p) => p.title === projectTitle) ?? null;
     return null;
   });
+  const [expandedMedia, setExpandedMedia] = useState<ProjectMedia | null>(null);
 
   const filtered =
     active === "All"
@@ -134,7 +149,7 @@ export default function Projects() {
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="h-full w-full object-cover"
+                        className="h-full w-full object-contain p-4"
                       />
                     ) : (
                       <div className="flex h-full w-full items-center justify-center">
@@ -146,12 +161,23 @@ export default function Projects() {
                   </div>
 
                   <div className="border-t-2 border-border p-3">
-                    <Badge
-                      variant="outline"
-                      className={`mb-1.5 font-mono-heading text-[10px] uppercase tracking-wider ${filterStyles[project.category] || ""}`}
-                    >
-                      {project.category}
-                    </Badge>
+                    <div className="mb-1.5 flex flex-wrap items-center gap-1.5">
+                      <Badge
+                        variant="outline"
+                        className={`font-mono-heading text-[10px] uppercase tracking-wider ${filterStyles[project.category] || ""}`}
+                      >
+                        {project.category}
+                      </Badge>
+                      {project.audience?.map((a) => (
+                        <Badge
+                          key={a}
+                          variant="outline"
+                          className={`font-mono-heading text-[10px] uppercase tracking-wider ${audienceStyles[a] || ""}`}
+                        >
+                          {a}
+                        </Badge>
+                      ))}
+                    </div>
                     <h3 className="font-mono-heading text-sm font-bold text-card-foreground leading-snug">
                       {project.title}
                     </h3>
@@ -230,6 +256,15 @@ export default function Projects() {
                 >
                   {selected.category}
                 </Badge>
+                {selected.audience?.map((a) => (
+                  <Badge
+                    key={a}
+                    variant="outline"
+                    className={`font-mono-heading text-[10px] uppercase tracking-wider ${audienceStyles[a] || ""}`}
+                  >
+                    {a}
+                  </Badge>
+                ))}
                 {selected.note && (
                   <span className="font-mono-heading text-[10px] border border-border rounded px-2 py-0.5 text-muted-foreground">
                     ⚠ {selected.note}
@@ -238,7 +273,23 @@ export default function Projects() {
               </div>
 
               <h2 className="font-mono-heading text-xl font-bold text-foreground leading-snug sm:text-2xl">
-                {selected.title}
+                {(() => {
+                  if (!selected.titleUrl) return selected.title;
+                  const [head, ...rest] = selected.title.split(" — ");
+                  return (
+                    <>
+                      <a
+                        href={selected.titleUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary transition-colors hover:underline"
+                      >
+                        {head}
+                      </a>
+                      {rest.length ? ` — ${rest.join(" — ")}` : ""}
+                    </>
+                  );
+                })()}
               </h2>
 
               {(selected.org || selected.period) && (
@@ -398,15 +449,37 @@ export default function Projects() {
                 <p className="mb-4 font-mono-heading text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
                   // Media
                 </p>
-                <div className="grid justify-items-center gap-4 sm:grid-cols-2 md:grid-cols-4">
-                  {selected.media.map((m, i) => (
-                    <MediaEmbed
-                      key={i}
-                      type={m.type}
-                      url={m.url}
-                      caption={m.caption}
-                    />
-                  ))}
+                <div
+                  className={`grid justify-items-center gap-4 sm:grid-cols-2 ${
+                    isPortraitMedia(selected.media) ? "md:grid-cols-4" : ""
+                  }`}
+                >
+                  {selected.media.map((m, i) =>
+                    m.type === "image" ? (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => setExpandedMedia(m)}
+                        className="group w-full cursor-zoom-in transition-transform hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                        aria-label={`Expand image${m.caption ? `: ${m.caption}` : ""}`}
+                      >
+                        <MediaEmbed
+                          type={m.type}
+                          url={m.url}
+                          caption={m.caption}
+                          aspectRatio={m.aspectRatio}
+                        />
+                      </button>
+                    ) : (
+                      <MediaEmbed
+                        key={i}
+                        type={m.type}
+                        url={m.url}
+                        caption={m.caption}
+                        aspectRatio={m.aspectRatio}
+                      />
+                    ),
+                  )}
                 </div>
               </div>
             )}
@@ -428,6 +501,31 @@ export default function Projects() {
           </div>
         </div>
       )}
+
+      {/* ————————————————————————————————————————————————————————
+          Image lightbox
+      ———————————————————————————————————————————————————————— */}
+      <Dialog
+        open={expandedMedia !== null}
+        onOpenChange={(open) => !open && setExpandedMedia(null)}
+      >
+        <DialogContent className="max-w-[95vw] border-0 bg-transparent p-0 shadow-none sm:max-w-[90vw]">
+          {expandedMedia && (
+            <figure className="flex flex-col items-center gap-3">
+              <img
+                src={expandedMedia.url}
+                alt={expandedMedia.caption ?? ""}
+                className="max-h-[85vh] w-auto max-w-full object-contain"
+              />
+              {expandedMedia.caption && (
+                <figcaption className="font-mono-heading text-xs uppercase tracking-wider text-white/90">
+                  {expandedMedia.caption}
+                </figcaption>
+              )}
+            </figure>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

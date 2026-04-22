@@ -4,6 +4,8 @@ type MediaEmbedProps = {
   type: "image" | "youtube";
   url: string;
   caption?: string;
+  /** CSS aspect-ratio for images (e.g. "9/16", "4/3"). Defaults to "9/16". */
+  aspectRatio?: string;
   className?: string;
 };
 
@@ -15,11 +17,20 @@ function toYouTubeEmbedUrl(url: string): string {
   return url;
 }
 
-export function MediaEmbed({ type, url, caption, className }: MediaEmbedProps) {
+export function MediaEmbed({
+  type,
+  url,
+  caption,
+  aspectRatio,
+  className,
+}: MediaEmbedProps) {
   return (
     <figure className={cn("flex w-full flex-col gap-2", className)}>
       {type === "image" ? (
-        <div className="aspect-[9/16] w-full overflow-hidden border-2 border-border bg-muted">
+        <div
+          className="w-full overflow-hidden border-2 border-border bg-muted"
+          style={{ aspectRatio: aspectRatio ?? "9 / 16" }}
+        >
           <img
             src={url}
             alt={caption ?? ""}

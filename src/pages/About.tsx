@@ -1,12 +1,12 @@
 import { ArrowRight } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { DownloadResumeButton, InstagramIcon } from "@/design-system";
-import { features } from "@/config/features";
-import headshot from "@/assets/headshot.png";
+import { AboutMeCard } from "@/components/AboutMeCard";
+import { InstagramIcon } from "@/design-system";
 import logoTiktok from "@/assets/logo-tiktok.png";
 import logoHpb from "@/assets/logo-hpb.png";
 import logoMoht from "@/assets/logo-moht.png";
+import artwork01 from "@/assets/artwork-01.png";
 
 const skills = [
   "Digital Product Strategy & Roadmap",
@@ -271,53 +271,18 @@ export default function About() {
               <div className="mx-auto mt-4 h-px w-32 bg-border" />
             </div>
 
-            {/* Bio window */}
-            <div className="retro-window mx-auto mb-12 max-w-3xl">
-              <div className="retro-titlebar">
-                <span className="text-muted-foreground">about_me.txt</span>
-                <div className="retro-btn-group">
-                  <span className="retro-btn-dot">_</span>
-                  <span className="retro-btn-dot">□</span>
-                  <span className="retro-btn-dot">×</span>
-                </div>
-              </div>
-              <div className="p-6 sm:p-8">
-                <div className="mb-6 flex flex-col items-center sm:float-left sm:mr-6 sm:mb-4">
-                  <div className="aspect-[3/4] w-40 overflow-hidden border-2 border-border">
-                    <img
-                      src={headshot}
-                      alt="Coco Low Yu Ting"
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                </div>
-                <p className="mb-4 text-sm leading-relaxed text-card-foreground">
-                  A Product Manager with 9 years building digital health and
-                  wellbeing products across Singapore and Canada — from B2C
-                  experiences that help older adults manage their functional
-                  health with confidence, to B2B platforms that save
-                  practitioners time on admin so they can focus on their
-                  patients. My work spans digital health (Healthy365's
-                  AgeStrong, Singapore's first gamified digital health programme
-                  for older adults), mental wellbeing (mindline.sg, Singapore's
-                  national mental health platform), and Trust & Safety (risk
-                  detection at TikTok).
-                </p>
-                <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
-                  I specialise in 0-to-1 launches in regulated environments —
-                  where clinical workflows, AI feasibility, policy, and user
-                  needs all have to resolve into something intuitive. My
-                  practice blends user research, service design, and behaviour
-                  change, with a track record of earning trust across
-                  multistakeholder teams — and caring about the person on the
-                  other side of every product decision.
-                </p>
-                {features.showResumeDownload && <DownloadResumeButton />}
-              </div>
+            <div className="mx-auto mb-12 max-w-4xl">
+              <AboutMeCard
+                ctaHref="#key-achievements"
+                ctaLabel="Achievements and Work Experience"
+              />
             </div>
 
             {/* Key achievements stickers */}
-            <div className="mx-auto mb-16 max-w-3xl">
+            <div
+              id="key-achievements"
+              className="mx-auto mb-16 max-w-3xl scroll-mt-24"
+            >
               <div className="mb-6 text-center">
                 <h2 className="font-mono-heading text-xl font-bold sm:text-2xl">
                   Key <span className="gradient-text">Achievements</span>
@@ -497,19 +462,28 @@ export default function About() {
                   My First Startup Was{" "}
                   <span className="gradient-text">An Art Brand</span>
                 </h2>
-                <p className="mb-6 text-sm leading-relaxed text-card-foreground">
-                  I founded Coconut Calligraphy in 2016 as a creative outlet — a
-                  way to process a demanding day job and explore a craft I love.
-                  Over time, it grew into a small art brand with commissions,
-                  wedding stationery, and wellbeing workshops for 100+ youth and
-                  seniors. Running it end-to-end taught me product instincts no
-                  PM course could: how to price and position a product, handle
-                  logistics from inventory to shipping, build an audience from
-                  zero, and design an experience from first glance to final
-                  delivery. Those lessons — paired with the empathy of teaching
-                  wellbeing to youth and seniors — directly shape how I approach
-                  health product work.
-                </p>
+                <div className="mb-6 grid gap-6 sm:grid-cols-[1fr_auto] sm:items-start">
+                  <p className="text-sm leading-relaxed text-card-foreground">
+                    I founded Coconut Calligraphy in 2016 as a creative outlet —
+                    a way to process a demanding day job and explore a craft I
+                    love. Over time, it grew into a small art brand with
+                    commissions, wedding stationery, and wellbeing workshops for
+                    100+ youth and seniors. Running it end-to-end taught me
+                    product instincts no PM course could: how to price and
+                    position a product, handle logistics from inventory to
+                    shipping, build an audience from zero, and design an
+                    experience from first glance to final delivery. Those
+                    lessons — paired with the empathy of teaching wellbeing to
+                    youth and seniors — directly shape how I approach health
+                    product work.
+                  </p>
+                  <img
+                    src={artwork01}
+                    alt="Coconut Calligraphy artwork"
+                    className="w-full rounded-lg border border-border sm:w-40 sm:self-center"
+                    loading="lazy"
+                  />
+                </div>
                 <p className="mb-3 font-mono-heading text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
                   // Skills Picked Up
                 </p>

@@ -1,5 +1,10 @@
-import { ArrowDown } from "lucide-react";
-import { CTAButton, RetroWindow, Sticker } from "@/design-system";
+import { ArrowRight } from "lucide-react";
+import {
+  CTAButton,
+  CTAButtonGroup,
+  RetroWindow,
+  Sticker,
+} from "@/design-system";
 
 export function HeroSection() {
   return (
@@ -51,12 +56,16 @@ export function HeroSection() {
                 started as a passion project, with wellbeing workshops for 100+
                 youth and seniors.
               </p>
-              <div className="flex flex-wrap gap-3">
+              <CTAButtonGroup>
+                <CTAButton href="/about" variant="outline">
+                  About Me
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </CTAButton>
                 <CTAButton href="/projects">
                   View My Work
-                  <ArrowDown className="ml-1 h-4 w-4" />
+                  <ArrowRight className="ml-1 h-4 w-4" />
                 </CTAButton>
-              </div>
+              </CTAButtonGroup>
             </div>
           </RetroWindow>
         </div>
