@@ -83,9 +83,7 @@ const allProjects: Project[] = [
       {
         track: "B2C — mindline.sg revamp",
         points: [
-          "Personalised support concepts for the existing 12,000+ weekly users",
-          "Directed cross-timezone design delivery across Brazil and Singapore — setting priorities, managing timelines, and ensuring output was stakeholder-ready",
-          "Navigated product decisions at the intersection of user engagement, clinical safety, and AI feasibility",
+          "Improved user onboarding and retention strategies, including tailored recommendations for mental health support",
         ],
       },
       {
@@ -93,7 +91,6 @@ const allProjects: Project[] = [
           "B2B — Capability-training platform concept for mental health responders",
         points: [
           "Digital platform concept for capability training of mental health responders (e.g. counsellors) — aimed at strengthening responder skills and, through them, client support",
-          "Worked with Clinical and AI/Data Science teams to identify safe and impactful AI use cases — balancing clinical appropriateness, operational feasibility, and real responder needs",
         ],
       },
     ],
