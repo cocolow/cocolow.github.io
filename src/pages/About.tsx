@@ -1,8 +1,11 @@
+import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { AboutMeCard } from "@/components/AboutMeCard";
 import { InstagramIcon } from "@/design-system";
+import { projects } from "@/data/projects";
 import logoTiktok from "@/assets/logo-tiktok.png";
 import logoHpb from "@/assets/logo-hpb.png";
 import logoMoht from "@/assets/logo-moht.png";
@@ -27,6 +30,7 @@ const timeline = [
     role: "UX Product Manager",
     org: "mindline.sg, Ministry of Health Transformation (MOHT)",
     logos: [logoMoht],
+    projects: ["MINDLINE_REVAMP.FIG"],
     description: [
       <>
         Led product revamp of <strong>mindline.sg</strong> (Singapore's national
@@ -50,6 +54,7 @@ const timeline = [
     role: "Product Manager (Risk & Operations)",
     org: "Trust & Safety, TikTok, Canada",
     logos: [logoTiktok],
+    projects: ["TIKTOK_TRUST_SAFETY.RS"],
     description: [
       <>
         Built risk detection capability roadmap across{" "}
@@ -76,6 +81,11 @@ const timeline = [
     role: "Product Manager, Healthy Ageing",
     org: "Health Promotion Board (HPB), Singapore",
     logos: [logoHpb],
+    projects: [
+      "AGESTRONG.FIG",
+      "HEALTHY365_FILTERING.FIG",
+      "FUNCTIONAL_ASSESSMENT.FIG",
+    ],
     description: [
       <>
         Spearheaded{" "}
@@ -116,6 +126,7 @@ const timeline = [
     role: "Program Manager, Youth Mental Health",
     org: "Health Promotion Board (HPB), Singapore",
     logos: [logoHpb],
+    projects: ["OPENWHEN_LETTERS.TXT", "COMMON_SPACE.JPG"],
     description: [
       <>
         Conceived the <strong>'Open When' Letters Vending Machine</strong> —
@@ -152,6 +163,7 @@ const timeline = [
     role: "Assistant Project Manager, Health Screening",
     org: "Health Promotion Board (HPB), Singapore",
     logos: [logoHpb],
+    projects: [],
     description: [
       <>
         Managed <strong>national breast cancer screening operations</strong> in
@@ -187,7 +199,28 @@ const languages = [
   { name: "Thai", level: "Intermediate / Certified Level 4" },
 ];
 
+function roleAnchorId(year: string): string {
+  return `role-${year.replace(/[–—]/g, "-")}`;
+}
+
+function shortProjectLabel(title: string): string {
+  return title.split("—")[0].trim();
+}
+
 export default function About() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!location.hash) return;
+    const id = location.hash.slice(1);
+    const el = document.getElementById(id);
+    if (el) {
+      requestAnimationFrame(() => {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+  }, [location.hash]);
+
   return (
     <div className="relative min-h-screen bg-background overflow-hidden">
       {/* Floating decorative stickers */}
@@ -338,60 +371,85 @@ export default function About() {
               </div>
 
               <div className="relative border-l-2 border-border pl-6 sm:pl-8">
-                {timeline.map((item, i) => (
-                  <div
-                    key={i}
-                    className="retro-window relative mb-6 animate-fade-in-up"
-                    style={{ animationDelay: `${i * 80}ms` }}
-                  >
-                    {/* Dot on timeline */}
-                    <div className="absolute -left-[calc(1.5rem+7px)] top-4 h-3 w-3 border-2 border-primary bg-background sm:-left-[calc(2rem+7px)]" />
+                {timeline.map((item, i) => {
+                  const anchorId = roleAnchorId(item.year);
+                  const visibleRoleProjects = (item.projects ?? [])
+                    .map((file) => projects.find((p) => p.file === file))
+                    .filter((p): p is NonNullable<typeof p> => Boolean(p));
+                  return (
+                    <div
+                      key={i}
+                      id={anchorId}
+                      className="retro-window relative mb-6 animate-fade-in-up scroll-mt-24"
+                      style={{ animationDelay: `${i * 80}ms` }}
+                    >
+                      {/* Dot on timeline */}
+                      <div className="absolute -left-[calc(1.5rem+7px)] top-4 h-3 w-3 border-2 border-primary bg-background sm:-left-[calc(2rem+7px)]" />
 
-                    <div className="retro-titlebar">
-                      <span className="text-muted-foreground">{item.year}</span>
-                      <div className="retro-btn-group">
-                        <span className="retro-btn-dot">_</span>
-                        <span className="retro-btn-dot">□</span>
-                        <span className="retro-btn-dot">×</span>
-                      </div>
-                    </div>
-                    <div className="p-4">
-                      <div className="flex items-start gap-3">
-                        <div className="flex shrink-0 items-center gap-2 pt-0.5">
-                          {item.logos.map((logo, li) => (
-                            <img
-                              key={li}
-                              src={logo}
-                              alt=""
-                              className="h-6 w-6 object-contain"
-                            />
-                          ))}
+                      <div className="retro-titlebar">
+                        <span className="text-muted-foreground">
+                          {item.year}
+                        </span>
+                        <div className="retro-btn-group">
+                          <span className="retro-btn-dot">_</span>
+                          <span className="retro-btn-dot">□</span>
+                          <span className="retro-btn-dot">×</span>
                         </div>
-                        <div className="min-w-0">
-                          <h3 className="font-mono-heading text-sm font-bold text-card-foreground">
-                            {item.role}
-                          </h3>
-                          <p className="mb-2 font-mono-heading text-[11px] text-muted-foreground">
-                            {item.org}
-                          </p>
-                          <ul className="space-y-1.5">
-                            {item.description.map((d, di) => (
-                              <li
-                                key={di}
-                                className="flex gap-2 text-xs leading-relaxed text-muted-foreground"
-                              >
-                                <span className="mt-0.5 flex-shrink-0 font-mono-heading text-foreground">
-                                  ›
-                                </span>
-                                <span>{d}</span>
-                              </li>
+                      </div>
+                      <div className="p-4">
+                        <div className="flex items-start gap-3">
+                          <div className="flex shrink-0 items-center gap-2 pt-0.5">
+                            {item.logos.map((logo, li) => (
+                              <img
+                                key={li}
+                                src={logo}
+                                alt=""
+                                className="h-6 w-6 object-contain"
+                              />
                             ))}
-                          </ul>
+                          </div>
+                          <div className="min-w-0">
+                            <h3 className="font-mono-heading text-sm font-bold text-card-foreground">
+                              {item.role}
+                            </h3>
+                            <p className="mb-2 font-mono-heading text-[11px] text-muted-foreground">
+                              {item.org}
+                            </p>
+                            <ul className="space-y-1.5">
+                              {item.description.map((d, di) => (
+                                <li
+                                  key={di}
+                                  className="flex gap-2 text-xs leading-relaxed text-muted-foreground"
+                                >
+                                  <span className="mt-0.5 flex-shrink-0 font-mono-heading text-foreground">
+                                    ›
+                                  </span>
+                                  <span>{d}</span>
+                                </li>
+                              ))}
+                            </ul>
+                            {visibleRoleProjects.length > 0 && (
+                              <div className="mt-3 flex flex-wrap gap-1.5 border-t border-border pt-3">
+                                <span className="font-mono-heading text-[10px] uppercase tracking-wider text-muted-foreground">
+                                  // Related projects:
+                                </span>
+                                {visibleRoleProjects.map((p) => (
+                                  <Link
+                                    key={p.file}
+                                    to={`/projects?project=${encodeURIComponent(p.title)}&from=${encodeURIComponent(`/about#${anchorId}`)}`}
+                                    className="border border-border bg-muted px-2 py-0.5 font-mono-heading text-[10px] font-bold uppercase tracking-wider text-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+                                  >
+                                    {shortProjectLabel(p.title)}
+                                  </Link>
+                                ))}
+                              </div>
+                            )}
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
 

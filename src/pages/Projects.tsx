@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Navbar } from "@/components/Navbar";
@@ -48,6 +48,8 @@ export default function Projects() {
   });
   const [expandedMedia, setExpandedMedia] = useState<ProjectMedia | null>(null);
 
+  const fromParam = searchParams.get("from");
+
   const filtered =
     active === "All"
       ? visibleProjects
@@ -62,10 +64,13 @@ export default function Projects() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  // Lock body scroll when modal is open & clean up query param on close
+  // Lock body scroll when modal is open & clean up query params on close
   useEffect(() => {
     document.body.style.overflow = selected ? "hidden" : "";
-    if (!selected && searchParams.has("project")) {
+    if (
+      !selected &&
+      (searchParams.has("project") || searchParams.has("from"))
+    ) {
       setSearchParams({}, { replace: true });
     }
     return () => {
@@ -250,16 +255,26 @@ export default function Projects() {
               <span className="truncate text-muted-foreground font-mono-heading text-xs">
                 {selected.file}
               </span>
-              <div className="retro-btn-group">
-                <span className="retro-btn-dot">_</span>
-                <span className="retro-btn-dot">□</span>
-                <button
-                  onClick={() => setSelected(null)}
-                  className="retro-btn-dot cursor-pointer hover:bg-destructive hover:text-destructive-foreground transition-colors"
-                  aria-label="Close"
-                >
-                  ×
-                </button>
+              <div className="flex items-center gap-2">
+                {fromParam && fromParam.startsWith("/about") && (
+                  <Link
+                    to={fromParam}
+                    className="font-mono-heading text-[10px] font-bold uppercase tracking-wider text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    ↩ Back to About
+                  </Link>
+                )}
+                <div className="retro-btn-group">
+                  <span className="retro-btn-dot">_</span>
+                  <span className="retro-btn-dot">□</span>
+                  <button
+                    onClick={() => setSelected(null)}
+                    className="retro-btn-dot cursor-pointer hover:bg-destructive hover:text-destructive-foreground transition-colors"
+                    aria-label="Close"
+                  >
+                    ×
+                  </button>
+                </div>
               </div>
             </div>
 

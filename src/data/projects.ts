@@ -51,10 +51,11 @@ const allProjects: Project[] = [
     category: "Work",
     audience: ["B2C", "B2B"],
     gradient: "from-teal-400/15 to-cyan-300/15",
+    image: "/projects/mindline-portalentry.png",
     title:
       "mindline.sg — Personalising Singapore's national mental health platform",
     description:
-      "AI-enabled revamp of Singapore's national digital mental health touchpoint. Serving 12,000+ weekly users.",
+      "Revamp concept for Singapore's national digital mental health touchpoint (12,000+ weekly users on the existing platform) — exploring better engagement, personalisation, and responsible AI use cases.",
     org: "Ministry of Health Transformation (MOHT), Singapore",
     period: "Aug 2025 – Feb 2026",
     tags: [
@@ -73,7 +74,7 @@ const allProjects: Project[] = [
     ],
     problem: [
       "mindline.sg — Singapore's national first-stop digital mental health touchpoint — needed better engagement and personalisation to reach more users",
-      "Mental health responders (e.g. counsellors) lacked AI-assisted tools for capability training and improved client support",
+      "Mental health responders (e.g. counsellors) needed better tools to support their capability training — which in turn helps them better support their clients",
       "Multiple teams (Clinical, Design, AI/Data Science, Business) needed early alignment on usability, safety, and feasibility before any build began",
     ],
     approach: [
@@ -86,16 +87,17 @@ const allProjects: Project[] = [
       {
         track: "B2C — mindline.sg revamp",
         points: [
-          "AI-enabled engagement and personalised care for 12,000+ weekly users",
+          "Personalised support concepts for the existing 12,000+ weekly users",
           "Directed cross-timezone design delivery across Brazil and Singapore — setting priorities, managing timelines, and ensuring output was stakeholder-ready",
           "Navigated product decisions at the intersection of user engagement, clinical safety, and AI feasibility",
         ],
       },
       {
-        track: "B2B — Mental health responder platform",
+        track:
+          "B2B — Capability-training platform concept for mental health responders",
         points: [
-          "Digital platform for capability training and AI-assisted support for mental health responders (e.g. counsellors)",
-          "Identified safe and impactful AI use cases, ensuring features were clinically appropriate and operationally feasible",
+          "Digital platform concept for capability training of mental health responders (e.g. counsellors) — aimed at strengthening responder skills and, through them, client support",
+          "Worked with Clinical and AI/Data Science teams to identify safe and impactful AI use cases — balancing clinical appropriateness, operational feasibility, and real responder needs",
         ],
       },
     ],
