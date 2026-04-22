@@ -20,7 +20,15 @@ const socialLinks = [
     href: "https://linkedin.com/in/yutinglow",
     label: "LinkedIn",
   },
-  { icon: GithubIcon, href: "https://github.com/cocolow", label: "GitHub" },
+  ...(features.showGithub
+    ? [
+        {
+          icon: GithubIcon,
+          href: "https://github.com/cocolow",
+          label: "GitHub",
+        },
+      ]
+    : []),
   {
     icon: InstagramIcon,
     href: "https://instagram.com/coconutcalligraphy",

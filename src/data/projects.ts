@@ -116,7 +116,7 @@ const allProjects: Project[] = [
     description:
       "End-to-end product development of a gamified digital health challenge on Healthy365. 100,000+ sign-ups in 3 months.",
     org: "Health Promotion Board (HPB), Singapore",
-    period: "Jun 2022 – Sep 2024",
+    period: "2024",
     tags: [
       "Gamification",
       "Behavioural Science",
@@ -129,9 +129,8 @@ const allProjects: Project[] = [
     ],
     metrics: [
       { value: "100k+", label: "sign-ups in 3 months" },
-      { value: "24hrs+", label: "saved per task request" },
-      { value: ">10%", label: "more event sign-ups" },
-      { value: ">15%", label: "operational efficiency gain" },
+      { value: "30%", label: "full programme completion" },
+      { value: "500k+", label: "users reached via reusable template" },
     ],
     problem: [
       "Existing H365 programmes were topic-specific (exercise, nutrition) — not user-specific or holistic for seniors as a segment",
@@ -141,18 +140,18 @@ const allProjects: Project[] = [
     ],
     approach: [
       "Benchmarked ecommerce and consumer apps — check-in reward mechanics proven to drive habit formation",
-      "Incorporated behavioural science and clinical workflow design into programme logic from the ground up",
+      "Incorporated behavioural science and clinical workflow design into programme logic from the ground up — weighted against safety, clinical risk, and what would resonate with a 50+ audience",
       "Concept testing confirmed: simple UI with clear calls-to-action is essential for senior usability",
-      "Defined programme logic end-to-end: from programme brief to lo-fi prototype through UAT, aligning 5+ stakeholder teams",
+      "Scoped launch against existing content — powered v1 with what was ready, parked gaps to roadmap. Set up a content-creation pipeline with health domain teams (intent, process, task examples) so they could contribute smoothly",
     ],
     built: [
       {
         track: "Consumer track — Healthy365 App (B2C)",
         points: [
-          "Check-in personalisation — rule-based content tailoring based on user responses, ahead of AI capabilities",
+          "Check-in personalisation — rule-based content tailoring based on user responses, while balancing safety, AI feasibility and user engagement needs",
           "Game of chance mechanic for ongoing daily engagement",
           "Upgraded rewards structure to incentivise sustained participation",
-          "4 health engagement task types — quizzes, mini-games, tailored workouts, and daily challenges",
+          "A Task A Day with 2 health engagement task types — quizzes and tailored workouts",
         ],
       },
       {
@@ -160,14 +159,14 @@ const allProjects: Project[] = [
         points: [
           "Digital programme template — co-created HPB's first reusable digital programme template, adopted across the entire organisation",
           "Task creation feature — enabled programme managers to independently create digital tasks on BAP without waiting for third-party vendors, saving 24+ hours per task creation request",
-          "Drove product alignment and onboarding via tailored materials across 5+ stakeholder teams — from workflow training for managers to strategic context decks for senior leadership",
+          "Drove product alignment and onboarding via tailored materials across 5+ stakeholder teams — from workflow training for programme managers to strategic context decks for senior leadership",
         ],
       },
     ],
     outcomes: [
       "100,000+ sign-ups within 3 months of launch — first national gamified digital health programme for seniors",
+      "30% full programme completion",
       "HPB Epic Award 2024 (AgeStrong)",
-      "HPB Epic Award 2023 — Business Transformation Team Gold Award (Prefrailty digital health tool)",
     ],
     learnings: [
       {
@@ -176,19 +175,19 @@ const allProjects: Project[] = [
           "Designing a reusable programme template meant the team's biggest impact wasn't AgeStrong itself — it was the 500k+ users reached through programmes other health domain teams launched independently afterward.",
       },
       {
-        theme: "Clinical rigour + consumer UX need a translator",
+        theme: "Designing for users means designing for their context",
         detail:
-          "Turning clinical frailty scoring into a gamified senior experience required holding tension between two valid logics — clinicians wanted precision, users wanted simplicity. The PM's job was making both true without either side feeling compromised.",
+          "Designing for seniors meant safety came first, but safety alone wouldn't improve functional health. Each exercise task had to balance safety, engagement, and progressive difficulty — so seniors stayed safe, kept coming back, and got stronger over time.",
       },
       {
-        theme: "E-commerce patterns translate — with translation",
+        theme: "Constraints shape the sharpest solutions",
         detail:
-          "Check-in and reward mechanics proven in consumer apps drove habit formation for seniors, but only after concept testing confirmed simple UI with clear CTAs was non-negotiable. Transferring patterns isn't copy-paste — it's translation into a new user context.",
+          "AI-driven personalisation wasn't feasible within our resource constraints for MVP, so variety had to come from a simpler, lighter solution. A post-task check-in let us adapt intensity per user, delivering the feeling of personalisation and a built-in safety signal at MVP cost.",
       },
       {
-        theme: "Front-load stakeholder disagreement",
+        theme: "Build for the years after the MVP",
         detail:
-          "Aligning 5+ teams (clinical, ops, vendors, engineering, leadership) upfront through tailored materials — strategic decks for leaders, workflow training for operators — front-loaded disagreement and saved weeks of rework mid-build.",
+          "Shipping an internal tool that let programme managers create tasks directly — instead of routing every update through procurement and a vendor — removed weeks of lead time per cycle and kept the programme sustainable. Other teams creating their own digital programmes also benefited from the tool in the organisation.",
       },
     ],
     media: [
@@ -333,6 +332,7 @@ const allProjects: Project[] = [
     outcomes: [
       "15%+ operational efficiency gain, with 20+ minutes saved per assessment",
       "Eliminated manual calculation errors by automating scoring at point-of-measurement",
+      "HPB Epic Award 2023 — Business Transformation Team Gold Award (Prefrailty digital health tool)",
     ],
     media: [
       {

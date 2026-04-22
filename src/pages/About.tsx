@@ -290,14 +290,16 @@ export default function About() {
               </div>
               <div className="flex flex-col gap-3">
                 <div className="flex items-center justify-center border-[1.5px] border-foreground bg-watercolor-orange/15 px-5 py-4 text-center text-sm leading-relaxed text-foreground">
-                  <strong>AgeStrong</strong>: 100k+ sign-ups, 30% completion
+                  <strong>AgeStrong</strong>: 100k+ sign-ups, 30% full
+                  completion, 1st holistic self-directed product for adults over
+                  50
                 </div>
                 <div className="flex items-center justify-center border-[1.5px] border-foreground bg-watercolor-purple/15 px-5 py-4 text-center text-sm leading-relaxed text-foreground">
-                  <strong>HPB 1st Innovation Award</strong> — Open When Letters
-                  Vending Machine
+                  <strong>Open When Letters Vending Machine</strong>: HPB 1st
+                  Innovation Award for Customer Centricity and Collaboration
                 </div>
                 <div className="flex items-center justify-center border-[1.5px] border-foreground bg-watercolor-blue/15 px-5 py-4 text-center text-sm leading-relaxed text-foreground">
-                  <strong>SG's national peer support curriculum</strong> —
+                  <strong>SG's national peer support curriculum</strong>:
                   adopted across polytechnics & universities
                 </div>
               </div>

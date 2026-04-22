@@ -15,4 +15,6 @@ export const features = {
   showTiktokTrustSafety: false,
   /** When false: hides the mindline.sg project (work in progress, not yet rolled out). */
   showMindline: false,
+  /** When false: hides the GitHub social icon in the navbar and footer. */
+  showGithub: false,
 } as const;
