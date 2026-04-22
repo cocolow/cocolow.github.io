@@ -14,7 +14,7 @@ export const features = {
   /** When false: hides the TikTok Trust & Safety project (sensitive content). */
   showTiktokTrustSafety: false,
   /** When false: hides the mindline.sg project (work in progress, not yet rolled out). */
-  showMindline: false,
+  showMindline: true,
   /** When false: hides the GitHub social icon in the navbar and footer. */
   showGithub: false,
   /** When false: hides the Personal Finance Tracker (UX bootcamp capstone) project. */
