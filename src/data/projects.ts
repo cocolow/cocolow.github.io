@@ -57,7 +57,7 @@ const allProjects: Project[] = [
     description:
       "Revamp concept for Singapore's national digital mental health touchpoint (12,000+ weekly users on the existing platform) — exploring better engagement, personalisation, and responsible AI use cases.",
     org: "Ministry of Health Transformation (MOHT), Singapore",
-    period: "Aug 2025 – Feb 2026",
+    period: "2025 – 2026",
     tags: [
       "Mental Health",
       "Responsible AI",
@@ -67,11 +67,7 @@ const allProjects: Project[] = [
       "Cross-timezone",
       "Figma",
     ],
-    metrics: [
-      { value: "12,000+", label: "weekly users" },
-      { value: "12", label: "research sessions led" },
-      { value: "2", label: "product tracks" },
-    ],
+    metrics: [{ value: "12,000+", label: "weekly users" }],
     problem: [
       "mindline.sg — Singapore's national first-stop digital mental health touchpoint — needed better engagement and personalisation to reach more users",
       "Mental health responders (e.g. counsellors) needed better tools to support their capability training — which in turn helps them better support their clients",
