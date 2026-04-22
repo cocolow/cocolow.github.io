@@ -202,7 +202,23 @@ export default function Projects() {
               ))}
             </div>
 
-            {filtered.length === 0 && (
+            {filtered.length === 0 && active === "Personal" && (
+              <div className="retro-window mx-auto max-w-lg text-center">
+                <div className="retro-titlebar">
+                  <span className="text-muted-foreground">
+                    tinkering_in_progress.log
+                  </span>
+                </div>
+                <p className="p-8 font-mono-heading text-sm leading-relaxed text-muted-foreground">
+                  🚧 A space in the making — for side products, art, and
+                  learnings picked up along the way. I'm writing up the first
+                  set now ✦ check back soon to see what I've been tinkering
+                  with.
+                </p>
+              </div>
+            )}
+
+            {filtered.length === 0 && active !== "Personal" && (
               <div className="retro-window mx-auto max-w-sm text-center">
                 <div className="retro-titlebar">
                   <span className="text-muted-foreground">no_results.txt</span>
