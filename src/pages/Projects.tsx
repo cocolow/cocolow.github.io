@@ -202,7 +202,23 @@ export default function Projects() {
               ))}
             </div>
 
-            {filtered.length === 0 && (
+            {filtered.length === 0 && active === "Personal" && (
+              <div className="retro-window mx-auto max-w-lg text-center">
+                <div className="retro-titlebar">
+                  <span className="text-muted-foreground">
+                    tinkering_in_progress.log
+                  </span>
+                </div>
+                <p className="p-8 font-mono-heading text-sm leading-relaxed text-muted-foreground">
+                  🚧 A space in the making — for side products, art, and
+                  learnings picked up along the way. I'm writing up the first
+                  set now ✦ check back soon to see what I've been tinkering
+                  with.
+                </p>
+              </div>
+            )}
+
+            {filtered.length === 0 && active !== "Personal" && (
               <div className="retro-window mx-auto max-w-sm text-center">
                 <div className="retro-titlebar">
                   <span className="text-muted-foreground">no_results.txt</span>
@@ -422,11 +438,11 @@ export default function Projects() {
               </div>
             </div>
 
-            {/* —— PM Learnings —— */}
+            {/* —— Learnings —— */}
             {selected.learnings && selected.learnings.length > 0 && (
               <div className="border-b border-border p-6">
                 <p className="mb-4 font-mono-heading text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
-                  // PM Learnings
+                  // Learnings
                 </p>
                 <div className="grid gap-4 sm:grid-cols-2">
                   {selected.learnings.map((l, i) => (

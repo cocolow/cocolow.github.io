@@ -116,7 +116,7 @@ const allProjects: Project[] = [
     description:
       "End-to-end product development of a gamified digital health challenge on Healthy365. 100,000+ sign-ups in 3 months.",
     org: "Health Promotion Board (HPB), Singapore",
-    period: "Jun 2022 – Sep 2024",
+    period: "2024",
     tags: [
       "Gamification",
       "Behavioural Science",
@@ -129,9 +129,8 @@ const allProjects: Project[] = [
     ],
     metrics: [
       { value: "100k+", label: "sign-ups in 3 months" },
-      { value: "24hrs+", label: "saved per task request" },
-      { value: ">10%", label: "more event sign-ups" },
-      { value: ">15%", label: "operational efficiency gain" },
+      { value: "30%", label: "full programme completion" },
+      { value: "500k+", label: "users reached via reusable template" },
     ],
     problem: [
       "Existing H365 programmes were topic-specific (exercise, nutrition) — not user-specific or holistic for seniors as a segment",
@@ -141,18 +140,18 @@ const allProjects: Project[] = [
     ],
     approach: [
       "Benchmarked ecommerce and consumer apps — check-in reward mechanics proven to drive habit formation",
-      "Incorporated behavioural science and clinical workflow design into programme logic from the ground up",
+      "Incorporated behavioural science and clinical workflow design into programme logic from the ground up — weighted against safety, clinical risk, and what would resonate with a 50+ audience",
       "Concept testing confirmed: simple UI with clear calls-to-action is essential for senior usability",
-      "Defined programme logic end-to-end: from programme brief to lo-fi prototype through UAT, aligning 5+ stakeholder teams",
+      "Scoped launch against existing content — powered v1 with what was ready, parked gaps to roadmap. Set up a content-creation pipeline with health domain teams (intent, process, task examples) so they could contribute smoothly",
     ],
     built: [
       {
         track: "Consumer track — Healthy365 App (B2C)",
         points: [
-          "Check-in personalisation — rule-based content tailoring based on user responses, ahead of AI capabilities",
+          "Check-in personalisation — rule-based content tailoring based on user responses, while balancing safety, AI feasibility and user engagement needs",
           "Game of chance mechanic for ongoing daily engagement",
           "Upgraded rewards structure to incentivise sustained participation",
-          "4 health engagement task types — quizzes, mini-games, tailored workouts, and daily challenges",
+          "A Task A Day with 2 health engagement task types — quizzes and tailored workouts",
         ],
       },
       {
@@ -160,14 +159,14 @@ const allProjects: Project[] = [
         points: [
           "Digital programme template — co-created HPB's first reusable digital programme template, adopted across the entire organisation",
           "Task creation feature — enabled programme managers to independently create digital tasks on BAP without waiting for third-party vendors, saving 24+ hours per task creation request",
-          "Drove product alignment and onboarding via tailored materials across 5+ stakeholder teams — from workflow training for managers to strategic context decks for senior leadership",
+          "Drove product alignment and onboarding via tailored materials across 5+ stakeholder teams — from workflow training for programme managers to strategic context decks for senior leadership",
         ],
       },
     ],
     outcomes: [
       "100,000+ sign-ups within 3 months of launch — first national gamified digital health programme for seniors",
+      "30% full programme completion",
       "HPB Epic Award 2024 (AgeStrong)",
-      "HPB Epic Award 2023 — Business Transformation Team Gold Award (Prefrailty digital health tool)",
     ],
     learnings: [
       {
@@ -176,19 +175,19 @@ const allProjects: Project[] = [
           "Designing a reusable programme template meant the team's biggest impact wasn't AgeStrong itself — it was the 500k+ users reached through programmes other health domain teams launched independently afterward.",
       },
       {
-        theme: "Clinical rigour + consumer UX need a translator",
+        theme: "Designing for users means designing for their context",
         detail:
-          "Turning clinical frailty scoring into a gamified senior experience required holding tension between two valid logics — clinicians wanted precision, users wanted simplicity. The PM's job was making both true without either side feeling compromised.",
+          "Designing for seniors meant safety came first, but safety alone wouldn't improve functional health. Each exercise task had to balance safety, engagement, and progressive difficulty — so seniors stayed safe, kept coming back, and got stronger over time.",
       },
       {
-        theme: "E-commerce patterns translate — with translation",
+        theme: "Constraints shape the sharpest solutions",
         detail:
-          "Check-in and reward mechanics proven in consumer apps drove habit formation for seniors, but only after concept testing confirmed simple UI with clear CTAs was non-negotiable. Transferring patterns isn't copy-paste — it's translation into a new user context.",
+          "AI-driven personalisation wasn't feasible within our resource constraints for MVP, so variety had to come from a simpler, lighter solution. A post-task check-in let us adapt intensity per user, delivering the feeling of personalisation and a built-in safety signal at MVP cost.",
       },
       {
-        theme: "Front-load stakeholder disagreement",
+        theme: "Build for the years after the MVP",
         detail:
-          "Aligning 5+ teams (clinical, ops, vendors, engineering, leadership) upfront through tailored materials — strategic decks for leaders, workflow training for operators — front-loaded disagreement and saved weeks of rework mid-build.",
+          "Shipping an internal tool that let programme managers create tasks directly — instead of routing every update through procurement and a vendor — removed weeks of lead time per cycle and kept the programme sustainable. Other teams creating their own digital programmes also benefited from the tool in the organisation.",
       },
     ],
     media: [
@@ -227,7 +226,7 @@ const allProjects: Project[] = [
     description:
       "B2C filtering and map-view feature on Healthy365 (Singapore's national healthy-living app), helping users navigate 1,000+ daily events with date, time, location, and age filters.",
     org: "Health Promotion Board (HPB), Singapore",
-    period: "2022 – 2024",
+    period: "2022",
     tags: [
       "B2C",
       "Digital Health",
@@ -290,7 +289,7 @@ const allProjects: Project[] = [
     description:
       "Two-part B2B system: an on-ground mobile app for trainers conducting functional health measurements, and a web portal for admins to create and customise metric-based assessments.",
     org: "Health Promotion Board (HPB), Singapore",
-    period: "2022 – 2024",
+    period: "2023",
     tags: [
       "B2B",
       "Digital Health",
@@ -305,7 +304,7 @@ const allProjects: Project[] = [
     ],
     problem: [
       "Trainers took physical functional health measurements on-ground and manually calculated participants' functional health status — slow and error-prone",
-      "No reusable digital tool existed to create and customise metric-based assessments for different target groups — every new assessment required custom work",
+      "No reusable digital tool existed to create and customise metric-based assessments for different target groups — every new assessment required custom work or was measured manually",
     ],
     approach: [
       "Designed two paired touchpoints — one for admins creating assessments, one for trainers running them — so the workflow was continuous end-to-end",
@@ -317,7 +316,7 @@ const allProjects: Project[] = [
         track: "Trainer-side — H365 Pal app (B2B)",
         points: [
           "QR-scan-based participant lookup, with grouping, search, and real-time check-in status",
-          "Step-by-step measurement flow — conduct CFS or custom assessments with automated score calculation",
+          "Step-by-step measurement flow — conduct Clinical Frailty Score (CFS) or custom assessments with automated score calculation",
           "Participant profile with contextual info and full assessment history in one place",
         ],
       },
@@ -333,6 +332,7 @@ const allProjects: Project[] = [
     outcomes: [
       "15%+ operational efficiency gain, with 20+ minutes saved per assessment",
       "Eliminated manual calculation errors by automating scoring at point-of-measurement",
+      "HPB Epic Award 2023 — Business Transformation Team Gold Award (Prefrailty digital health tool)",
     ],
     media: [
       {
@@ -363,7 +363,7 @@ const allProjects: Project[] = [
     description:
       "Innovation Award-winning physical product. 700,000+ users. A CBT-embedded letter series and vending machine that normalised mental health support in schools.",
     org: "Health Promotion Board (HPB), Singapore",
-    period: "Jun 2018 – Jun 2022",
+    period: "2019",
     tags: [
       "Youth Mental Health",
       "Physical Product",
@@ -373,12 +373,7 @@ const allProjects: Project[] = [
       "Innovation Award",
       "Power BI",
     ],
-    metrics: [
-      { value: "700k+", label: "users reached nationally" },
-      { value: "98%", label: "agreed resources reduced stigma" },
-      { value: "30,000", label: "students via Common Space" },
-      { value: "100%+", label: "programme reach growth in 1 yr" },
-    ],
+    metrics: [{ value: "98%", label: "agreed resources reduced stigma" }],
     problem: [
       "Youth peer supporters struggled to create safe spaces for mental health conversations without coming across as threatening",
       "School counselling centres were daunting and stigmatising — youth avoided them even when they needed support",
@@ -388,7 +383,6 @@ const allProjects: Project[] = [
       "Conducted user interviews and market research — surfaced specific stigma barriers that informed the neutral, friendly design approach",
       "98% of users in testing confirmed the resources promoted wellbeing without stigma, validating the de-stigmatising design approach",
       "Drew on CBT frameworks, gratitude journal research, insights from youth, and personal experience to shape the letter content",
-      "Built a Power BI programme auditing dashboard to systematically track delivery gaps and outcomes — eliminating manual ad-hoc auditing",
     ],
     built: [
       {
@@ -409,9 +403,8 @@ const allProjects: Project[] = [
       },
     ],
     outcomes: [
-      "HPB's 1st Innovation Award for Customer-centricity & Collaboration",
-      "HPB Epic Award 2020 — Innovation & Collaboration Champion for Mental Wellbeing",
-      "Programme reach grew by 100%+ within a single year",
+      "HPB's 1st EPIC Award for Innovation & Collaboration",
+      "Represented HPB to present youth mental health initiatives at international mental health conferences (e.g. IAYMH 2019, TAS 2019)",
     ],
     media: [
       {
@@ -440,7 +433,7 @@ const allProjects: Project[] = [
     description:
       "Physical product expanding on the Open When Letters Vending Machine — student-led advocacy spaces built into school campuses to normalise mental health conversations.",
     org: "Health Promotion Board (HPB), Singapore",
-    period: "2018 – 2022",
+    period: "2021-2022",
     tags: [
       "Youth Mental Health",
       "Physical Product",
@@ -458,6 +451,7 @@ const allProjects: Project[] = [
       "Led end-to-end development across schools, stakeholders, vendors, and operations — reusing the vending-machine playbook and extending it into furnished, student-run spaces",
       "Co-developed with student groups (e.g., TP PSIA) to ensure spaces were genuinely student-led, not top-down",
       "Activated spaces with student takeovers, Instagram content, and recurring sessions to build ongoing engagement",
+      "Built a Power BI programme auditing dashboard to systematically track delivery gaps and outcomes — eliminating manual ad-hoc auditing",
     ],
     built: [
       {
@@ -649,6 +643,9 @@ export const projects: Project[] = allProjects
     (p) =>
       features.showTiktokTrustSafety || p.file !== "TIKTOK_TRUST_SAFETY.RS",
   )
-  .filter((p) => features.showMindline || p.file !== "MINDLINE_REVAMP.FIG");
+  .filter((p) => features.showMindline || p.file !== "MINDLINE_REVAMP.FIG")
+  .filter(
+    (p) => features.showFinanceTracker || p.file !== "FINANCE_TRACKER.FIG",
+  );
 
 export const featuredProjects = projects.filter((p) => p.featured);
