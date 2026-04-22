@@ -422,11 +422,11 @@ export default function Projects() {
               </div>
             </div>
 
-            {/* —— PM Learnings —— */}
+            {/* —— Learnings —— */}
             {selected.learnings && selected.learnings.length > 0 && (
               <div className="border-b border-border p-6">
                 <p className="mb-4 font-mono-heading text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
-                  // PM Learnings
+                  // Learnings
                 </p>
                 <div className="grid gap-4 sm:grid-cols-2">
                   {selected.learnings.map((l, i) => (

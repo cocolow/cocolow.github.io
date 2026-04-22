@@ -226,7 +226,7 @@ const allProjects: Project[] = [
     description:
       "B2C filtering and map-view feature on Healthy365 (Singapore's national healthy-living app), helping users navigate 1,000+ daily events with date, time, location, and age filters.",
     org: "Health Promotion Board (HPB), Singapore",
-    period: "2022 – 2024",
+    period: "2022",
     tags: [
       "B2C",
       "Digital Health",
@@ -289,7 +289,7 @@ const allProjects: Project[] = [
     description:
       "Two-part B2B system: an on-ground mobile app for trainers conducting functional health measurements, and a web portal for admins to create and customise metric-based assessments.",
     org: "Health Promotion Board (HPB), Singapore",
-    period: "2022 – 2024",
+    period: "2023",
     tags: [
       "B2B",
       "Digital Health",
@@ -304,7 +304,7 @@ const allProjects: Project[] = [
     ],
     problem: [
       "Trainers took physical functional health measurements on-ground and manually calculated participants' functional health status — slow and error-prone",
-      "No reusable digital tool existed to create and customise metric-based assessments for different target groups — every new assessment required custom work",
+      "No reusable digital tool existed to create and customise metric-based assessments for different target groups — every new assessment required custom work or was measured manually",
     ],
     approach: [
       "Designed two paired touchpoints — one for admins creating assessments, one for trainers running them — so the workflow was continuous end-to-end",
@@ -316,7 +316,7 @@ const allProjects: Project[] = [
         track: "Trainer-side — H365 Pal app (B2B)",
         points: [
           "QR-scan-based participant lookup, with grouping, search, and real-time check-in status",
-          "Step-by-step measurement flow — conduct CFS or custom assessments with automated score calculation",
+          "Step-by-step measurement flow — conduct Clinical Frailty Score (CFS) or custom assessments with automated score calculation",
           "Participant profile with contextual info and full assessment history in one place",
         ],
       },
@@ -363,7 +363,7 @@ const allProjects: Project[] = [
     description:
       "Innovation Award-winning physical product. 700,000+ users. A CBT-embedded letter series and vending machine that normalised mental health support in schools.",
     org: "Health Promotion Board (HPB), Singapore",
-    period: "Jun 2018 – Jun 2022",
+    period: "2019",
     tags: [
       "Youth Mental Health",
       "Physical Product",
@@ -373,12 +373,7 @@ const allProjects: Project[] = [
       "Innovation Award",
       "Power BI",
     ],
-    metrics: [
-      { value: "700k+", label: "users reached nationally" },
-      { value: "98%", label: "agreed resources reduced stigma" },
-      { value: "30,000", label: "students via Common Space" },
-      { value: "100%+", label: "programme reach growth in 1 yr" },
-    ],
+    metrics: [{ value: "98%", label: "agreed resources reduced stigma" }],
     problem: [
       "Youth peer supporters struggled to create safe spaces for mental health conversations without coming across as threatening",
       "School counselling centres were daunting and stigmatising — youth avoided them even when they needed support",
@@ -388,7 +383,6 @@ const allProjects: Project[] = [
       "Conducted user interviews and market research — surfaced specific stigma barriers that informed the neutral, friendly design approach",
       "98% of users in testing confirmed the resources promoted wellbeing without stigma, validating the de-stigmatising design approach",
       "Drew on CBT frameworks, gratitude journal research, insights from youth, and personal experience to shape the letter content",
-      "Built a Power BI programme auditing dashboard to systematically track delivery gaps and outcomes — eliminating manual ad-hoc auditing",
     ],
     built: [
       {
@@ -409,9 +403,8 @@ const allProjects: Project[] = [
       },
     ],
     outcomes: [
-      "HPB's 1st Innovation Award for Customer-centricity & Collaboration",
-      "HPB Epic Award 2020 — Innovation & Collaboration Champion for Mental Wellbeing",
-      "Programme reach grew by 100%+ within a single year",
+      "HPB's 1st EPIC Award for Innovation & Collaboration",
+      "Represented HPB to present youth mental health initiatives at international mental health conferences (e.g. IAYMH 2019, TAS 2019)",
     ],
     media: [
       {
@@ -440,7 +433,7 @@ const allProjects: Project[] = [
     description:
       "Physical product expanding on the Open When Letters Vending Machine — student-led advocacy spaces built into school campuses to normalise mental health conversations.",
     org: "Health Promotion Board (HPB), Singapore",
-    period: "2018 – 2022",
+    period: "2021-2022",
     tags: [
       "Youth Mental Health",
       "Physical Product",
@@ -458,6 +451,7 @@ const allProjects: Project[] = [
       "Led end-to-end development across schools, stakeholders, vendors, and operations — reusing the vending-machine playbook and extending it into furnished, student-run spaces",
       "Co-developed with student groups (e.g., TP PSIA) to ensure spaces were genuinely student-led, not top-down",
       "Activated spaces with student takeovers, Instagram content, and recurring sessions to build ongoing engagement",
+      "Built a Power BI programme auditing dashboard to systematically track delivery gaps and outcomes — eliminating manual ad-hoc auditing",
     ],
     built: [
       {
@@ -649,6 +643,9 @@ export const projects: Project[] = allProjects
     (p) =>
       features.showTiktokTrustSafety || p.file !== "TIKTOK_TRUST_SAFETY.RS",
   )
-  .filter((p) => features.showMindline || p.file !== "MINDLINE_REVAMP.FIG");
+  .filter((p) => features.showMindline || p.file !== "MINDLINE_REVAMP.FIG")
+  .filter(
+    (p) => features.showFinanceTracker || p.file !== "FINANCE_TRACKER.FIG",
+  );
 
 export const featuredProjects = projects.filter((p) => p.featured);

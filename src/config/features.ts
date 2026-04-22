@@ -17,4 +17,6 @@ export const features = {
   showMindline: false,
   /** When false: hides the GitHub social icon in the navbar and footer. */
   showGithub: false,
+  /** When false: hides the Personal Finance Tracker (UX bootcamp capstone) project. */
+  showFinanceTracker: false,
 } as const;

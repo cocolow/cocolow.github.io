@@ -119,7 +119,8 @@ const timeline = [
     description: [
       <>
         Conceived the <strong>'Open When' Letters Vending Machine</strong> —
-        winning <strong>HPB's 1st Innovation Award</strong>
+        winning{" "}
+        <strong>HPB's 1st EPIC Award for Innovation & Collaboration</strong>
       </>,
       <>
         Identified a gap in post-school peer support and secured Youth Corps
@@ -295,8 +296,8 @@ export default function About() {
                   50
                 </div>
                 <div className="flex items-center justify-center border-[1.5px] border-foreground bg-watercolor-purple/15 px-5 py-4 text-center text-sm leading-relaxed text-foreground">
-                  <strong>Open When Letters Vending Machine</strong>: HPB 1st
-                  Innovation Award for Customer Centricity and Collaboration
+                  <strong>Open When Letters Vending Machine</strong>: HPB's 1st
+                  EPIC Award for Innovation & Collaboration
                 </div>
                 <div className="flex items-center justify-center border-[1.5px] border-foreground bg-watercolor-blue/15 px-5 py-4 text-center text-sm leading-relaxed text-foreground">
                   <strong>SG's national peer support curriculum</strong>:
