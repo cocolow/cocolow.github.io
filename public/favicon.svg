@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" shape-rendering="crispEdges">
+  <rect x="0" y="0" width="512" height="512" fill="#f4ede4"></rect>
+  <rect x="10.24" y="10.24" width="491.52" height="491.52" fill="#1f1b3a" stroke="#14112a" stroke-width="10.24"></rect>
+  <rect x="10.24" y="10.24" width="491.52" height="112.64" fill="#f4ede4"></rect>
+  <line x1="10.24" y1="122.88" x2="501.76" y2="122.88" stroke="#14112a" stroke-width="10.24"></line>
+  <rect x="473.59999999999997" y="55.040000000000006" width="23.04" height="23.04" fill="none" stroke="#14112a" stroke-width="7.68"></rect>
+  <rect x="442.88" y="55.040000000000006" width="23.04" height="23.04" fill="none" stroke="#14112a" stroke-width="7.68"></rect>
+  <rect x="412.15999999999997" y="55.040000000000006" width="23.04" height="23.04" fill="none" stroke="#14112a" stroke-width="7.68"></rect>
+  <text x="256" y="363.52" font-family="&#39;Fraunces&#39;, &#39;Playfair Display&#39;, Georgia, serif" font-size="296.96" font-weight="900" text-anchor="middle" dominant-baseline="middle" fill="#f4ede4" letter-spacing="-5.12">CL</text>
+</svg>
